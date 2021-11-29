@@ -1,0 +1,11 @@
+{
+  "name": "calories-tracker",
+  "version": "1.0.0",
+  "description": "A capstone project application that functions to track the number of calories of each food.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nerufuyo <listyoadipamungkas65@gmail.com>",
+  "license": "ISC"
+}
