@@ -6,9 +6,17 @@
   font-family: 'Roboto', sans-serif;
 }
 
+
 /* ---- Header ---- */
 .app-bar {
   display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.app-bar_menu-hamburger {
+  margin-right: 20px;
 }
 
 .hamburger-bar {
@@ -17,6 +25,20 @@
   height: 3px;
   margin: 5px auto;
   background-color: #101010;
+}
+
+
+.user-profile {
+  margin-left: auto;
+}
+
+.user-profile__pic {
+  display: inline-block;
+  height: 30px;
+}
+
+.user-profile__pic img {
+  height: 100%;
 }
 
 .user-profile__dropdown {
