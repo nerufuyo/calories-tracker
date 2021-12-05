@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #F6F8FA;
+  box-sizing: border-box;
+}
 
 /* ---- Header ---- */
 .app-bar {
@@ -43,5 +47,4 @@
 
 .user-profile__dropdown {
   display: none;
-  box-sizing: border-box;
 }
