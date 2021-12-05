@@ -5,10 +5,21 @@
   font-family: 'Roboto', sans-serif;
 }
 
+/* ---- Header ---- */
+.app-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .hamburger-bar {
   display: block;
   width: 25px;
   height: 3px;
   margin: 5px auto;
   background-color: #101010;
+}
+
+.user-profile__dropdown {
+  display: none;
 }
