@@ -8,6 +8,7 @@ const NavbarDrawerInitiator = {
   _toggleDrawer(event, drawer) {
     event.stopPropagation();
     drawer.classList.toggle('show');
+    button.classList.toggle('active');
   },
 }
 
