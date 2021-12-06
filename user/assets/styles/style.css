@@ -23,6 +23,7 @@ body {
           align-items: center;
   width: 100%;
   padding: 10px 20px;
+  background-color: #FFFFFF;
 }
 
 .app-bar_menu-hamburger {
@@ -38,6 +39,13 @@ body {
 }
 
 .user-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
   margin-left: auto;
 }
 
