@@ -10,8 +10,8 @@ class App {
 
   _initialAppShell() {
     UserProfileDrawerInitiator.init({
-      button: this._button;
-      drawer: this._drawer;
+      button: this._button,
+      drawer: this._drawer,
     })
   }
 }
