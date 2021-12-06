@@ -67,7 +67,7 @@ body {
 }
 
 .user-profile__dropdown {
-  // display: none;
+  display: none;
   position: absolute;
   top: 60px;
   right: 20px;
@@ -91,4 +91,8 @@ body {
 .user-profile__menu i {
   display: inline-block;
   margin-right: 10px;
+}
+
+.user-profile__dropdown.show {
+  display: block;
 }
