@@ -30,7 +30,7 @@ body {
   flex-direction: column;
   justify-content: center;
   height: $app-bar-height;
-  width: 44px;
+  width: $app-bar-height;
   margin-right: 10px;
   user-select: none;
   cursor: pointer;
