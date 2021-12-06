@@ -11,6 +11,8 @@ $menu-hover-bgcolor: #dadce0;
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
   background-color: #F6F8FA;
   box-sizing: border-box;
 }

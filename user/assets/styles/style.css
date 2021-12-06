@@ -8,6 +8,8 @@
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
   background-color: #F6F8FA;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
