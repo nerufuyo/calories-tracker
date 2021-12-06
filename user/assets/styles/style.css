@@ -93,6 +93,10 @@ body {
   gap: 5px;
 }
 
+.user-profile__info:hover {
+  background-color: #dadce0;
+}
+
 .user-profile__pic {
   display: inline-block;
   height: 30px;

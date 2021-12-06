@@ -68,6 +68,10 @@ body {
   align-items: center;
   height: 60px;
   gap: 5px;
+
+  &:hover {
+    background-color: $menu-hover-bgcolor;
+  }
 }
 
 .user-profile__pic {
