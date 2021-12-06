@@ -78,10 +78,10 @@ body {
 .user-profile__pic {
   display: inline-block;
   height: 30px;
-}
 
-.user-profile__pic img {
-  height: 100%;
+  & img {
+    height: 100%;
+  }
 }
 
 .user-profile__dropdown {
