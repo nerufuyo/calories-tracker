@@ -2,6 +2,8 @@
 
 $app-bar-height: 60px;
 $menu-hover-bgcolor: #dadce0;
+$font-base-color: #000;
+$side-nav-width: 230px;
 
 * {
   margin: 0;
@@ -111,7 +113,7 @@ body {
   & a {
     display: block;
     text-decoration: none;
-    color: #000;
+    color: $font-base-color;
     padding: 15px 20px;
 
     &:hover {
@@ -123,5 +125,36 @@ body {
   & i {
     display: inline-block;
     margin-right: 10px;
+  }
+}
+
+/* ---- Navbar ---- */
+.sidenav {
+  position: fixed;
+  top: $app-bar-height;
+  left: -$side-nav-width;
+  width: $side-nav-width;
+  min-height: calc(100vh - #{$app-bar-height});
+  background-color: #FFFFFF;
+
+  &.show {
+    left: 0;
+    transition: left 0.5s;
+  }
+}
+
+.navbar-menu {
+  list-style: none;
+
+  & a {
+    display: block;
+    color: $font-base-color;
+    text-decoration: none;
+    padding: 13px 20px;
+
+    &:hover {
+      font-weight: 500;
+      background-color: $menu-hover-bgcolor;
+    }
   }
 }

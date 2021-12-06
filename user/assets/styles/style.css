@@ -148,3 +148,35 @@ body {
   display: inline-block;
   margin-right: 10px;
 }
+
+/* ---- Navbar ---- */
+.sidenav {
+  position: fixed;
+  top: 60px;
+  left: -230px;
+  width: 230px;
+  min-height: calc(100vh - 60px);
+  background-color: #FFFFFF;
+}
+
+.sidenav.show {
+  left: 0;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+.navbar-menu {
+  list-style: none;
+}
+
+.navbar-menu a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 13px 20px;
+}
+
+.navbar-menu a:hover {
+  font-weight: 500;
+  background-color: #dadce0;
+}
