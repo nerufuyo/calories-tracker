@@ -97,23 +97,23 @@ body {
 
 .user-profile__menu {
   list-style: none;
-}
 
-.user-profile__menu a {
-  display: block;
-  text-decoration: none;
-  color: #000;
-  padding: 15px 20px;
-}
+  & a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 15px 20px;
 
-.user-profile__menu a:hover {
-  background-color: $menu-hover-bgcolor;
-  font-weight: 500;
-}
+    &:hover {
+      background-color: $menu-hover-bgcolor;
+      font-weight: 500;
+    }
+  }
 
-.user-profile__menu i {
-  display: inline-block;
-  margin-right: 10px;
+  & i {
+    display: inline-block;
+    margin-right: 10px;
+  }
 }
 
 .user-profile__dropdown.show {
