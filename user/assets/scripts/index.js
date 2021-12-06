@@ -1,4 +1,4 @@
-import App from './views/app.js';
+import App from './views/App';
 
 const app = new App({
   buttonUserProfile: document.querySelector('user-profile__info'),
