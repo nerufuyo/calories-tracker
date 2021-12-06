@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 $app-bar-height: 60px;
+$menu-hover-bgcolor: #dadce0;
 
 * {
   margin: 0;
@@ -36,7 +37,7 @@ body {
 }
 
 .app-bar_menu-hamburger:hover {
-  background-color: #dadce0;
+  background-color: $menu-hover-bgcolor;
 }
 
 .hamburger-bar {
@@ -101,7 +102,7 @@ body {
 }
 
 .user-profile__menu a:hover {
-  background-color: #dadce0;
+  background-color: $menu-hover-bgcolor;
   font-weight: 500;
 }
 
