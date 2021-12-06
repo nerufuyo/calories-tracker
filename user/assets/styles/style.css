@@ -48,6 +48,10 @@ body {
   cursor: pointer;
 }
 
+.app-bar_menu-hamburger:hover {
+  background-color: #dadce0;
+}
+
 .hamburger-bar {
   display: block;
   width: 25px;
