@@ -1,4 +1,4 @@
-import UserProfileDrawerInitiator from '../utils/UserProfileDrawerInitiator';
+import UserProfileDrawerInitiator from '../utils/UserProfileDrawerInitiator.js';
 
 class App {
   constructor({ buttonUserProfile, drawerUserProfile }) {
