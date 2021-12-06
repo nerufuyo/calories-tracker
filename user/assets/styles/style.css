@@ -22,7 +22,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 10px 20px;
+  padding: 0 20px;
+  height: 60px;
   background-color: #FFFFFF;
 }
 
@@ -60,6 +61,7 @@ body {
           align-items: center;
   gap: 5px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .user-profile__pic {
