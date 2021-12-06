@@ -180,3 +180,7 @@ body {
   font-weight: 500;
   background-color: #dadce0;
 }
+
+.navbar-menu a i {
+  margin-right: 10px;
+}

@@ -156,5 +156,9 @@ body {
       font-weight: 500;
       background-color: $menu-hover-bgcolor;
     }
+
+    & i {
+      margin-right: 10px;
+    }
   }
 }
