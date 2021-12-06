@@ -11,7 +11,7 @@ const UserProfileDrawerInitiator = {
 
   _toggleDrawer(event, drawer) {
     event.stopPropagation();
-    drawer.classList.toggle('open');
+    drawer.classList.toggle('show');
   },
 
   _closeDrawer(event, drawer) {
