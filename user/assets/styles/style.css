@@ -56,6 +56,10 @@ body {
 }
 
 .user-profile {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin-left: auto;
   cursor: pointer;
 }

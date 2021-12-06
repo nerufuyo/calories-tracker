@@ -47,6 +47,7 @@ body {
 }
 
 .user-profile {
+  user-select: none;
   margin-left: auto;
   cursor: pointer;
 }
