@@ -51,6 +51,12 @@ body {
   cursor: pointer;
 }
 
+.user-profile__info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .user-profile__pic {
   display: inline-block;
   height: 30px;

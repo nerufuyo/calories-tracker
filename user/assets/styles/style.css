@@ -60,6 +60,16 @@ body {
   cursor: pointer;
 }
 
+.user-profile__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
 .user-profile__pic {
   display: inline-block;
   height: 30px;
