@@ -118,6 +118,10 @@ body {
   z-index: 1;
 }
 
+.user-profile__dropdown.show {
+  display: block;
+}
+
 .user-profile__menu {
   list-style: none;
 }
@@ -137,8 +141,4 @@ body {
 .user-profile__menu i {
   display: inline-block;
   margin-right: 10px;
-}
-
-.user-profile__dropdown.show {
-  display: block;
 }

@@ -93,6 +93,10 @@ body {
   background-color: #FFFFFF;
   min-width: 160px;
   z-index: 1;
+
+  &.show {
+    display: block;
+  }
 }
 
 .user-profile__menu {
@@ -114,8 +118,4 @@ body {
     display: inline-block;
     margin-right: 10px;
   }
-}
-
-.user-profile__dropdown.show {
-  display: block;
 }
