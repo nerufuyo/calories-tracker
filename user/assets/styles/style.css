@@ -90,9 +90,11 @@ body {
           align-items: center;
   height: 60px;
   gap: 5px;
+  padding: 0 20px;
 }
 
 .user-profile__info:hover {
+  font-weight: 500;
   background-color: #dadce0;
 }
 

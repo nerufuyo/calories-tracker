@@ -67,8 +67,10 @@ body {
   align-items: center;
   height: 60px;
   gap: 5px;
+  padding: 0 20px;
 
   &:hover {
+    font-weight: 500;
     background-color: $menu-hover-bgcolor;
   }
 }
