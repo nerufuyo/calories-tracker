@@ -77,5 +77,27 @@ body {
 }
 
 .user-profile__dropdown {
-  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 200px;
+  background-color: #FFFFFF;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.user-profile__menu {
+  list-style: none;
+}
+
+.user-profile__menu a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 15px 20px;
+}
+
+.user-profile__menu i {
+  display: inline-block;
+  margin-right: 10px;
 }
