@@ -1,17 +1,17 @@
 import UserProfileDrawerInitiator from '../utils/UserProfileDrawerInitiator';
 
 class App {
-  constructor({ button, drawer }) {
-    this._button = button;
-    this._drawer = drawer;
+  constructor({ buttonUserProfile, drawerUserProfile }) {
+    this._buttonUserProfile = buttonUserProfile;
+    this._drawerUserProfile = drawerUserProfile;
     
     this._initialAppShell();
   }
 
   _initialAppShell() {
     UserProfileDrawerInitiator.init({
-      button: this._button,
-      drawer: this._drawer,
+      button: this._buttonUserProfile,
+      drawer: this._drawerUserProfile,
     })
   }
 }
