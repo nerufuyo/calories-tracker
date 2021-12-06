@@ -38,6 +38,19 @@ body {
   background-color: #101010;
 }
 
+.app-bar__brand h1 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 400;
+}
+
 .user-profile {
   display: -webkit-box;
   display: -ms-flexbox;

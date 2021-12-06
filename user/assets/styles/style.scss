@@ -33,6 +33,15 @@ body {
   background-color: #101010;
 }
 
+.app-bar__brand h1 a {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 400;
+}
+
 .user-profile {
   display: flex;
   align-items: center;
