@@ -89,6 +89,11 @@ body {
   padding: 15px 20px;
 }
 
+.user-profile__menu a:hover {
+  background-color: #dadce0;
+  font-weight: 500;
+}
+
 .user-profile__menu i {
   display: inline-block;
   margin-right: 10px;
