@@ -52,8 +52,22 @@ body {
   cursor: pointer;
 }
 
-.app-bar_menu-hamburger:hover {
+.app-bar_menu-hamburger:hover, .app-bar_menu-hamburger.active {
   background-color: #dadce0;
+}
+
+.app-bar_menu-hamburger.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.app-bar_menu-hamburger.active .hamburger-bar:nth-child(1) {
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+}
+
+.app-bar_menu-hamburger.active .hamburger-bar:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+          transform: translateY(-10px) rotate(-45deg);
 }
 
 .hamburger-bar {
