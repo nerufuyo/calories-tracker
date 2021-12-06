@@ -33,10 +33,10 @@ body {
   margin-right: 10px;
   user-select: none;
   cursor: pointer;
-}
 
-.app-bar_menu-hamburger:hover {
-  background-color: $menu-hover-bgcolor;
+  &:hover {
+    background-color: $menu-hover-bgcolor;
+  }
 }
 
 .hamburger-bar {
