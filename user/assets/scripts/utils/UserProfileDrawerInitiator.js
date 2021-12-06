@@ -22,3 +22,5 @@ const UserProfileDrawerInitiator = {
     }
   }
 }
+
+export default UserProfileDrawerInitiator;
