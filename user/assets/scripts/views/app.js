@@ -17,7 +17,7 @@ class App {
       drawer: this._drawerUserProfile,
     })
 
-    NavbarDrawerInitiator({
+    NavbarDrawerInitiator.init({
       button: this._buttonNavbar,
       drawer: this._drawerNavbar,
     })
