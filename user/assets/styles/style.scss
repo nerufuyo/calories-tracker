@@ -69,7 +69,7 @@ body {
   gap: 5px;
   padding: 0 20px;
 
-  &:hover {
+  &:hover, &:focus {
     font-weight: 500;
     background-color: $menu-hover-bgcolor;
   }
