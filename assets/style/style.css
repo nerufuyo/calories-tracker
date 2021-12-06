@@ -11,6 +11,10 @@
   overflow: hidden;
 }
 
+* .hamburger_slide {
+  left: 0%;
+}
+
 div#preloader {
   display: none;
   position: fixed;
@@ -76,6 +80,7 @@ nav {
   gap: 60%;
   border-bottom: 0.15rem solid var(--third-color);
   background-color: var(--primary-color);
+  z-index: 5;
 }
 
 nav a {
@@ -156,6 +161,10 @@ nav ul.navigation-list li.login-list:hover a.login-link:hover {
 
 nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
   color: var(--secondary-color);
+}
+
+nav ul.hamburger-lines {
+  display: none;
 }
 
 section#hero-container {
@@ -362,6 +371,131 @@ footer p.footer-text {
   color: var(--third-color);
 }
 
+section.login-page {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+}
+
+section.login-page nav {
+  display: flex;
+  position: fixed;
+  width: 20vw;
+  height: 10vh;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+section.login-page nav a img {
+  width: 60%;
+}
+
+section.login-page div.login-hero {
+  display: flex;
+  width: 30%;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+section.login-page div.login-hero img {
+  width: 80%;
+}
+
+section.login-page div.form-collection {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+section.login-page div.form-collection div.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  height: 38rem;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 4px solid var(--third-color);
+  border-radius: 1rem;
+}
+
+section.login-page div.form-collection div.form-container div.form-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 30rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 3rem;
+}
+
+section.login-page div.form-collection div.form-container div.form-card p.form-title {
+  font-size: 2.5rem;
+  text-decoration: underline;
+}
+
+section.login-page div.form-collection div.form-container div.form-card div.form-input-group {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+  gap: 2rem;
+}
+
+section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+  width: 30rem;
+  height: 3rem;
+  padding: .5rem;
+  font-size: 2rem;
+}
+
+section.login-page div.form-collection div.form-container div.form-card a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+section.login-page div.form-collection div.form-container div.footer-container {
+  display: flex;
+  width: 40rem;
+  height: 6rem;
+  background-color: var(--third-color);
+}
+
+section.login-page div.form-collection div.form-container div.footer-container button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  font-size: 4rem;
+  color: white;
+  cursor: pointer;
+  background-color: var(--third-color);
+}
+
+section.login-page div.form-collection div.login-form {
+  display: flex;
+}
+
+section.login-page div.form-collection div.signup-form {
+  display: none;
+}
+
 @keyframes fade-out {
   from {
     opacity: 100%;
@@ -415,6 +549,401 @@ footer p.footer-text {
   }
   100% {
     transform: translateY(1rem);
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  nav {
+    gap: 50%;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 35rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2.5rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1.25rem;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 32rem;
+    height: 35rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 28rem;
+    height: 3rem;
+    padding: .5rem;
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container {
+    width: 40rem;
+    height: 6rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container button {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  nav {
+    gap: 45%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  nav {
+    gap: 35%;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 25rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2.5rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    gap: 10%;
+  }
+  nav a img.navigation-logo {
+    width: 15vw;
+  }
+  section#hero-container div.hero-image-container {
+    padding: 0;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 20rem;
+  }
+  section#hero-container div.hero-detail-container {
+    width: 40%;
+    padding: 1rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1rem;
+  }
+  section#hero-container div.hero-detail-container a.register-link {
+    padding: .8rem 1.5rem;
+  }
+  section#feature-container div.feature-inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  section#feature-container div.feature-inner-container img.feature-image {
+    width: 10rem;
+  }
+  section#feature-container div.feature-inner-container p.feature-text {
+    width: 50%;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  section#feature-container div.second-feature {
+    flex-direction: row-reverse;
+  }
+  section#about-container p.about-title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  section#about-container div.about-outer-container div.about-inner-container {
+    display: none;
+  }
+  section#about-container div.about-outer-container p.about-text {
+    width: 90%;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  nav {
+    gap: 35%;
+    border: none;
+    padding: .5rem 0rem;
+  }
+  nav a img.navigation-logo {
+    width: 8rem;
+  }
+  nav ul.navigation-list {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 100vw;
+    height: 95vh;
+    top: 7%;
+    left: 100%;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    z-index: 4;
+    transition: all .5s ease;
+  }
+  nav ul.navigation-list li.navigation-item-list {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--third-color);
+    transition: .2s all;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link span.navigation-slide {
+    display: flex;
+    width: 0%;
+    height: 3px;
+    border-radius: 5rem;
+    background-color: var(--third-color);
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover {
+    color: var(--third-color);
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover span.navigation-slide {
+    width: 100%;
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.login-list {
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    height: fit-content;
+    padding: .5rem;
+    align-items: center;
+    border-radius: .25rem;
+    background-color: var(--fourth-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link {
+    color: var(--primary-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link span.login-slide {
+    display: none;
+  }
+  nav ul.navigation-list li.login-list:hover {
+    background-color: var(--third-color);
+  }
+  nav ul.navigation-list li.login-list:hover a.login-link:hover {
+    color: var(--fifth-color);
+  }
+  nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
+    color: var(--secondary-color);
+  }
+  nav ul.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    cursor: pointer;
+  }
+  nav ul.hamburger-lines li {
+    width: 2rem;
+    height: .25rem;
+    border-radius: 1rem;
+    background-color: black;
+  }
+  section#hero-container {
+    width: 92vw;
+    padding: 1rem;
+    justify-content: center;
+  }
+  section#hero-container div.hero-image-container {
+    display: none;
+  }
+  section#hero-container div.hero-detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1rem;
+  }
+  section#hero-container div.hero-detail-container a.register-link {
+    padding: .6rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  section#feature-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: fit-content;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  section#feature-container p.feature-title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  section#feature-container div.feature-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+  }
+  section#feature-container div.feature-inner-container img.feature-image {
+    width: 10rem;
+  }
+  section#feature-container div.feature-inner-container p.feature-text {
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  section#feature-container div.second-feature {
+    flex-direction: column;
+  }
+  section#about-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: fit-content;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  section#about-container p.about-title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  section#about-container div.about-outer-container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 2.5rem;
+  }
+  section#about-container div.about-outer-container p.about-text {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  nav {
+    width: 100vw;
+    gap: 35%;
+    border: none;
+    padding: .5rem 0rem;
+  }
+  nav a img.navigation-logo {
+    width: 8rem;
+  }
+  nav ul.navigation-list {
+    top: 8%;
+    left: 100%;
+  }
+  nav ul.navigation-list li.navigation-item-list {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--third-color);
+    transition: .2s all;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link span.navigation-slide {
+    display: flex;
+    width: 0%;
+    height: 3px;
+    border-radius: 5rem;
+    background-color: var(--third-color);
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover {
+    color: var(--third-color);
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover span.navigation-slide {
+    width: 100%;
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.login-list {
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    height: fit-content;
+    padding: .5rem;
+    align-items: center;
+    border-radius: .25rem;
+    background-color: var(--fourth-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link {
+    color: var(--primary-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link span.login-slide {
+    display: none;
+  }
+  nav ul.navigation-list li.login-list:hover {
+    background-color: var(--third-color);
+  }
+  nav ul.navigation-list li.login-list:hover a.login-link:hover {
+    color: var(--fifth-color);
+  }
+  nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
+    color: var(--secondary-color);
+  }
+  nav ul.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    cursor: pointer;
+  }
+  nav ul.hamburger-lines li {
+    width: 2rem;
+    height: .25rem;
+    border-radius: 1rem;
+    background-color: black;
+  }
+  section#feature-container p.feature-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  section#feature-container div.feature-inner-container p.feature-text {
+    font-size: 1rem;
+  }
+  section#about-container p.about-title {
+    font-size: 2.5rem;
+  }
+  section#about-container div.about-outer-container p.about-text {
+    font-size: 1rem;
+  }
+  footer {
+    width: 90vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 

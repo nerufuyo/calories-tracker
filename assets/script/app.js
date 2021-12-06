@@ -14,3 +14,16 @@
 // function sleep(ms) {
 //     return new Promise(resolve => setTimeout(resolve, ms));
 // };
+
+// Hamburger Menu 
+const hamburger = document.querySelector('nav ul.hamburger-lines');
+const hamburgerItem = document.querySelector('nav ul.navigation-list');
+
+hamburger.addEventListener('click', hamburgerSlider);
+function hamburgerSlider() {
+    if (hamburgerItem.style.left === '100%') {
+        hamburgerItem.style.left = '0%';
+    } else {
+        hamburgerItem.style.left = '100%';
+    }
+}
