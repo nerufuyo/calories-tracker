@@ -157,12 +157,12 @@ body {
   width: 230px;
   min-height: calc(100vh - 60px);
   background-color: #FFFFFF;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
 }
 
 .sidenav.show {
   left: 0;
-  -webkit-transition: left 0.5s;
-  transition: left 0.5s;
 }
 
 .navbar-menu {

@@ -136,10 +136,10 @@ body {
   width: $side-nav-width;
   min-height: calc(100vh - #{$app-bar-height});
   background-color: #FFFFFF;
+  transition: left 0.5s;
 
   &.show {
     left: 0;
-    transition: left 0.5s;
   }
 }
 
