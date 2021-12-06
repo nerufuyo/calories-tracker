@@ -28,6 +28,8 @@ body {
 }
 
 .app-bar_menu-hamburger {
+  height: 100%;
+  padding: 16px 0;
   width: 44px;
   margin-right: 10px;
 }
