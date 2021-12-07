@@ -1,3 +1,5 @@
+import user from './data/userDummy.json';
+import CookieHelper from './utils/CookieHelper.js';
 import App from './views/App.js';
 
 const app = new App({
@@ -6,3 +8,8 @@ const app = new App({
   buttonNavbar: document.querySelector('.app-bar_menu-hamburger'),
   drawerNavbar: document.querySelector('.sidenav'),
 });
+
+
+window.addEventListener('load', () => {
+  CookieHelper.setCookie()
+})
