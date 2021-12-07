@@ -21,6 +21,16 @@ class CookieHelper {
     return null;
   }
 
+  static checkCookie(cname) {
+    let user = getCookie(cname);
+    
+    if (user !== null) {
+      return;
+    }
+
+    window.location.replace('/');
+  }
+
   static deleteCookie(cname) {
     document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
   }
