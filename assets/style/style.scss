@@ -20,7 +20,7 @@
 
 // Preloader
 div#preloader {   
-    display: none;
+    display: flex;
     position: fixed;
     flex-direction: column;
     width: 100vw;
@@ -28,7 +28,7 @@ div#preloader {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    z-index: 5;
+    z-index: 10;
     background-color: var(--primary-color);
 
     animation: fade-out 1s forwards 3800ms;
