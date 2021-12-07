@@ -24,10 +24,6 @@ class CookieHelper {
   static deleteCookie(cname) {
     document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
   }
-
-  static masuk() {
-    return 'masuk cookiehelper';
-  }
 }
 
 export default CookieHelper;
