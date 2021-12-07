@@ -22,8 +22,8 @@ class CookieHelper {
   }
 
   static checkCookie(cname) {
-    let user = getCookie(cname);
-    
+    let user = this.getCookie(cname);
+
     if (user !== null) {
       return;
     }
