@@ -36,6 +36,7 @@ div#preloader div.preloader-image {
   height: 15vh;
   padding: .5rem;
   gap: 3rem;
+  overflow: hidden;
 }
 
 div#preloader div.preloader-image img {
@@ -590,9 +591,40 @@ section.login-page div.form-collection div.signup-form {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  section.login-page nav a img {
+    width: 4rem;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 28rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 20rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card a {
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container button {
+    font-size: 2.5rem;
+  }
+  section.login-page div.form-collection div.login-form {
+    display: flex;
+  }
+  section.login-page div.form-collection div.signup-form {
+    display: none;
+    height: 32rem;
+  }
+}
+
 @media screen and (max-width: 1080px) {
   nav {
     gap: 35%;
+  }
+  nav a img.navigation-logo {
+    width: 10rem;
   }
   section#hero-container div.hero-image-container img.hero-image {
     width: 25rem;
@@ -610,7 +642,7 @@ section.login-page div.form-collection div.signup-form {
     gap: 10%;
   }
   nav a img.navigation-logo {
-    width: 15vw;
+    width: 10rem;
   }
   section#hero-container div.hero-image-container {
     padding: 0;
@@ -661,11 +693,43 @@ section.login-page div.form-collection div.signup-form {
     text-align: center;
     font-size: 1.25rem;
   }
+  section.login-page nav a img {
+    width: 100%;
+  }
+  section.login-page div.login-hero {
+    display: none;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 30rem;
+    height: 35rem;
+  }
 }
 
 @media screen and (max-width: 428px) {
+  div#preloader {
+    width: 100vw;
+    height: 100vh;
+    gap: 1rem;
+    padding: 0%;
+    overflow: hidden;
+    animation: fade-out 1s forwards 3800ms;
+  }
+  div#preloader div.preloader-image {
+    height: 20vh;
+    gap: 1rem;
+  }
+  div#preloader div.preloader-image img {
+    width: 3rem;
+  }
+  div#preloader p.preloader-text {
+    font-size: 2.5rem;
+    opacity: 0;
+    color: var(--third-color);
+    animation: blink .75s alternate infinite .2s;
+  }
   nav {
-    gap: 35%;
+    width: 100vw;
+    gap: 25%;
     border: none;
     padding: .5rem 0rem;
   }
@@ -677,14 +741,16 @@ section.login-page div.form-collection div.signup-form {
     position: absolute;
     flex-direction: column;
     width: 100vw;
-    height: 95vh;
+    height: 100vh;
     top: 7%;
     left: 100%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     list-style: none;
     gap: 1rem;
+    padding: 1rem;
     cursor: pointer;
+    overflow: hidden;
     background-color: var(--primary-color);
     z-index: 4;
     transition: all .5s ease;
@@ -692,12 +758,12 @@ section.login-page div.form-collection div.signup-form {
   nav ul.navigation-list li.navigation-item-list {
     display: flex;
     flex-direction: column;
-    padding: .5rem;
+    padding: 0rem;
     align-items: center;
     justify-content: center;
   }
   nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     color: var(--third-color);
     transition: .2s all;
@@ -755,8 +821,8 @@ section.login-page div.form-collection div.signup-form {
     background-color: black;
   }
   section#hero-container {
-    width: 92vw;
-    padding: 1rem;
+    width: 100vw;
+    padding: 0rem;
     justify-content: center;
   }
   section#hero-container div.hero-image-container {
@@ -783,15 +849,16 @@ section.login-page div.form-collection div.signup-form {
   section#feature-container {
     display: flex;
     flex-direction: column;
-    width: 90vw;
+    width: 100vw;
     height: fit-content;
-    margin-top: 1rem;
+    margin-top: 3rem;
+    padding: 0rem;
     justify-content: center;
     align-items: center;
     gap: 3rem;
   }
   section#feature-container p.feature-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;
   }
   section#feature-container div.feature-inner-container {
@@ -800,13 +867,14 @@ section.login-page div.form-collection div.signup-form {
     justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
+    padding: 1rem;
   }
   section#feature-container div.feature-inner-container img.feature-image {
-    width: 10rem;
+    width: 5rem;
   }
   section#feature-container div.feature-inner-container p.feature-text {
     width: 100%;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 400;
     text-align: center;
   }
@@ -825,7 +893,7 @@ section.login-page div.form-collection div.signup-form {
     gap: 2rem;
   }
   section#about-container p.about-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;
   }
   section#about-container div.about-outer-container {
@@ -840,17 +908,44 @@ section.login-page div.form-collection div.signup-form {
   }
   section#about-container div.about-outer-container p.about-text {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   footer {
     flex-direction: column;
   }
+  section.login-page {
+    padding: 0%;
+  }
+  section.login-page nav {
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+  }
+  section.login-page nav a {
+    width: fit-content;
+  }
+  section.login-page nav a img {
+    width: 50%;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 28rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 18rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card a {
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 320px) {
+  div#preloader div.preloader-image img {
+    width: 2.5rem;
+  }
   nav {
     width: 100vw;
-    gap: 35%;
+    gap: 40%;
     border: none;
     padding: .5rem 0rem;
   }
@@ -858,7 +953,7 @@ section.login-page div.form-collection div.signup-form {
     width: 8rem;
   }
   nav ul.navigation-list {
-    top: 8%;
+    top: 6%;
     left: 100%;
   }
   nav ul.navigation-list li.navigation-item-list {
@@ -944,6 +1039,49 @@ section.login-page div.form-collection div.signup-form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  section.login-page {
+    justify-content: center;
+    padding: 0%;
+  }
+  section.login-page nav {
+    width: 100vw;
+    height: 3vh;
+    align-items: center;
+  }
+  section.login-page nav a img {
+    width: 30%;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 20rem;
+    overflow: hidden;
+  }
+  section.login-page div.form-collection div.form-container div.form-card {
+    gap: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card p.form-title {
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group {
+    gap: 1rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 12rem;
+    height: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card a {
+    font-size: 1.25rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container button {
+    font-size: 2rem;
+  }
+  section.login-page div.form-collection div.login-form {
+    display: flex;
+  }
+  section.login-page div.form-collection div.signup-form {
+    display: none;
+    height: 22rem;
   }
 }
 
