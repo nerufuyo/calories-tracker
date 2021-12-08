@@ -190,4 +190,10 @@ footer {
   width: 100%;
   height: $footer-height;
   background-color: #FFFFFF;
+  transition: all 0.5s;
+
+  &.shift {
+    width: calc(100% - #{$side-nav-width});
+    left: $side-nav-width;
+  }
 }

@@ -216,4 +216,11 @@ footer {
   width: 100%;
   height: 60px;
   background-color: #FFFFFF;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+footer.shift {
+  width: calc(100% - 230px);
+  left: 230px;
 }
