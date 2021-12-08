@@ -1,3 +1,4 @@
+import FooterYearGenerator from '../utils/FooterYearGenerator.js';
 import NavbarDrawerInitiator from '../utils/NavbarDrawerInitiator.js';
 import UserProfileDrawerInitiator from '../utils/UserProfileDrawerInitiator.js';
 
@@ -23,6 +24,8 @@ class App {
       drawer: this._drawerNavbar,
       footerElement: this._footerElement,
     })
+    
+    FooterYearGenerator.init(this._footerElement.querySelector('.footer-year'));
   }
 }
 
