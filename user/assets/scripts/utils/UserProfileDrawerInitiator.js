@@ -20,7 +20,7 @@ const UserProfileDrawerInitiator = {
         drawer.classList.remove('show');
       }
     }
-  }
+  },
 }
 
 export default UserProfileDrawerInitiator;
