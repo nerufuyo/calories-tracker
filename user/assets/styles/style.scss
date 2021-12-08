@@ -4,6 +4,7 @@ $app-bar-height: 60px;
 $menu-hover-bgcolor: #dadce0;
 $font-base-color: #000;
 $side-nav-width: 230px;
+$footer-height: 60px;
 
 * {
   margin: 0;
@@ -175,4 +176,18 @@ body {
       margin-right: 10px;
     }
   }
+}
+
+
+/* ---- Footer ---- */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: $footer-height;
+  background-color: #FFFFFF;
 }
