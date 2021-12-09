@@ -5,7 +5,7 @@ const foodDiaryDummy = [
     "serving_size": "250",
     "calories": "432",
     "cateogry": "Breakfast",
-    "date": "2021-11-30",
+    "date": "2021/11/30",
     "user_id": "12345678"
   },
   {
@@ -14,7 +14,7 @@ const foodDiaryDummy = [
     "serving_size": "215",
     "calories": "285",
     "cateogry": "Lunch",
-    "date": "2021-11-30",
+    "date": "2021/11/30",
     "user_id": "12345678"
   },
   {
@@ -23,7 +23,7 @@ const foodDiaryDummy = [
     "serving_size": "265",
     "calories": "315",
     "cateogry": "Dinner",
-    "date": "2021-11-30",
+    "date": "2021/11/30",
     "user_id": "12345678"
   },
   {
@@ -32,7 +32,7 @@ const foodDiaryDummy = [
     "serving_size": "125",
     "calories": "175",
     "cateogry": "Snack",
-    "date": "2021-11-30",
+    "date": "2021/11/30",
     "user_id": "12345678"
   },
   {
@@ -41,7 +41,7 @@ const foodDiaryDummy = [
     "serving_size": "150",
     "calories": "300",
     "cateogry": "Breakfast",
-    "date": "2021-12-01",
+    "date": "2021/12/01",
     "user_id": "12345678"
   },
   {
@@ -50,7 +50,7 @@ const foodDiaryDummy = [
     "serving_size": "200",
     "calories": "350",
     "cateogry": "Lunch",
-    "date": "2021-12-01",
+    "date": "2021/12/01",
     "user_id": "12345678"
   },
   {
@@ -59,7 +59,7 @@ const foodDiaryDummy = [
     "serving_size": "250",
     "calories": "400",
     "cateogry": "Dinner",
-    "date": "2021-12-01",
+    "date": "2021/12/01",
     "user_id": "12345678"
   },
   {
@@ -68,7 +68,7 @@ const foodDiaryDummy = [
     "serving_size": "100",
     "calories": "200",
     "cateogry": "Snack",
-    "date": "2021-12-01",
+    "date": "2021/12/01",
     "user_id": "12345678"
   },
   {
@@ -77,7 +77,7 @@ const foodDiaryDummy = [
     "serving_size": "150",
     "calories": "200",
     "cateogry": "Lunch",
-    "date": "2021-12-07",
+    "date": "2021/12/07",
     "user_id": "12345678"
   },
   {
@@ -86,7 +86,7 @@ const foodDiaryDummy = [
     "serving_size": "100",
     "calories": "150",
     "cateogry": "Lunch",
-    "date": "2021-12-07",
+    "date": "2021/12/07",
     "user_id": "12345678"
   },
   {
@@ -95,7 +95,7 @@ const foodDiaryDummy = [
     "serving_size": "170",
     "calories": "220",
     "cateogry": "Dinner",
-    "date": "2021-12-07",
+    "date": "2021/12/07",
     "user_id": "12345678"
   },
   {
@@ -104,7 +104,7 @@ const foodDiaryDummy = [
     "serving_size": "125",
     "calories": "225",
     "cateogry": "Dinner",
-    "date": "2021-12-07",
+    "date": "2021/12/07",
     "user_id": "12345678"
   },
   {
@@ -113,7 +113,7 @@ const foodDiaryDummy = [
     "serving_size": "50",
     "calories": "80",
     "cateogry": "Snack",
-    "date": "2021-12-07",
+    "date": "2021/12/07",
     "user_id": "12345678"
   },
   {
@@ -122,7 +122,7 @@ const foodDiaryDummy = [
     "serving_size": "135",
     "calories": "185",
     "cateogry": "Snack",
-    "date": "2021-12-07",
+    "date": "2021/12/07",
     "user_id": "12345678"
   }
 ];
