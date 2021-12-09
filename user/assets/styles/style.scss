@@ -14,6 +14,8 @@ $footer-height: 60px;
 }
 
 body {
+  margin: 0;
+  padding: calc(#{$app-bar-height} + 40px) 0;
   position: relative;
   min-height: 100vh;
   background-color: #F6F8FA;
