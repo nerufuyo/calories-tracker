@@ -7,6 +7,8 @@ const app = new App({
   drawerUserProfile: document.querySelector('.user-profile__dropdown'),
   buttonNavbar: document.querySelector('.app-bar_menu-hamburger'),
   drawerNavbar: document.querySelector('.sidenav'),
+  pageTitle: document.querySelector('.page-title'),
+  pageContent: document.querySelector('.page-content'),
   footerElement: document.querySelector('footer'),
 });
 
