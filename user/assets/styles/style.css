@@ -202,8 +202,28 @@ body {
 /* ---- Main ---- */
 main {
   width: 100%;
-  margin-top: calc(60px + 20px);
+  margin-top: calc(60px + 40px);
   padding: 0 40px;
+}
+
+.page-header {
+  min-height: 72px;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+}
+
+.page-title i {
+  font-size: 4.5rem;
+  margin-right: 20px;
 }
 
 /* ---- Footer ---- */

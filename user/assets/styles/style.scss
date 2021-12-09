@@ -182,10 +182,25 @@ body {
 /* ---- Main ---- */
 main {
   width: 100%;
-  margin-top: calc(#{$app-bar-height} + 20px);
+  margin-top: calc(#{$app-bar-height} + 40px);
   padding: 0 40px;
 }
 
+.page-header {
+  min-height: 72px;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  
+  i {
+    font-size: 4.5rem;
+    margin-right: 20px;
+  }
+}
 
 /* ---- Footer ---- */
 footer {
