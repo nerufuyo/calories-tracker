@@ -4,7 +4,7 @@ const view = new DashboardView();
 
 const Dashboard = {
   async render() {
-    return { title: view.getTitleTemplate(), content: view.getContentTemplate };
+    return { title: view.getTitleTemplate(), content: view.getContentTemplate() };
   },
 }
 
