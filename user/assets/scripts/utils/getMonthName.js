@@ -1,13 +1,7 @@
-function getMonthName(date) {
-  if (date !== null) {
-    const date = new Date(date);
-  }
-  else {
-    const date = new Date();
-  }
+function getMonthName(dateInput) {
+  let date = dateInput ? new Date(dateInput) : new Date();
   
-  const month = date.toLocaleString('default', { month: 'long' });
-  return month;
+  return date.toLocaleString('default', { month: 'long' });
 }
 
 export default getMonthName;
