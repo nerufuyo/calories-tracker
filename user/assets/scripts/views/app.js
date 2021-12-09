@@ -6,12 +6,13 @@ import routes from '../routes/routes.js';
 
 class App {
   constructor({ 
-    buttonUserProfile, drawerUserProfile, buttonNavbar, drawerNavbar, pageTitle, pageContent, footerElement, 
+    buttonUserProfile, drawerUserProfile, buttonNavbar, drawerNavbar, mainElement, pageTitle, pageContent, footerElement, 
   }) {
     this._buttonUserProfile = buttonUserProfile;
     this._drawerUserProfile = drawerUserProfile;
     this._buttonNavbar = buttonNavbar;
     this._drawerNavbar = drawerNavbar;
+    this._mainElement = mainElement;
     this._pageTitle = pageTitle;
     this._pageContent = pageContent;
     this._footerElement = footerElement;
@@ -28,6 +29,7 @@ class App {
     NavbarDrawerInitiator.init({
       button: this._buttonNavbar,
       drawer: this._drawerNavbar,
+      mainElement: this._mainElement,
       footerElement: this._footerElement,
     })
     

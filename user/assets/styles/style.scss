@@ -185,6 +185,12 @@ body {
 main {
   width: 100%;
   padding: 0 40px;
+  transition: all 0.5s;
+
+  &.shift {
+    width: calc(100% - #{$side-nav-width});
+    margin-left: $side-nav-width;
+  }
 }
 
 .page-header {
