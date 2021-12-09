@@ -1,13 +1,19 @@
 import FooterYearGenerator from '../utils/FooterYearGenerator.js';
 import NavbarDrawerInitiator from '../utils/NavbarDrawerInitiator.js';
 import UserProfileDrawerInitiator from '../utils/UserProfileDrawerInitiator.js';
+import UrlParser from '../routes/UrlParser.js';
+import routes from '../routes/routes.js';
 
 class App {
-  constructor({ buttonUserProfile, drawerUserProfile, buttonNavbar, drawerNavbar, footerElement }) {
+  constructor({ 
+    buttonUserProfile, drawerUserProfile, buttonNavbar, drawerNavbar, pageTitle, pageContent, footerElement, 
+  }) {
     this._buttonUserProfile = buttonUserProfile;
     this._drawerUserProfile = drawerUserProfile;
     this._buttonNavbar = buttonNavbar;
     this._drawerNavbar = drawerNavbar;
+    this._pageTitle = pageTitle;
+    this._pageContent = pageContent;
     this._footerElement = footerElement;
     
     this._initialAppShell();
@@ -26,6 +32,14 @@ class App {
     })
     
     FooterYearGenerator.init(this._footerElement.querySelector('.footer-year'));
+  }
+
+  async renderPage() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    const {title, content} = await page.render();
+    this._pageTitle.innerHTML = title;
+    this._pageContent.innerHTML = content;
   }
 }
 
