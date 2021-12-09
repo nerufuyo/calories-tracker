@@ -1,5 +1,5 @@
 class DashboardView {
-  getHeadTemplate() {
+  getTitleTemplate() {
     return `
       <i class="fas fa-chart-pie"></i> Dashboard
     `;
