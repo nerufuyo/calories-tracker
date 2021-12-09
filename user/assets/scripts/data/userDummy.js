@@ -1,7 +1,7 @@
 const userDummy = {
   "id": "12345678",
   "nama": "Imam Firdaus Dwimeianto",
-  "birthday": "2000/05/15",
+  "birthday": "2000-05-15",
   "gender": "male",
   "height": 175,
   "weight": 55,
