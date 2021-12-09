@@ -12,10 +12,16 @@ const app = new App({
   footerElement: document.querySelector('footer'),
 });
 
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
 window.addEventListener('load', () => {
   CookieHelper.setCookie({
     cname: 'userId',
     cvalue: userDummy.id,
     exdays: 365,
   });
+
+  app.renderPage();
 });
