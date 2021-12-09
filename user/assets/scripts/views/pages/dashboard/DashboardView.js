@@ -9,8 +9,8 @@ class DashboardView {
     return `
       <div class="dashboard-top">
         <div class="month-picker">
-          <div class="previous-month"></div>
-          <div class="next-month"></div>
+          <div class="previous-month"><i class="fas fa-angle-left"></i></div>
+          <div class="next-month"><i class="fas fa-angle-right"></i></div>
           <div class="selected-month"></div>
         </div>
         <div class="bmi">
