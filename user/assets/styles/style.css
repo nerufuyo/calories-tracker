@@ -199,6 +199,13 @@ body {
   margin-right: 10px;
 }
 
+/* ---- Main ---- */
+main {
+  width: 100%;
+  margin-top: calc(60px + 20px);
+  padding: 0 40px;
+}
+
 /* ---- Footer ---- */
 footer {
   position: absolute;

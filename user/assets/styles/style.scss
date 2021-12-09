@@ -179,6 +179,14 @@ body {
 }
 
 
+/* ---- Main ---- */
+main {
+  width: 100%;
+  margin-top: calc(#{$app-bar-height} + 20px);
+  padding: 0 40px;
+}
+
+
 /* ---- Footer ---- */
 footer {
   position: absolute;
