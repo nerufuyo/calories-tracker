@@ -4,7 +4,7 @@ const foodDiaryDummy = [
     "name": "Spaghetty",
     "serving_size": "250",
     "calories": "432",
-    "cateogry": "Breakfast",
+    "category": "Breakfast",
     "date": "2021-11-30",
     "user_id": "12345678"
   },
@@ -13,7 +13,7 @@ const foodDiaryDummy = [
     "name": "Hot Dog",
     "serving_size": "215",
     "calories": "285",
-    "cateogry": "Lunch",
+    "category": "Lunch",
     "date": "2021-11-30",
     "user_id": "12345678"
   },
@@ -22,7 +22,7 @@ const foodDiaryDummy = [
     "name": "Kebab",
     "serving_size": "265",
     "calories": "315",
-    "cateogry": "Dinner",
+    "category": "Dinner",
     "date": "2021-11-30",
     "user_id": "12345678"
   },
@@ -31,7 +31,7 @@ const foodDiaryDummy = [
     "name": "Butter",
     "serving_size": "125",
     "calories": "175",
-    "cateogry": "Snack",
+    "category": "Snack",
     "date": "2021-11-30",
     "user_id": "12345678"
   },
@@ -40,7 +40,7 @@ const foodDiaryDummy = [
     "name": "Noodles",
     "serving_size": "150",
     "calories": "300",
-    "cateogry": "Breakfast",
+    "category": "Breakfast",
     "date": "2021-12-01",
     "user_id": "12345678"
   },
@@ -49,7 +49,7 @@ const foodDiaryDummy = [
     "name": "Burger",
     "serving_size": "200",
     "calories": "350",
-    "cateogry": "Lunch",
+    "category": "Lunch",
     "date": "2021-12-01",
     "user_id": "12345678"
   },
@@ -58,7 +58,7 @@ const foodDiaryDummy = [
     "name": "Pizza",
     "serving_size": "250",
     "calories": "400",
-    "cateogry": "Dinner",
+    "category": "Dinner",
     "date": "2021-12-01",
     "user_id": "12345678"
   },
@@ -67,7 +67,7 @@ const foodDiaryDummy = [
     "name": "cheesee",
     "serving_size": "100",
     "calories": "200",
-    "cateogry": "Snack",
+    "category": "Snack",
     "date": "2021-12-01",
     "user_id": "12345678"
   },
@@ -76,7 +76,7 @@ const foodDiaryDummy = [
     "name": "chicken nugget",
     "serving_size": "150",
     "calories": "200",
-    "cateogry": "Lunch",
+    "category": "Lunch",
     "date": "2021-12-07",
     "user_id": "12345678"
   },
@@ -85,7 +85,7 @@ const foodDiaryDummy = [
     "name": "Cakue",
     "serving_size": "100",
     "calories": "150",
-    "cateogry": "Lunch",
+    "category": "Lunch",
     "date": "2021-12-07",
     "user_id": "12345678"
   },
@@ -94,7 +94,7 @@ const foodDiaryDummy = [
     "name": "chicken porridge",
     "serving_size": "170",
     "calories": "220",
-    "cateogry": "Dinner",
+    "category": "Dinner",
     "date": "2021-12-07",
     "user_id": "12345678"
   },
@@ -103,7 +103,7 @@ const foodDiaryDummy = [
     "name": "chicken soto",
     "serving_size": "125",
     "calories": "225",
-    "cateogry": "Dinner",
+    "category": "Dinner",
     "date": "2021-12-07",
     "user_id": "12345678"
   },
@@ -112,7 +112,7 @@ const foodDiaryDummy = [
     "name": "ice cream",
     "serving_size": "50",
     "calories": "80",
-    "cateogry": "Snack",
+    "category": "Snack",
     "date": "2021-12-07",
     "user_id": "12345678"
   },
@@ -121,7 +121,7 @@ const foodDiaryDummy = [
     "name": "French Fries",
     "serving_size": "135",
     "calories": "185",
-    "cateogry": "Snack",
+    "category": "Snack",
     "date": "2021-12-07",
     "user_id": "12345678"
   }
