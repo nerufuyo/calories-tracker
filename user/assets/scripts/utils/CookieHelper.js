@@ -1,12 +1,12 @@
-class CookieHelper {
-  static setCookie({ cname, cvalue, exdays }) {
+const CookieHelper = {
+  setCookie({ cname, cvalue, exdays }) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
+  },
 
-  static getCookie(cname) {
+  getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');
     for(let i = 0; i < ca.length; i++) {
@@ -19,9 +19,9 @@ class CookieHelper {
       }
     }
     return null;
-  }
+  },
 
-  static checkCookie(cname) {
+  checkCookie(cname) {
     let user = this.getCookie(cname);
 
     if (user !== null) {
@@ -29,11 +29,11 @@ class CookieHelper {
     }
 
     window.location.replace('/');
-  }
+  },
 
-  static deleteCookie(cname) {
+  deleteCookie(cname) {
     document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-  }
+  },
 }
 
 export default CookieHelper;
