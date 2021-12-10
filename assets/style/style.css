@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Signika Negative', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * .stop_scrolling {
@@ -16,7 +17,7 @@
 }
 
 div#preloader {
-  display: flex;
+  display: none;
   position: fixed;
   flex-direction: column;
   width: 100vw;
@@ -447,6 +448,7 @@ section.login-page div.form-collection div.form-container div.form-card {
 section.login-page div.form-collection div.form-container div.form-card p.form-title {
   font-size: 2.5rem;
   text-decoration: underline;
+  overflow: hidden;
 }
 
 section.login-page div.form-collection div.form-container div.form-card div.form-input-group {
@@ -465,10 +467,12 @@ section.login-page div.form-collection div.form-container div.form-card div.form
   font-size: 2rem;
 }
 
-section.login-page div.form-collection div.form-container div.form-card a {
+section.login-page div.form-collection div.form-container div.form-card p.link-button {
   font-size: 2rem;
   text-decoration: none;
+  cursor: pointer;
   color: black;
+  overflow: hidden;
 }
 
 section.login-page div.form-collection div.form-container div.footer-container {
@@ -495,6 +499,108 @@ section.login-page div.form-collection div.login-form {
 
 section.login-page div.form-collection div.signup-form {
   display: none;
+}
+
+section.user-profile {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+section.user-profile p {
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+section.user-profile div.profile-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+section.user-profile div.profile-container div.image-card {
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50rem;
+  border: 2px solid black;
+}
+
+section.user-profile div.profile-container div.profile-card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: fit-content;
+  border-left: 1px solid gray;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card p.profile-title {
+  width: 10rem;
+  color: #3b3b3b;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card p.profile-text {
+  display: flex;
+  width: 50rem;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card input.profile-text {
+  display: none;
+  width: 50rem;
+  font-size: 1.5rem;
+  padding: 0rem .5rem;
+  border-radius: .5rem;
+  border: 1px solid black;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card button.profile-button {
+  display: flex;
+  width: 10rem;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card button.save-button {
+  display: none;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card button.cancel-button {
+  display: none;
+}
+
+section.user-profile div.profile-container div.profile-card button#profile-edit {
+  width: 5rem;
+  height: 3rem;
+  font-size: 1.5rem;
+}
+
+section.user-profile button#logout {
+  display: flex;
+  width: 8rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 @keyframes fade-out {
