@@ -1,5 +1,6 @@
-import userDummy from './data/userDummy.js';
+import UserData from './data/UserData.js';
 import CookieHelper from './utils/CookieHelper.js';
+import DateHelper from './utils/DateHelper.js';
 import App from './views/App.js';
 
 const app = new App({
@@ -18,9 +19,12 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
+
+  DateHelper.setMonthDaysPrototype();
+
   CookieHelper.setCookie({
     cname: 'userId',
-    cvalue: userDummy.id,
+    cvalue: UserData.getById(12345678).id,
     exdays: 365,
   });
 
