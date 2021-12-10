@@ -216,6 +216,99 @@ main {
   min-height: 300px;
 }
 
+/* ---- Dashboard ---- */
+.dashboard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.125rem;
+}
+
+.month-picker {
+  display: flex;
+  align-items: center;
+  min-width: 215px;
+}
+
+.previous-month, .next-month {
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 15px;
+  
+  &:hover {
+    border-radius: 50%;
+    background-color: $menu-hover-bgcolor;
+  }
+}
+
+.calories-goal-data {
+  display: inline-block;
+  min-width: 40px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+}
+
+.day-name {
+  padding: 0 5px;
+  color: #9E777A;
+  text-align: center;
+}
+
+.calendar-date {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+}
+
+.date-grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #DADCE0;
+  padding: 0 5px 5px 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.date-number {
+  padding: 5px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.date-order {
+  padding: 5px;
+
+}
+
+.current-date {
+  display: inline-block;
+  padding: 5px;
+  color: #FFFFFF;
+  border-radius: 50%;
+  background-color: #1a73e8;
+}
+
+.current-month {
+  color: #000;
+}
+
+.not__current-month {
+  color: #9E777A;
+}
+
+.calories__this-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 /* ---- Footer ---- */
 footer {
   position: absolute;
