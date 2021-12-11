@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
 
 export function connectToDatabase() {

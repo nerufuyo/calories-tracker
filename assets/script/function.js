@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
 /* eslint-disable require-jsdoc */
 import {connectToDatabase} from './database-connector.js';
 import {getDatabase, set, ref, update, onValue} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js';
@@ -18,20 +20,20 @@ export function signUpNewUser() {
     alert('Please fill all fields!');
   } else {
     createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
+        .then((userCredential) => {
+          const user = userCredential.user;
 
-      set(ref(database, `users/${user.uid}`), {
-        fullname: fullname.value,
-        email: email.value,
-      });
-      alert('User Created!');
-    })
+          set(ref(database, `users/${user.uid}`), {
+            fullname: fullname.value,
+            email: email.value,
+          });
+          alert('User Created!');
+        })
 
-    .catch((error) => {
-      const errorMessage = error.message;
-      alert(errorMessage);
-    });
+        .catch((error) => {
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
   }
 }
 
@@ -103,15 +105,15 @@ export function updateProfile() {
       birth: birth.value,
       gender: gender.value,
       height: height.value,
-      weight: weight.value
-    })
-    alert('Data Upadated!')
-  })
+      weight: weight.value,
+    });
+    alert('Data Upadated!');
+  });
 }
 
-// Style 
+// Style
 export function hamburgerMenu() {
-  const hamburgerItem = document.querySelector('nav ul.navigation-list')
+  const hamburgerItem = document.querySelector('nav ul.navigation-list');
 
   if (hamburgerItem.style.left === '100%') {
     hamburgerItem.style.left = '0%';
@@ -132,45 +134,45 @@ export async function preloader() {
 }
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
 export function removeAttributDisabled() {
-  const inputFullName = document.getElementById('profile-fullname-input')
-  const inputEmail = document.getElementById('profile-email-input')
-  const inputBirth = document.getElementById('profile-birth-input')
-  const inputGender = document.getElementById('profile-gender-input')
-  const inputHeight = document.getElementById('profile-height-input')
-  const inputWeight = document.getElementById('profile-weight-input')
-  const buttonGroup =document.querySelector('div.profile-button-group')
-  const editButton = document.getElementById('profile-edit-button')
+  const inputFullName = document.getElementById('profile-fullname-input');
+  const inputEmail = document.getElementById('profile-email-input');
+  const inputBirth = document.getElementById('profile-birth-input');
+  const inputGender = document.getElementById('profile-gender-input');
+  const inputHeight = document.getElementById('profile-height-input');
+  const inputWeight = document.getElementById('profile-weight-input');
+  const buttonGroup =document.querySelector('div.profile-button-group');
+  const editButton = document.getElementById('profile-edit-button');
 
-  inputFullName.disabled = false
-  inputEmail.disabled = false
-  inputBirth.disabled = false
-  inputGender.disabled = false
-  inputHeight.disabled = false
-  inputWeight.disabled = false
-  buttonGroup.style.display = 'flex'
-  editButton.style.display = 'none'
+  inputFullName.disabled = false;
+  inputEmail.disabled = false;
+  inputBirth.disabled = false;
+  inputGender.disabled = false;
+  inputHeight.disabled = false;
+  inputWeight.disabled = false;
+  buttonGroup.style.display = 'flex';
+  editButton.style.display = 'none';
 }
 
 export function setAttributeDisable() {
-  const inputFullName = document.getElementById('profile-fullname-input')
-  const inputEmail = document.getElementById('profile-email-input')
-  const inputBirth = document.getElementById('profile-birth-input')
-  const inputGender = document.getElementById('profile-gender-input')
-  const inputHeight = document.getElementById('profile-height-input')
-  const inputWeight = document.getElementById('profile-weight-input')
-  const buttonGroup =document.querySelector('div.profile-button-group')
-  const editButton = document.getElementById('profile-edit-button')
+  const inputFullName = document.getElementById('profile-fullname-input');
+  const inputEmail = document.getElementById('profile-email-input');
+  const inputBirth = document.getElementById('profile-birth-input');
+  const inputGender = document.getElementById('profile-gender-input');
+  const inputHeight = document.getElementById('profile-height-input');
+  const inputWeight = document.getElementById('profile-weight-input');
+  const buttonGroup =document.querySelector('div.profile-button-group');
+  const editButton = document.getElementById('profile-edit-button');
 
-  inputFullName.disabled = true
-  inputEmail.disabled = true
-  inputBirth.disabled = true
-  inputGender.disabled = true
-  inputHeight.disabled = true
-  inputWeight.disabled = true
-  buttonGroup.style.display = 'none'
-  editButton.style.display = 'flex'
+  inputFullName.disabled = true;
+  inputEmail.disabled = true;
+  inputBirth.disabled = true;
+  inputGender.disabled = true;
+  inputHeight.disabled = true;
+  inputWeight.disabled = true;
+  buttonGroup.style.display = 'none';
+  editButton.style.display = 'flex';
 }
