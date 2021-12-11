@@ -505,7 +505,7 @@ section.user-profile {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -540,55 +540,44 @@ section.user-profile div.profile-container div.profile-card {
   flex-direction: column;
   width: 50%;
   height: fit-content;
+  padding: 1rem;
+  gap: 1rem;
   border-left: 1px solid gray;
 }
 
 section.user-profile div.profile-container div.profile-card div.profile-item-card {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
-  padding: 1rem;
+  width: 60%;
+  height: fit-content;
+  gap: 1rem;
 }
 
 section.user-profile div.profile-container div.profile-card div.profile-item-card p.profile-title {
-  width: 10rem;
-  color: #3b3b3b;
+  width: 12rem;
+  font-size: 2rem;
 }
 
-section.user-profile div.profile-container div.profile-card div.profile-item-card p.profile-text {
-  display: flex;
-  width: 50rem;
-}
-
-section.user-profile div.profile-container div.profile-card div.profile-item-card input.profile-text {
-  display: none;
-  width: 50rem;
-  font-size: 1.5rem;
+section.user-profile div.profile-container div.profile-card div.profile-item-card input.profile-input {
+  width: 30rem;
   padding: 0rem .5rem;
-  border-radius: .5rem;
-  border: 1px solid black;
+  font-size: 1.5rem;
 }
 
-section.user-profile div.profile-container div.profile-card div.profile-item-card button.profile-button {
+section.user-profile div.profile-container div.profile-card div.profile-button-group {
+  display: none;
+  flex-direction: row;
+  width: 20rem;
+  height: fit-content;
+  gap: 1rem;
+}
+
+section.user-profile div.profile-container div.profile-card button {
   display: flex;
-  width: 10rem;
-  font-size: 1rem;
+  width: 20rem;
+  height: 2rem;
   justify-content: center;
   align-items: center;
-}
-
-section.user-profile div.profile-container div.profile-card div.profile-item-card button.save-button {
-  display: none;
-}
-
-section.user-profile div.profile-container div.profile-card div.profile-item-card button.cancel-button {
-  display: none;
-}
-
-section.user-profile div.profile-container div.profile-card button#profile-edit {
-  width: 5rem;
-  height: 3rem;
-  font-size: 1.5rem;
 }
 
 section.user-profile button#logout {

@@ -22,53 +22,34 @@
           </div>
           <div class="profile-card" id="profile-card">
                <div class="profile-item-card">
-                    <p class="profile-title">Name</p>
-                    <p id="profile-fullname" class="profile-text">Tidak Ada</p>
-                    <input id="profile-fullname-input" class="profile-text" type="text">
-                    <button id="save-profile-fullname-button" class="profile-button save-button" type="submit">SAVE</button>
-                    <button id="edit-profile-fullname-button" class="profile-button" type="submit">EDIT</button>
-                    <button id="cancel-profile-fullname-button" class="profile-button cancel-button" type="submit">CANCEL</button>
+                    <p class="profile-title" id="profile-title">Name</p>
+                    <input id="profile-fullname-input" class="profile-input" type="text" disabled>
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Email</p>
-                    <p id="profile-email" class="profile-text">Tidak Ada</p>
-                    <input id="profile-email-input" class="profile-text" type="email">
-                    <button id="save-profile-email-button" class="profile-button save-button" type="submit">SAVE</button>
-                    <button id="edit-profile-email-button" class="profile-button">EDIT</button>
-                    <button id="cancel-profile-email-button" class="profile-button cancel-button" type="submit">CANCEL</button>
+                    <input id="profile-email-input" class="profile-input" type="email" disabled>
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Birth</p>
-                    <p id="profile-birth" class="profile-text">Tidak Ada</p>
-                    <input id="profile-birth-input" class="profile-text" type="date">
-                    <button id="save-profile-birth-button" class="profile-button save-button" type="submit">SAVE</button>
-                    <button id="edit-profile-birth-button" class="profile-button">EDIT</button>
-                    <button id="cancel-profile-birth-button" class="profile-button cancel-button" type="submit">CANCEL</button>
+                    <input id="profile-birth-input" class="profile-input" type="date" disabled>
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Gender</p>
-                    <p id="profile-gender" class="profile-text">Tidak Ada</p>
-                    <input id="profile-gender-input" class="profile-text" type="text">
-                    <button id="save-profile-gender-button" class="profile-button save-button" type="submit">SAVE</button>
-                    <button id="edit-profile-gender-button" class="profile-button">EDIT</button>
-                    <button id="cancel-profile-gender-button" class="profile-button cancel-button" type="submit">CANCEL</button>
+                    <input id="profile-gender-input" class="profile-input" type="text" disabled>
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Height</p>
-                    <p id="profile-height" class="profile-text">Tidak Ada</p>
-                    <input id="profile-height-input" class="profile-text" type="number">
-                    <button id="save-profile-height-button" class="profile-button save-button" type="submit">SAVE</button>
-                    <button id="edit-profile-height-button" class="profile-button">EDIT</button>
-                    <button id="cancel-profile-height-button" class="profile-button cancel-button" type="submit">CANCEL</button>
+                    <input id="profile-height-input" class="profile-input" type="number" disabled>
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Weight</p>
-                    <p id="profile-weight" class="profile-text">Tidak Ada</p>
-                    <input id="profile-weight-input" class="profile-text" type="number">
-                    <button id="save-profile-weight-button" class="profile-button save-button" type="submit">SAVE</button>
-                    <button id="edit-profile-weight-button" class="profile-button">EDIT</button>
-                    <button id="cancel-profile-weight-button" class="profile-button cancel-button" type="submit">CANCEL</button>
+                    <input id="profile-weight-input" class="profile-input" type="number" disabled>
                </div>
+               <div class="profile-button-group">
+                    <button id="profile-save-button">Save</button>
+                    <button id="profile-cancel-button">Cancel</button>
+               </div>
+               <button id="profile-edit-button">Edit</button>
           </div>
         </div>
         <button id="logout" value="logout">LOG OUT</button>
@@ -76,6 +57,6 @@
 
      <!-- Scripts -->
      <script src="assets/script/function.js" type="module"></script>
-     <script src="assets/script/app.js"></script>
+     <script src="assets/script/app.js" type="module"></script>
 </body>
 </html>

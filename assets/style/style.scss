@@ -533,7 +533,7 @@ section.user-profile {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -566,55 +566,45 @@ section.user-profile {
             flex-direction: column;
             width: 50%;
             height: fit-content;
+            padding: 1rem;
+            gap: 1rem;
             border-left: 1px solid gray;
 
             div.profile-item-card {
                 display: flex;
                 flex-direction: row;
-                gap: 1.5rem;
-                padding: 1rem;
+                width: 60%;
+                height: fit-content;
+                gap: 1rem;
 
                 p.profile-title {
-                    width: 10rem;
-                    color: rgb(59, 59, 59);
+                    width: 12rem;
+                    font-size: 2rem;
                 }
 
-                p.profile-text {
-                    display: flex;
-                    width: 50rem;
-                }
-
-                input.profile-text {
-                    display: none;
-                    width: 50rem;
-                    font-size: 1.5rem;
+                input.profile-input {
+                    width: 30rem;
                     padding: 0rem .5rem;
-                    border-radius: .5rem;
-                    border: 1px solid black;
-                }
-
-                button.profile-button {
-                    display: flex;
-                    width: 10rem;
-                    font-size: 1rem;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                button.save-button {
-                    display: none;
-                }
-
-                button.cancel-button {
-                    display: none;
+                    font-size: 1.5rem;
                 }
             }
 
-            button#profile-edit {
-                width: 5rem;
-                height: 3rem;
-                font-size: 1.5rem;
+            div.profile-button-group {
+                display: none;
+                flex-direction: row;
+                width: 20rem;
+                height: fit-content;
+                gap: 1rem;
             }
+
+            button {
+                display: flex;
+                width: 20rem;
+                height: 2rem;
+                justify-content: center;
+                align-items: center;
+            }
+
         }
     }
     
