@@ -18,7 +18,13 @@
         <p>User Profile</p>
         <div class="profile-container">
           <div class="image-card">
-               <div id="image-profile"></div>
+               <img id="image-preview" class="image-preview"></img>
+               <div class="image-button-group">
+                    <p id="image-extension"></p>
+                    <input id="image-select" class="image-select" type="file">
+                    <button id="image-upload" class="image-upload" type="submit">Upload</button>
+                    <button class="image-delete">Delete</button>
+               </div>
           </div>
           <div class="profile-card" id="profile-card">
                <div class="profile-item-card">
@@ -35,15 +41,18 @@
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Gender</p>
-                    <input id="profile-gender-input" class="profile-input" type="text" disabled>
+                    <select name="" class="profile-input" id="profile-gender-input" disabled>
+                         <option value="Male">Male</option>
+                         <option value="Female">Female</option>
+                    </select>
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Height</p>
-                    <input id="profile-height-input" class="profile-input" type="number" disabled>
+                    <input id="profile-height-input" class="profile-input" min="1" type="number" disabled>
                </div>
                <div class="profile-item-card">
                     <p class="profile-title">Weight</p>
-                    <input id="profile-weight-input" class="profile-input" type="number" disabled>
+                    <input id="profile-weight-input" class="profile-input" min="1" type="number" disabled>
                </div>
                <div class="profile-button-group">
                     <button id="profile-save-button">Save</button>
@@ -56,7 +65,6 @@
      </section>
 
      <!-- Scripts -->
-     <script src="assets/script/function.js" type="module"></script>
      <script src="assets/script/app.js" type="module"></script>
 </body>
 </html>

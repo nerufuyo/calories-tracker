@@ -10,7 +10,9 @@ import {auth, database, signUpNewUser,
   hamburgerMenu,
   preloader,
   removeAttributDisabled,
-  setAttributeDisable} from './function.js';
+  setAttributeDisable,
+  selectPhotoProfile,
+  uploadPhotoProfile} from './function.js';
 
 // Preloader
 document.documentElement.addEventListener('load', preloader) || null;
@@ -22,25 +24,27 @@ if (hamburger !== null) {
 }
 
 // Auth Page
-onAuthStateChanged(auth, (user) => {
-  const fullname = document.getElementById('profile-fullname-input');
-  const email = document.getElementById('profile-email-input');
-  const birth = document.getElementById('profile-birth-input');
-  const gender = document.getElementById('profile-gender-input');
-  const height = document.getElementById('profile-height-input');
-  const weight = document.getElementById('profile-weight-input');
-  const databaseRef = ref(database, `users/${user.uid}`);
+if (auth !== null) {
+  onAuthStateChanged(auth, (user) => {
+    const fullname = document.getElementById('profile-fullname-input');
+    const email = document.getElementById('profile-email-input');
+    const birth = document.getElementById('profile-birth-input');
+    const gender = document.getElementById('profile-gender-input');
+    const height = document.getElementById('profile-height-input');
+    const weight = document.getElementById('profile-weight-input');
+    const databaseRef = ref(database, `users/${user.uid}`);
 
-  onValue(databaseRef, (data) => {
-    const obj = data.val();
-    fullname.value = obj['fullname'];
-    email.value = obj['email'];
-    birth.value = obj['birth'];
-    gender.value = obj['gender'];
-    height.value = obj['height'];
-    weight.value = obj['weight'];
+    onValue(databaseRef, (data) => {
+      const obj = data.val();
+      fullname.value = obj['fullname'];
+      email.value = obj['email'];
+      birth.value = obj['birth'];
+      gender.value = obj['gender'];
+      height.value = obj['height'];
+      weight.value = obj['weight'];
+    });
   });
-});
+}
 
 const dontHaveAccountButton = document.getElementById('dont-have-account') || null;
 if (dontHaveAccountButton !== null) {
@@ -81,4 +85,14 @@ if (editProfileButton !== null) {
 const cancelProfileButton = document.getElementById('profile-cancel-button') || null;
 if (cancelProfileButton !== null) {
   cancelProfileButton.addEventListener('click', setAttributeDisable);
+}
+
+const selectProfileImageButton = document.getElementById('image-select') || null;
+if (selectProfileImageButton !== null) {
+  selectProfileImageButton.addEventListener('change', selectPhotoProfile);
+}
+
+const uploadProfileImageButton = document.getElementById('image-upload') || null;
+if (uploadProfileImageButton !== null) {
+  uploadProfileImageButton.addEventListener('click', uploadPhotoProfile);
 }

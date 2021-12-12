@@ -2,13 +2,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable require-jsdoc */
 import {connectToDatabase} from './database-connector.js';
+import {getStorage, ref as refStorage, uploadBytes, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
 import {getDatabase, set, ref, update, onValue} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 // Initialize Firebase
 export const app = connectToDatabase();
 export const database = getDatabase(app);
+export const storage = getStorage(app);
 export const auth = getAuth();
+const files = [];
 
 // Authentication
 export function signUpNewUser() {
@@ -65,6 +68,7 @@ export function loginUser() {
 export function logOutUser() {
   signOut(auth).then(() => {
     alert('Logout Succesfully!');
+    window.location.reload;
     window.location.href = 'authentication.html';
   }).catch((error) => {
     const errorMessage = error.message;
@@ -73,16 +77,16 @@ export function logOutUser() {
 }
 
 export function switchFromLoginForm() {
-  const loginForm = document.querySelector('section.login-page div.form-collection div.login-form');
-  const registerForm = document.querySelector('section.login-page div.form-collection div.signup-form');
+  const loginForm = document.querySelector('div.form-collection div.login-form');
+  const registerForm = document.querySelector('div.form-collection div.signup-form');
 
   loginForm.style.display = 'none';
   registerForm.style.display = 'flex';
 }
 
 export function switchFromSignUpForm() {
-  const loginForm = document.querySelector('section.login-page div.form-collection div.login-form');
-  const registerForm = document.querySelector('section.login-page div.form-collection div.signup-form');
+  const loginForm = document.querySelector('div.form-collection div.login-form');
+  const registerForm = document.querySelector('div.form-collection div.signup-form');
 
   loginForm.style.display = 'flex';
   registerForm.style.display = 'none';
@@ -97,7 +101,8 @@ export function updateProfile() {
     const gender = document.getElementById('profile-gender-input');
     const height = document.getElementById('profile-height-input');
     const weight = document.getElementById('profile-weight-input');
-    const databaseRef = ref(database, `users/${user.uid}`);
+    const buttonGroup =document.querySelector('div.profile-button-group');
+    const editButton = document.getElementById('profile-edit-button');
 
     update(ref(database, `users/${user.uid}`), {
       fullname: fullname.value,
@@ -108,6 +113,52 @@ export function updateProfile() {
       weight: weight.value,
     });
     alert('Data Upadated!');
+    fullname.disabled = true;
+    email.disabled = true;
+    birth.disabled = true;
+    gender.disabled = true;
+    height.disabled = true;
+    weight.disabled = true;
+    buttonGroup.style.display = 'none';
+    editButton.style.display = 'flex';
+  });
+}
+
+export function selectPhotoProfile() {
+  const files = event.target.files;
+  const reader = new FileReader();
+  reader.onload = function() {
+    const dataURL = reader.result;
+    const output = document.getElementById('image-preview');
+    output.src = dataURL;
+  };
+  reader.readAsDataURL(files[0]);
+}
+
+export function uploadPhotoProfile() {
+  onAuthStateChanged(auth, (user) => {
+    const imageSelected = files[0];
+    const metadata = {contentType: 'image/jpeg'};
+    const storageRef = refStorage(storage, `users/${user.uid}`);
+    const uploadTask = uploadBytesResumable(storageRef, imageSelected, metadata);
+
+    uploadTask.on('state_changed', (snapshot)=> {
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log('Upload is ' + progress + '% done');
+    }, (error) => {
+      switch (error.code) {
+        case 'storage/unauthorized':
+          break;
+        case 'storage/canceled':
+          break;
+        case 'storage/unknown':
+          break;
+      }
+    }, () => {
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        console.log('File available at', downloadURL);
+      });
+    });
   });
 }
 

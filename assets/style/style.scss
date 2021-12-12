@@ -396,8 +396,8 @@ footer {
     }
 }
 
-// Login Page
-section.login-page {
+// Authentication Page
+section.auth-page {
     display: flex;
     flex-direction: row;
     width: 100vw;
@@ -427,7 +427,7 @@ section.login-page {
         }
     }
 
-    div.login-hero {
+    div.auth-hero {
         display: flex;
         width: 30%;
         padding: 2rem;
@@ -555,10 +555,54 @@ section.user-profile {
 
         div.image-card {
             display: flex;
-            width: 20rem;
-            height: 20rem;
-            border-radius: 50rem;
+            flex-direction: column;
+            width: 25rem;
+            height: 25rem;
+            justify-content: center;
+            align-items: center;
             border: 2px solid black;
+            overflow: hidden;
+
+            img.image-preview {
+                width: 20rem;
+                height: 20rem;
+                border-radius: 10rem;
+                border: 1px solid rebeccapurple;
+                overflow: hidden;
+            }
+
+            div.image-button-group {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: fit-content;
+                padding: 1rem;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+                
+                input#image-name {
+                    display: flex;
+                    width: 0%;
+                    height: 0%;
+                    opacity: 0;
+                }
+
+                p#image-extension {
+                    display: flex;
+                    width: 0%;
+                    height: 0%;
+                    opacity: 0;
+                }
+
+                input.image-select {
+                    width: 5.6rem;
+                }
+
+                button {
+                    width: 6rem;
+                }
+            }
         }
 
         div.profile-card {
@@ -584,6 +628,12 @@ section.user-profile {
 
                 input.profile-input {
                     width: 30rem;
+                    padding: 0rem .5rem;
+                    font-size: 1.5rem;
+                }
+
+                select.profile-input {
+                    width: 32rem;
                     padding: 0rem .5rem;
                     font-size: 1.5rem;
                 }
