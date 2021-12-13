@@ -63,9 +63,6 @@ body {
 }
 
 .edit-button {
-  border: none;
-  background-color: none;
-
   & a {
     background-color: #17a2b8;
     border: 1px solid #17a2b8;
@@ -76,6 +73,19 @@ body {
     &:hover {
       background-color: #138496;
     }
+  }
+}
+
+.edit-food-button {
+  background-color: #17a2b8;
+  padding: 10px;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    background-color: #138496;
   }
 }
 
@@ -598,6 +608,11 @@ main {
   display: flex;
   justify-content: end;
   margin-top: 30px;
+}
+
+/* ---- Edit Food ---- */
+.edit-food-button__container {
+  @extend .add-food-button__container;
 }
 
 /* ---- Footer ---- */
