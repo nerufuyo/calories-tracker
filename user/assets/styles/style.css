@@ -17,97 +17,6 @@ body {
           box-sizing: border-box;
 }
 
-.add-food-link {
-  border: none;
-  background-color: none;
-}
-
-.add-food-link a {
-  background-color: #007bff;
-  padding: 10px;
-  border: 1px solid #007bff;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-}
-
-.add-food-link a i {
-  margin-right: 5px;
-}
-
-.add-food-link a:hover {
-  background-color: #0069D9;
-}
-
-.add-food-button {
-  padding: 10px;
-  background-color: #007bff;
-  border: 1px solid #007bff;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-}
-
-.add-food-button i {
-  margin-right: 5px;
-}
-
-.add-food-button:hover {
-  cursor: pointer;
-  background-color: #0069D9;
-}
-
-.edit-button a {
-  background-color: #17a2b8;
-  border: 1px solid #17a2b8;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-}
-
-.edit-button a:hover {
-  background-color: #138496;
-}
-
-.edit-food-button {
-  background-color: #17a2b8;
-  padding: 10px;
-  border: 1px solid #17a2b8;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-}
-
-.edit-food-button:hover {
-  background-color: #138496;
-}
-
-.edit-button-sm a {
-  padding: 5px 10px;
-}
-
-.edit-button-sm i {
-  margin-right: 3px;
-}
-
-.delete-button {
-  background-color: #dc3545;
-  padding: 5px 10px;
-  border: 1px solid #dc3545;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
-
-.delete-button i {
-  margin-right: 3px;
-}
-
-.delete-button:hover {
-  background-color: #C82333;
-}
-
 /* ---- Header ---- */
 .app-bar {
   position: fixed;
@@ -512,7 +421,23 @@ main.shift {
 }
 
 .add-food-link {
+  background-color: none;
+  border: none;
   margin-top: 10px;
+}
+
+.add-food-link a {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.add-food-link a:hover {
+  background-color: #0069D9;
 }
 
 .calories-remaining__container {
@@ -624,6 +549,40 @@ main.shift {
   text-align: left;
 }
 
+.edit-food-link {
+  background-color: none;
+  border: none;
+}
+
+.edit-food-link a {
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  width: 78px;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+.edit-food-link a:hover {
+  background-color: #138496;
+}
+
+.delete-food-button {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 78px;
+}
+
+.delete-food-button:hover {
+  background-color: #C82333;
+}
+
 /* ---- Add Food ---- */
 .add-food__form label {
   display: block;
@@ -707,7 +666,33 @@ main.shift {
   margin-top: 30px;
 }
 
+.add-food-button {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.add-food-button:hover {
+  background-color: #0069D9;
+}
+
 /* ---- Edit Food ---- */
+.edit-food-button {
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.edit-food-button:hover {
+  background-color: #138496;
+}
+
 /* ---- Footer ---- */
 footer {
   position: absolute;

@@ -22,95 +22,36 @@ body {
   box-sizing: border-box;
 }
 
-.add-food-link {
-  border: none;
-  background-color: none;
-
-  & a {
-    background-color: #007bff;
-    padding: 10px;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-
-    & i {
-      margin-right: 5px;
-    }
-
-    &:hover {
-      background-color: #0069D9;
-    }
-  }
-}
-
-.add-food-button {
-  padding: 10px;
+@mixin add-button {
   background-color: #007bff;
   border: 1px solid #007bff;
   border-radius: 5px;
-  text-decoration: none;
   color: white;
-
-  & i {
-    margin-right: 5px;
-  }
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
     background-color: #0069D9;
   }
 }
 
-.edit-button {
-  & a {
-    background-color: #17a2b8;
-    border: 1px solid #17a2b8;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-
-    &:hover {
-      background-color: #138496;
-    }
-  }
-}
-
-.edit-food-button {
+@mixin edit-button {
   background-color: #17a2b8;
-  padding: 10px;
   border: 1px solid #17a2b8;
   border-radius: 5px;
-  text-decoration: none;
   color: white;
+  cursor: pointer;
 
   &:hover {
     background-color: #138496;
   }
 }
 
-.edit-button-sm {
-  & a {
-    padding: 5px 10px;
-  }
-
-  & i {
-    margin-right: 3px;
-  }
-}
-
-.delete-button {
+@mixin delete-button {
   background-color: #dc3545;
-  padding: 5px 10px;
   border: 1px solid #dc3545;
   border-radius: 5px;
-  text-decoration: none;
   color: white;
   cursor: pointer;
-
-  & i {
-    margin-right: 3px;
-  }
 
   &:hover {
     background-color: #C82333;
@@ -449,7 +390,15 @@ main {
 }
 
 .add-food-link {
+  background-color: none;
+  border: none;
   margin-top: 10px;
+
+  a {
+    @include add-button;
+    padding: 10px;
+    text-decoration: none;
+  }
 }
 
 .calories-remaining__container {
@@ -537,6 +486,24 @@ main {
   }
 }
 
+.edit-food-link {
+  background-color: none;
+  border: none;
+
+  & a {
+    @include edit-button;
+    width: 78px;
+    padding: 5px 15px;
+    text-decoration: none;
+  }
+}
+
+.delete-food-button {
+  @include delete-button;
+  padding: 5px 10px;
+  width: 78px;
+}
+
 /* ---- Add Food ---- */
 .add-food__form {
   label {
@@ -610,9 +577,19 @@ main {
   margin-top: 30px;
 }
 
+.add-food-button {
+  @include add-button;
+  padding: 10px;
+}
+
 /* ---- Edit Food ---- */
 .edit-food-button__container {
   @extend .add-food-button__container;
+}
+
+.edit-food-button {
+  @include edit-button;
+  padding: 10px;
 }
 
 /* ---- Footer ---- */

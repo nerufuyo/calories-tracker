@@ -49,7 +49,7 @@ class EditFoodView {
           </div>
         </label>
         <div class="edit-food-button__container">
-          <button class="edit-button edit-food-button" ><i class="far fa-edit"></i> Update Food</button>
+          <button class="edit-food-button" ><i class="far fa-edit"></i> Update Food</button>
         </div>
       </form>
     `
