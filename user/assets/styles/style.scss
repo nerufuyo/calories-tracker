@@ -140,7 +140,7 @@ body {
   display: inline-block;
   height: 30px;
 
-  & img {
+  img {
     height: 100%;
   }
 }
@@ -163,7 +163,7 @@ body {
 .user-profile__menu {
   list-style: none;
 
-  & a {
+  a {
     display: block;
     text-decoration: none;
     color: $font-base-color;
@@ -175,7 +175,7 @@ body {
     }
   }
 
-  & i {
+  i {
     display: inline-block;
     margin-right: 10px;
   }
@@ -199,7 +199,7 @@ body {
 .navbar-menu {
   list-style: none;
 
-  & a {
+  a {
     display: block;
     color: $font-base-color;
     text-decoration: none;
@@ -210,7 +210,7 @@ body {
       background-color: $menu-hover-bgcolor;
     }
 
-    & i {
+    i {
       margin-right: 10px;
     }
   }
@@ -414,19 +414,19 @@ main {
   gap: 40px;
   margin-top: 30px;
 
-  & .section {
+  .section {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
   }
 
-  & .operation {
+  .operation {
     font-size: 1.375rem;
     font-weight: 500;
   }
 
-  & .title {
+  .title {
     color: #808080;
   }
 }
@@ -436,16 +436,16 @@ main {
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: -10px;
 
-  & .title {
+  .title {
     color: #808080;
   }
 
-  & .title-1 {
+  .title-1 {
     text-align: center;
     grid-column-start: 2;
   }
 
-  & .title-2 {
+  .title-2 {
     text-align: center;
     grid-column-start: 3;
   }
@@ -457,12 +457,12 @@ main {
   border-radius: 5px;
   background-color: #F8F9FA;
 
-  & .title {
+  .title {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
   
-  & .total-calories {
+  .total-calories {
     grid-column-start: 3;
     text-align: center;
     font-weight: 500;
@@ -475,13 +475,13 @@ main {
   margin-top: 20px;
   text-align: center;
 
-  & .button-container {
+  .button-container {
     display: flex;
     justify-content: end;
     gap: 10px;
   }
 
-  & div:nth-child(1) {
+  div:nth-child(1) {
     text-align: left;
   }
 }
@@ -490,7 +490,7 @@ main {
   background-color: none;
   border: none;
 
-  & a {
+  a {
     @include edit-button;
     width: 78px;
     padding: 5px 15px;
