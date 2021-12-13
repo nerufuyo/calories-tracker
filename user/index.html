@@ -7,9 +7,57 @@
   <title>Calories Tracker</title>
   <link rel="stylesheet" href="assets/styles/style.css">
   <link rel="icon" href="../assets/images/icons/calorie-icon.ico">
+  <script src="https://kit.fontawesome.com/6f3c04f8e8.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header class="app-bar"">
+    <div class="app-bar_menu-hamburger" aria-label="menu navigation button" tabindex="0">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </div>
+    <div class="app-bar__brand">
+      <h1><a href="/">Calories Tracker</a></h1>
+    </div>
+    <div class="user-profile">
+      <div class="user-profile__info" tabindex="0">
+        <span class="user-profile__name">Imam Firdaus Dwimeianto</span>
+        <span class="user-profile__pic"><img src="https://static.thenounproject.com/png/1743560-200.png" alt=""></span>
+        <span class="user-profile__dropdown-button"><i class="fas fa-angle-down"></i></span>
+      </div>
+      <div class="user-profile__dropdown">
+        <ul class="user-profile__menu">
+          <li><a href="./#/profile"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+          <li><a href="./#/password"><i class="fas fa-key"></i> Edit Password</a></li>
+          <li><a href="#"><i class="fas fa-power-off"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sidenav">
+    <ul class="navbar-menu">
+      <li><a href="#/dashboard"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+      <li><a href="#/food-diary"><i class="fas fa-utensils"></i> Food Diary</a></li>
+      <li><a href="#/add-food"><i class="fas fa-folder-plus"></i> Add Food</a></li>
+      <li><a href="#/goal"><i class="fas fa-bullseye"></i> Goal</a></li>
+      <li><a href="#/summary"><i class="far fa-file-alt"></i> Summary</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="main-content">
+      <div class="page-header">
+        <h2 class="page-title"></h2>
+      </div>
+      <div class="page-content"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div>&copy; <span class="footer-year"></span> Calories Tracker - All Rights Reserved.</div>
+  </footer>
   
-  <script src="index.js" type="module"></script>
+  <script src="./assets/scripts/index.js" type="module" ></script>
 </body>
 </html>

@@ -1,1 +1,735 @@
-/* No CSS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: calc(60px + 40px) 0;
+  position: relative;
+  min-height: 100vh;
+  background-color: #F6F8FA;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.add-food-link {
+  border: none;
+  background-color: none;
+}
+
+.add-food-link a {
+  background-color: #007bff;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.add-food-link a i {
+  margin-right: 5px;
+}
+
+.add-food-link a:hover {
+  background-color: #0069D9;
+}
+
+.add-food-button {
+  padding: 10px;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.add-food-button i {
+  margin-right: 5px;
+}
+
+.add-food-button:hover {
+  cursor: pointer;
+  background-color: #0069D9;
+}
+
+.edit-button a {
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.edit-button a:hover {
+  background-color: #138496;
+}
+
+.edit-food-button {
+  background-color: #17a2b8;
+  padding: 10px;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.edit-food-button:hover {
+  background-color: #138496;
+}
+
+.edit-button-sm a {
+  padding: 5px 10px;
+}
+
+.edit-button-sm i {
+  margin-right: 3px;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  padding: 5px 10px;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-button i {
+  margin-right: 3px;
+}
+
+.delete-button:hover {
+  background-color: #C82333;
+}
+
+/* ---- Header ---- */
+.app-bar {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #FFFFFF;
+}
+
+.app-bar_menu-hamburger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.app-bar_menu-hamburger:hover, .app-bar_menu-hamburger.active {
+  background-color: #dadce0;
+}
+
+.app-bar_menu-hamburger.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.app-bar_menu-hamburger.active .hamburger-bar:nth-child(1) {
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+}
+
+.app-bar_menu-hamburger.active .hamburger-bar:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+          transform: translateY(-10px) rotate(-45deg);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 3px auto;
+  background-color: #101010;
+}
+
+.app-bar__brand h1 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 400;
+  height: 60px;
+}
+
+.user-profile {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.user-profile__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  gap: 5px;
+  padding: 0 20px;
+}
+
+.user-profile__info:hover, .user-profile__info:focus {
+  font-weight: 500;
+  background-color: #dadce0;
+}
+
+.user-profile__pic {
+  display: inline-block;
+  height: 30px;
+}
+
+.user-profile__pic img {
+  height: 100%;
+}
+
+.user-profile__dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 200px;
+  background-color: #FFFFFF;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.user-profile__dropdown.show {
+  display: block;
+}
+
+.user-profile__menu {
+  list-style: none;
+}
+
+.user-profile__menu a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 15px 20px;
+}
+
+.user-profile__menu a:hover {
+  background-color: #dadce0;
+  font-weight: 500;
+}
+
+.user-profile__menu i {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* ---- Navbar ---- */
+.sidenav {
+  position: fixed;
+  top: 60px;
+  left: -230px;
+  width: 230px;
+  min-height: calc(100vh - 60px);
+  background-color: #FFFFFF;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+.sidenav.show {
+  left: 0;
+}
+
+.navbar-menu {
+  list-style: none;
+}
+
+.navbar-menu a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 13px 20px;
+}
+
+.navbar-menu a:hover {
+  font-weight: 500;
+  background-color: #dadce0;
+}
+
+.navbar-menu a i {
+  margin-right: 10px;
+}
+
+/* ---- Main ---- */
+main {
+  width: 100%;
+  padding: 0 40px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+main.shift {
+  width: calc(100% - 230px);
+  margin-left: 230px;
+}
+
+.page-header {
+  min-height: 72px;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+}
+
+.page-title i {
+  font-size: 4.5rem;
+  margin-right: 20px;
+}
+
+.page-content {
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  min-height: 300px;
+}
+
+/* ---- Dashboard ---- */
+.dashboard-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.125rem;
+}
+
+.month-picker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 215px;
+}
+
+.previous-month, .next-month {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 10px 15px;
+}
+
+.previous-month:hover, .next-month:hover {
+  border-radius: 50%;
+  background-color: #dadce0;
+}
+
+.calories-goal-data {
+  display: inline-block;
+  min-width: 40px;
+}
+
+.calendar-days {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+}
+
+.day-name {
+  padding: 0 5px;
+  color: #9E777A;
+  text-align: center;
+}
+
+.calendar-date {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+}
+
+.date-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #DADCE0;
+  padding: 0 5px 5px 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.date-number {
+  padding: 5px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.date-order {
+  padding: 5px;
+}
+
+.current-date {
+  display: inline-block;
+  padding: 5px;
+  color: #FFFFFF;
+  border-radius: 50%;
+  background-color: #1a73e8;
+}
+
+.current-month {
+  color: #000;
+}
+
+.not__current-month {
+  color: #9E777A;
+}
+
+.calories__this-day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+/* ---- Food Diary ---- */
+.food-diary__top {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.date-picker__container {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin-bottom: 40px;
+}
+
+.date-picker-button {
+  padding: 15px 20px;
+}
+
+.date-picker-button:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #dadce0;
+}
+
+.date-picker-input__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.date-picker-input input {
+  text-align: center;
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #E3E3E3;
+  border-radius: 5px;
+  color: #818182;
+}
+
+.add-food-link__container {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.add-food-link {
+  margin-top: 10px;
+}
+
+.calories-remaining__container {
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: #F8F9FA;
+  border-radius: 5px;
+}
+
+.calories-remaining-formula {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.calories-remaining-formula .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.calories-remaining-formula .operation {
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.calories-remaining-formula .title {
+  color: #808080;
+}
+
+.food-diary-list__column-title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  margin-bottom: -10px;
+}
+
+.food-diary-list__column-title .title {
+  color: #808080;
+}
+
+.food-diary-list__column-title .title-1 {
+  text-align: center;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+.food-diary-list__column-title .title-2 {
+  text-align: center;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+}
+
+.food-diary-list {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #F8F9FA;
+}
+
+.food-diary-list .title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.food-diary-list .total-calories {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  text-align: center;
+  font-weight: 500;
+}
+
+.food-data {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.food-data .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 10px;
+}
+
+.food-data div:nth-child(1) {
+  text-align: left;
+}
+
+/* ---- Add Food ---- */
+.add-food__form label {
+  display: block;
+}
+
+.input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0;
+  gap: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #DADCE0;
+  width: 100%;
+}
+
+.date__input .form-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.input-name {
+  min-width: 150px;
+}
+
+.form-input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.form-input input {
+  display: block;
+  padding: 5px;
+  border: none;
+  width: 100%;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.form-input input:focus {
+  outline: none;
+  border: none;
+}
+
+.form-input input[type="date"] {
+  width: 230px;
+}
+
+.form-input select {
+  display: block;
+  padding: 5px;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  text-align-last: right;
+}
+
+.form-input option {
+  text-align: right;
+}
+
+.food-name__input {
+  padding: 5px;
+}
+
+.add-food-button__container, .edit-food-button__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: 30px;
+}
+
+/* ---- Edit Food ---- */
+/* ---- Footer ---- */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 60px;
+  background-color: #FFFFFF;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+footer.shift {
+  width: calc(100% - 230px);
+  left: 230px;
+}
