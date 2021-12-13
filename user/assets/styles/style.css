@@ -17,6 +17,71 @@ body {
           box-sizing: border-box;
 }
 
+.add-button {
+  border: none;
+  background-color: none;
+}
+
+.add-button a {
+  background-color: #007bff;
+  padding: 10px;
+  border-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.add-button a i {
+  margin-right: 5px;
+}
+
+.add-button a:hover {
+  background-color: #0069D9;
+}
+
+.edit-button {
+  border: none;
+  background-color: none;
+}
+
+.edit-button a {
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.edit-button a:hover {
+  background-color: #138496;
+}
+
+.edit-button-sm a {
+  padding: 5px 10px;
+}
+
+.edit-button-sm i {
+  margin-right: 3px;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  padding: 5px 10px;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-button i {
+  margin-right: 3px;
+}
+
+.delete-button:hover {
+  background-color: #C82333;
+}
+
 /* ---- Header ---- */
 .app-bar {
   position: fixed;
@@ -359,6 +424,174 @@ main.shift {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+}
+
+/* ---- Food Diary ---- */
+.food-diary__top {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.date-picker__container {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin-bottom: 40px;
+}
+
+.date-picker-button {
+  padding: 15px 20px;
+}
+
+.date-picker-button:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #dadce0;
+}
+
+.date-picker-input__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.date-picker-input input {
+  text-align: center;
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #E3E3E3;
+  border-radius: 5px;
+  color: #818182;
+}
+
+.add-food-link__container {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.calories-remaining__container {
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: #F8F9FA;
+  border-radius: 5px;
+}
+
+.calories-remaining-formula {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.calories-remaining-formula .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.calories-remaining-formula .operation {
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.calories-remaining-formula .title {
+  color: #808080;
+}
+
+.food-diary-list__column-title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  margin-bottom: -10px;
+}
+
+.food-diary-list__column-title .title {
+  color: #808080;
+}
+
+.food-diary-list__column-title .title-1 {
+  text-align: center;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+.food-diary-list__column-title .title-2 {
+  text-align: center;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+}
+
+.food-diary-list {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #F8F9FA;
+}
+
+.food-diary-list .title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.food-diary-list .total-calories {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  text-align: center;
+  font-weight: 500;
+}
+
+.food-data {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.food-data .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 10px;
+}
+
+.food-data div:nth-child(1) {
+  text-align: left;
 }
 
 /* ---- Footer ---- */
