@@ -648,6 +648,11 @@ main.shift {
   text-align-last: right;
 }
 
+.form-input select:focus {
+  border: none;
+  outline: none;
+}
+
 .form-input option {
   text-align: right;
 }
@@ -656,7 +661,7 @@ main.shift {
   padding: 5px;
 }
 
-.add-food-button__container, .edit-food-button__container {
+.add-food-button__container, .edit-food-button__container, .set-goal-button__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -691,6 +696,20 @@ main.shift {
 
 .edit-food-button:hover {
   background-color: #138496;
+}
+
+/* ---- Set Goal ---- */
+.set-goal-button {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.set-goal-button:hover {
+  background-color: #0069D9;
 }
 
 /* ---- Footer ---- */

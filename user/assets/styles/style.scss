@@ -560,6 +560,11 @@ main {
     width: 100%;
     font-size: 1rem;
     text-align-last: right;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
   }
 
   option {
@@ -589,6 +594,16 @@ main {
 
 .edit-food-button {
   @include edit-button;
+  padding: 10px;
+}
+
+/* ---- Set Goal ---- */
+.set-goal-button__container {
+  @extend .add-food-button__container;
+}
+
+.set-goal-button {
+  @include add-button;
   padding: 10px;
 }
 
