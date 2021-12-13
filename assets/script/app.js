@@ -1,16 +1,98 @@
-//   Preloader
-// const preloader = document.getElementById('preloader');
-// const preloaderImage = document.querySelector('.preloader-image');
-// const preloaderText = document.querySelector('.preloader-text');
+/* eslint-disable max-len */
+import {ref, onValue} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js';
+import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+import {auth, database, signUpNewUser,
+  loginUser,
+  logOutUser,
+  updateProfile,
+  switchFromLoginForm,
+  switchFromSignUpForm,
+  hamburgerMenu,
+  preloader,
+  removeAttributDisabled,
+  setAttributeDisable,
+  selectPhotoProfile,
+  uploadPhotoProfile} from './function.js';
 
-// document.documentElement.addEventListener('load', init()) 
-// async function init() {
-//     document.body.classList.add('stop_scrolling');
-//     await sleep(7000);
-//     preloader.style.display = 'none';
-//     document.body.classList.remove('stop_scrolling');
-// };
+// Preloader
+document.documentElement.addEventListener('load', preloader) || null;
 
-// function sleep(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// };
+// Hamburger Menu
+const hamburger = document.querySelector('nav ul.hamburger-lines') || null;
+if (hamburger !== null) {
+  hamburger.addEventListener('click', hamburgerMenu);
+}
+
+// Auth Page
+if (auth !== null) {
+  onAuthStateChanged(auth, (user) => {
+    const fullname = document.getElementById('profile-fullname-input');
+    const email = document.getElementById('profile-email-input');
+    const birth = document.getElementById('profile-birth-input');
+    const gender = document.getElementById('profile-gender-input');
+    const height = document.getElementById('profile-height-input');
+    const weight = document.getElementById('profile-weight-input');
+    const databaseRef = ref(database, `users/${user.uid}`);
+
+    onValue(databaseRef, (data) => {
+      const obj = data.val();
+      fullname.value = obj['fullname'];
+      email.value = obj['email'];
+      birth.value = obj['birth'];
+      gender.value = obj['gender'];
+      height.value = obj['height'];
+      weight.value = obj['weight'];
+    });
+  });
+}
+
+const dontHaveAccountButton = document.getElementById('dont-have-account') || null;
+if (dontHaveAccountButton !== null) {
+  dontHaveAccountButton.addEventListener('click', switchFromLoginForm);
+}
+
+const haveAccountButton = document.getElementById('have-account') || null;
+if (haveAccountButton !== null) {
+  haveAccountButton.addEventListener('click', switchFromSignUpForm);
+}
+
+const signUpButton = document.getElementById('signup') || null;
+if (signUpButton !== null) {
+  signUpButton.addEventListener('click', signUpNewUser);
+}
+
+const loginButton = document.getElementById('login') || null;
+if (loginButton !== null) {
+  loginButton.addEventListener('click', loginUser);
+}
+
+const logoutButton = document.getElementById('logout') || null;
+if (logoutButton !== null) {
+  logoutButton.addEventListener('click', logOutUser);
+}
+
+// User Profile Page
+const saveButton = document.getElementById('profile-save-button') || null;
+if (saveButton !== null) {
+  saveButton.addEventListener('click', updateProfile);
+}
+
+const editProfileButton = document.getElementById('profile-edit-button') || null;
+if (editProfileButton !== null) {
+  editProfileButton.addEventListener('click', removeAttributDisabled);
+}
+
+const cancelProfileButton = document.getElementById('profile-cancel-button') || null;
+if (cancelProfileButton !== null) {
+  cancelProfileButton.addEventListener('click', setAttributeDisable);
+}
+
+const selectProfileImageButton = document.getElementById('image-select') || null;
+if (selectProfileImageButton !== null) {
+  selectProfileImageButton.addEventListener('change', selectPhotoProfile);
+}
+
+const uploadProfileImageButton = document.getElementById('image-upload') || null;
+if (uploadProfileImageButton !== null) {
+  uploadProfileImageButton.addEventListener('click', uploadPhotoProfile);
+}

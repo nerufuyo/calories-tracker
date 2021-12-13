@@ -4,11 +4,16 @@
   padding: 0;
   font-family: 'Signika Negative', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * .stop_scrolling {
   height: 100vh;
   overflow: hidden;
+}
+
+* .hamburger_slide {
+  left: 0%;
 }
 
 div#preloader {
@@ -20,7 +25,7 @@ div#preloader {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  z-index: 5;
+  z-index: 10;
   background-color: var(--primary-color);
   animation: fade-out 1s forwards 3800ms;
 }
@@ -32,6 +37,7 @@ div#preloader div.preloader-image {
   height: 15vh;
   padding: .5rem;
   gap: 3rem;
+  overflow: hidden;
 }
 
 div#preloader div.preloader-image img {
@@ -76,6 +82,7 @@ nav {
   gap: 60%;
   border-bottom: 0.15rem solid var(--third-color);
   background-color: var(--primary-color);
+  z-index: 5;
 }
 
 nav a {
@@ -156,6 +163,10 @@ nav ul.navigation-list li.login-list:hover a.login-link:hover {
 
 nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
   color: var(--secondary-color);
+}
+
+nav ul.hamburger-lines {
+  display: none;
 }
 
 section#hero-container {
@@ -362,6 +373,275 @@ footer p.footer-text {
   color: var(--third-color);
 }
 
+section.auth-page {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+}
+
+section.auth-page nav {
+  display: flex;
+  position: fixed;
+  width: 20vw;
+  height: 10vh;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+section.auth-page nav a img {
+  width: 60%;
+}
+
+section.auth-page div.auth-hero {
+  display: flex;
+  width: 30%;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+section.auth-page div.auth-hero img {
+  width: 80%;
+}
+
+section.auth-page div.form-collection {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+section.auth-page div.form-collection div.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  height: 38rem;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 4px solid var(--third-color);
+  border-radius: 1rem;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 30rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 3rem;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card p.form-title {
+  font-size: 2.5rem;
+  text-decoration: underline;
+  overflow: hidden;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card div.form-input-group {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+  gap: 2rem;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input {
+  width: 30rem;
+  height: 3rem;
+  padding: .5rem;
+  font-size: 2rem;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card p.link-button {
+  font-size: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  overflow: hidden;
+}
+
+section.auth-page div.form-collection div.form-container div.footer-container {
+  display: flex;
+  width: 40rem;
+  height: 6rem;
+  background-color: var(--third-color);
+}
+
+section.auth-page div.form-collection div.form-container div.footer-container button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  font-size: 4rem;
+  color: white;
+  cursor: pointer;
+  background-color: var(--third-color);
+}
+
+section.auth-page div.form-collection div.login-form {
+  display: flex;
+}
+
+section.auth-page div.form-collection div.signup-form {
+  display: none;
+}
+
+section.user-profile {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+section.user-profile p {
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+section.user-profile div.profile-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+section.user-profile div.profile-container div.image-card {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  height: 25rem;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+section.user-profile div.profile-container div.image-card img.image-preview {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10rem;
+  border: 1px solid rebeccapurple;
+  overflow: hidden;
+}
+
+section.user-profile div.profile-container div.image-card div.image-button-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+section.user-profile div.profile-container div.image-card div.image-button-group input#image-name {
+  display: flex;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+}
+
+section.user-profile div.profile-container div.image-card div.image-button-group p#image-extension {
+  display: flex;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+}
+
+section.user-profile div.profile-container div.image-card div.image-button-group input.image-select {
+  width: 5.6rem;
+}
+
+section.user-profile div.profile-container div.image-card div.image-button-group button {
+  width: 6rem;
+}
+
+section.user-profile div.profile-container div.profile-card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: fit-content;
+  padding: 1rem;
+  gap: 1rem;
+  border-left: 1px solid gray;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: fit-content;
+  gap: 1rem;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card p.profile-title {
+  width: 12rem;
+  font-size: 2rem;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card input.profile-input {
+  width: 30rem;
+  padding: 0rem .5rem;
+  font-size: 1.5rem;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-item-card select.profile-input {
+  width: 32rem;
+  padding: 0rem .5rem;
+  font-size: 1.5rem;
+}
+
+section.user-profile div.profile-container div.profile-card div.profile-button-group {
+  display: none;
+  flex-direction: row;
+  width: 20rem;
+  height: fit-content;
+  gap: 1rem;
+}
+
+section.user-profile div.profile-container div.profile-card button {
+  display: flex;
+  width: 20rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+section.user-profile button#logout {
+  display: flex;
+  width: 8rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
 @keyframes fade-out {
   from {
     opacity: 100%;
@@ -415,6 +695,538 @@ footer p.footer-text {
   }
   100% {
     transform: translateY(1rem);
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  nav {
+    gap: 50%;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 35rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2.5rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1.25rem;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 32rem;
+    height: 35rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 28rem;
+    height: 3rem;
+    padding: .5rem;
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container {
+    width: 40rem;
+    height: 6rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container button {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  nav {
+    gap: 45%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  section.login-page nav a img {
+    width: 4rem;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 28rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 20rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card a {
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container button {
+    font-size: 2.5rem;
+  }
+  section.login-page div.form-collection div.login-form {
+    display: flex;
+  }
+  section.login-page div.form-collection div.signup-form {
+    display: none;
+    height: 32rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  nav {
+    gap: 35%;
+  }
+  nav a img.navigation-logo {
+    width: 10rem;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 25rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2.5rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    gap: 10%;
+  }
+  nav a img.navigation-logo {
+    width: 10rem;
+  }
+  section#hero-container div.hero-image-container {
+    padding: 0;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 20rem;
+  }
+  section#hero-container div.hero-detail-container {
+    width: 40%;
+    padding: 1rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1rem;
+  }
+  section#hero-container div.hero-detail-container a.register-link {
+    padding: .8rem 1.5rem;
+  }
+  section#feature-container div.feature-inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  section#feature-container div.feature-inner-container img.feature-image {
+    width: 10rem;
+  }
+  section#feature-container div.feature-inner-container p.feature-text {
+    width: 50%;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  section#feature-container div.second-feature {
+    flex-direction: row-reverse;
+  }
+  section#about-container p.about-title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  section#about-container div.about-outer-container div.about-inner-container {
+    display: none;
+  }
+  section#about-container div.about-outer-container p.about-text {
+    width: 90%;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  section.login-page nav a img {
+    width: 100%;
+  }
+  section.login-page div.login-hero {
+    display: none;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 30rem;
+    height: 35rem;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  div#preloader {
+    width: 100vw;
+    height: 100vh;
+    gap: 1rem;
+    padding: 0%;
+    overflow: hidden;
+    animation: fade-out 1s forwards 3800ms;
+  }
+  div#preloader div.preloader-image {
+    height: 20vh;
+    gap: 1rem;
+  }
+  div#preloader div.preloader-image img {
+    width: 3rem;
+  }
+  div#preloader p.preloader-text {
+    font-size: 2.5rem;
+    opacity: 0;
+    color: var(--third-color);
+    animation: blink .75s alternate infinite .2s;
+  }
+  nav {
+    width: 100vw;
+    gap: 25%;
+    border: none;
+    padding: .5rem 0rem;
+  }
+  nav a img.navigation-logo {
+    width: 8rem;
+  }
+  nav ul.navigation-list {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    top: 7%;
+    left: 100%;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    z-index: 4;
+    transition: all .5s ease;
+  }
+  nav ul.navigation-list li.navigation-item-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--third-color);
+    transition: .2s all;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link span.navigation-slide {
+    display: flex;
+    width: 0%;
+    height: 3px;
+    border-radius: 5rem;
+    background-color: var(--third-color);
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover {
+    color: var(--third-color);
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover span.navigation-slide {
+    width: 100%;
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.login-list {
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    height: fit-content;
+    padding: .5rem;
+    align-items: center;
+    border-radius: .25rem;
+    background-color: var(--fourth-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link {
+    color: var(--primary-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link span.login-slide {
+    display: none;
+  }
+  nav ul.navigation-list li.login-list:hover {
+    background-color: var(--third-color);
+  }
+  nav ul.navigation-list li.login-list:hover a.login-link:hover {
+    color: var(--fifth-color);
+  }
+  nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
+    color: var(--secondary-color);
+  }
+  nav ul.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    cursor: pointer;
+  }
+  nav ul.hamburger-lines li {
+    width: 2rem;
+    height: .25rem;
+    border-radius: 1rem;
+    background-color: black;
+  }
+  section#hero-container {
+    width: 100vw;
+    padding: 0rem;
+    justify-content: center;
+  }
+  section#hero-container div.hero-image-container {
+    display: none;
+  }
+  section#hero-container div.hero-detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 2rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1rem;
+  }
+  section#hero-container div.hero-detail-container a.register-link {
+    padding: .6rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  section#feature-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: fit-content;
+    margin-top: 3rem;
+    padding: 0rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  section#feature-container p.feature-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  section#feature-container div.feature-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  section#feature-container div.feature-inner-container img.feature-image {
+    width: 5rem;
+  }
+  section#feature-container div.feature-inner-container p.feature-text {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  section#feature-container div.second-feature {
+    flex-direction: column;
+  }
+  section#about-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: fit-content;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  section#about-container p.about-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  section#about-container div.about-outer-container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 2.5rem;
+  }
+  section#about-container div.about-outer-container p.about-text {
+    text-align: center;
+    font-size: 1rem;
+  }
+  footer {
+    flex-direction: column;
+  }
+  section.login-page {
+    padding: 0%;
+  }
+  section.login-page nav {
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+  }
+  section.login-page nav a {
+    width: fit-content;
+  }
+  section.login-page nav a img {
+    width: 50%;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 28rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 18rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card a {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div#preloader div.preloader-image img {
+    width: 2.5rem;
+  }
+  nav {
+    width: 100vw;
+    gap: 40%;
+    border: none;
+    padding: .5rem 0rem;
+  }
+  nav a img.navigation-logo {
+    width: 8rem;
+  }
+  nav ul.navigation-list {
+    top: 6%;
+    left: 100%;
+  }
+  nav ul.navigation-list li.navigation-item-list {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--third-color);
+    transition: .2s all;
+  }
+  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link span.navigation-slide {
+    display: flex;
+    width: 0%;
+    height: 3px;
+    border-radius: 5rem;
+    background-color: var(--third-color);
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover {
+    color: var(--third-color);
+  }
+  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover span.navigation-slide {
+    width: 100%;
+    transition: width .25s ease-in-out;
+  }
+  nav ul.navigation-list li.login-list {
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    height: fit-content;
+    padding: .5rem;
+    align-items: center;
+    border-radius: .25rem;
+    background-color: var(--fourth-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link {
+    color: var(--primary-color);
+  }
+  nav ul.navigation-list li.login-list a.login-link span.login-slide {
+    display: none;
+  }
+  nav ul.navigation-list li.login-list:hover {
+    background-color: var(--third-color);
+  }
+  nav ul.navigation-list li.login-list:hover a.login-link:hover {
+    color: var(--fifth-color);
+  }
+  nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
+    color: var(--secondary-color);
+  }
+  nav ul.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    cursor: pointer;
+  }
+  nav ul.hamburger-lines li {
+    width: 2rem;
+    height: .25rem;
+    border-radius: 1rem;
+    background-color: black;
+  }
+  section#feature-container p.feature-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  section#feature-container div.feature-inner-container p.feature-text {
+    font-size: 1rem;
+  }
+  section#about-container p.about-title {
+    font-size: 2.5rem;
+  }
+  section#about-container div.about-outer-container p.about-text {
+    font-size: 1rem;
+  }
+  footer {
+    width: 90vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  section.login-page {
+    justify-content: center;
+    padding: 0%;
+  }
+  section.login-page nav {
+    width: 100vw;
+    height: 3vh;
+    align-items: center;
+  }
+  section.login-page nav a img {
+    width: 30%;
+  }
+  section.login-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 20rem;
+    overflow: hidden;
+  }
+  section.login-page div.form-collection div.form-container div.form-card {
+    gap: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card p.form-title {
+    font-size: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group {
+    gap: 1rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 12rem;
+    height: 1.5rem;
+  }
+  section.login-page div.form-collection div.form-container div.form-card a {
+    font-size: 1.25rem;
+  }
+  section.login-page div.form-collection div.form-container div.footer-container button {
+    font-size: 2rem;
+  }
+  section.login-page div.form-collection div.login-form {
+    display: flex;
+  }
+  section.login-page div.form-collection div.signup-form {
+    display: none;
+    height: 22rem;
   }
 }
 

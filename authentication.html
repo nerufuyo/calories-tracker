@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Bar Infromation -->
+     <title>Login :: Calories Tracker</title>
+     <link rel="icon" href="assets/images/icons/calorie-icon.ico">
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Links -->
+     <link rel="stylesheet" href="assets/style/style.css">
+     <!-- Scripts -->
+     <script src="https://kit.fontawesome.com/6f3c04f8e8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-image">
+            <img src="assets/images/loading-food-first.svg" class="first-image">
+            <img src="assets/images/loading-food-second.svg" class="second-image">
+            <img src="assets/images/loading-food-third.svg" class="third-image">
+            <img src="assets/images/loading-food-fourth.svg" class="fourth-image">
+            <img src="assets/images/loading-food-fifth.svg"class="fifth-image">
+        </div>
+        <p class="preloader-text">Now Loading</p>
+    </div>
+
+   <!-- Main Section -->
+   <section class="auth-page">
+      <!-- Navigation -->
+      <nav>
+         <a href="index.html"><img src="assets/images/calories-logo.png" alt=""></a>
+      </nav>
+      <!-- Hero -->
+      <div class="auth-hero">
+         <img src="assets/images/loading-food-fourth.svg" alt="">
+      </div>
+      <!-- Form Section -->
+      <div class="form-collection">
+         <!-- Log In Page -->
+         <div class="form-container login-form">
+            <div class="form-card">
+               <p class="form-title">Log in</p>
+               <div class="form-input-group">
+                  <input id="emails" type="email" placeholder="Email">
+                  <input id="passwords" type="password" placeholder="Password">
+               </div>
+               <p href="" id="dont-have-account" class="link-button">Don't Have An Account?</p>
+            </div>
+            <div class="footer-container">
+               <button id="login" type="submit" value="Login">LOG IN</button>
+            </div>
+         </div>
+          <!-- Sign Up Page -->
+          <div class="form-container signup-form">
+            <div class="form-card">
+               <p class="form-title">Sign Up</p>
+               <div class="form-input-group">
+                  <input id="fullname" type="text" placeholder="Full Name">
+                  <input id="email" type="email" placeholder="Email">
+                  <input id="password" type="password" placeholder="Password">
+               </div>
+               <p href="#" id="have-account" class="link-button">Already Have An Account?</p>
+            </div>
+            <div class="footer-container">
+               <button id="signup" type="submit" value="Sign Up">SIGN UP</button>
+            </div>
+         </div>
+      </div>
+   </section>
+
+     <!-- Scripts -->
+     <!-- <script src="assets/script/function.js" type="module"></script> -->
+     <script src="assets/script/app.js" type="module"></script>
+</body>
+</html>

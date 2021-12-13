@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Bar Infromation -->
+     <title>User Profile :: Calories Tracker</title>
+     <link rel="icon" href="assets/images/icons/calorie-icon.ico">
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Links -->
+     <link rel="stylesheet" href="assets/style/style.css">
+     <!-- Scripts -->
+     <script src="https://kit.fontawesome.com/6f3c04f8e8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <!-- Main Section -->
+   <section class="user-profile">
+        <p>User Profile</p>
+        <div class="profile-container">
+          <div class="image-card">
+               <img id="image-preview" class="image-preview"></img>
+               <div class="image-button-group">
+                    <p id="image-extension"></p>
+                    <input id="image-select" class="image-select" type="file">
+                    <button id="image-upload" class="image-upload" type="submit">Upload</button>
+                    <button class="image-delete">Delete</button>
+               </div>
+          </div>
+          <div class="profile-card" id="profile-card">
+               <div class="profile-item-card">
+                    <p class="profile-title" id="profile-title">Name</p>
+                    <input id="profile-fullname-input" class="profile-input" type="text" disabled>
+               </div>
+               <div class="profile-item-card">
+                    <p class="profile-title">Email</p>
+                    <input id="profile-email-input" class="profile-input" type="email" disabled>
+               </div>
+               <div class="profile-item-card">
+                    <p class="profile-title">Birth</p>
+                    <input id="profile-birth-input" class="profile-input" type="date" disabled>
+               </div>
+               <div class="profile-item-card">
+                    <p class="profile-title">Gender</p>
+                    <select name="" class="profile-input" id="profile-gender-input" disabled>
+                         <option value="Male">Male</option>
+                         <option value="Female">Female</option>
+                    </select>
+               </div>
+               <div class="profile-item-card">
+                    <p class="profile-title">Height</p>
+                    <input id="profile-height-input" class="profile-input" min="1" type="number" disabled>
+               </div>
+               <div class="profile-item-card">
+                    <p class="profile-title">Weight</p>
+                    <input id="profile-weight-input" class="profile-input" min="1" type="number" disabled>
+               </div>
+               <div class="profile-button-group">
+                    <button id="profile-save-button">Save</button>
+                    <button id="profile-cancel-button">Cancel</button>
+               </div>
+               <button id="profile-edit-button">Edit</button>
+          </div>
+        </div>
+        <button id="logout" value="logout">LOG OUT</button>
+     </section>
+
+     <!-- Scripts -->
+     <script src="assets/script/app.js" type="module"></script>
+</body>
+</html>
