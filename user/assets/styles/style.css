@@ -699,6 +699,22 @@ main.shift {
 }
 
 /* ---- Set Goal ---- */
+.goal__form .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: -10px;
+  font-size: 0.75rem;
+  color: #808080;
+}
+
+.goal__form .info a {
+  text-decoration: none;
+}
+
 .set-goal-button {
   background-color: #007bff;
   border: 1px solid #007bff;

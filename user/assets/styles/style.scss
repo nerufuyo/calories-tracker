@@ -598,6 +598,20 @@ main {
 }
 
 /* ---- Set Goal ---- */
+.goal__form {
+  .info {
+    display: flex;
+    justify-content: end;
+    margin-top: -10px;
+    font-size: 0.75rem;
+    color: #808080;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
 .set-goal-button__container {
   @extend .add-food-button__container;
 }

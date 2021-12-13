@@ -28,6 +28,7 @@ class GoalView {
         <div>/ day</div>
       </div>
     </label>
+    <div class="info"><span>*Calories recommendation according to <a href="https://www.fda.gov/media/112972/download" target="_blank">fda.gov</a></span></div>
 
     <div class="set-goal-button__container">
       <button class="set-goal-button"><i class="far fa-plus-square"></i> Set Goal</button>
