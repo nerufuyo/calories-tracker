@@ -22,14 +22,14 @@ body {
   box-sizing: border-box;
 }
 
-.add-button {
+.add-food-link {
   border: none;
   background-color: none;
 
   & a {
     background-color: #007bff;
     padding: 10px;
-    border-color: #007bff;
+    border: 1px solid #007bff;
     border-radius: 5px;
     text-decoration: none;
     color: white;
@@ -41,6 +41,24 @@ body {
     &:hover {
       background-color: #0069D9;
     }
+  }
+}
+
+.add-food-button {
+  padding: 10px;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+
+  & i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #0069D9;
   }
 }
 
@@ -507,6 +525,79 @@ main {
   & div:nth-child(1) {
     text-align: left;
   }
+}
+
+/* ---- Add Food ---- */
+.add-food__form {
+  label {
+    display: block;
+  }
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  gap: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #DADCE0;
+  width: 100%;
+}
+
+.date__input {
+  .form-input {
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.input-name {
+  min-width: 150px;
+}
+
+.form-input {
+  flex-grow: 1;
+
+  input {
+    display: block;
+    padding: 5px;
+    border: none;
+    width: 100%;
+    text-align: right;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &[type="date"] {
+      width: 230px;
+    }
+  }
+
+  select {
+    display: block;
+    padding: 5px;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    text-align-last: right;
+  }
+
+  option {
+    text-align: right;
+  }
+}
+
+.food-name__input {
+  padding: 5px;
+}
+
+.add-food-button__container {
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
 }
 
 /* ---- Footer ---- */
