@@ -585,14 +585,12 @@ section.user-profile {
                     display: flex;
                     width: 0%;
                     height: 0%;
-                    opacity: 0;
                 }
 
                 p#image-extension {
                     display: flex;
                     width: 0%;
                     height: 0%;
-                    opacity: 0;
                 }
 
                 input.image-select {
@@ -671,7 +669,68 @@ section.user-profile {
     }
 }
 
+// Food Page 
+section.user-profile {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    gap: 1rem;
 
+    div.food-outter-container {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        padding: 1rem;
+        gap: .5rem;
+        border-radius: 1rem;
+        border: 2px solid blue;
+
+        div.food-inner-container {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            p.food-title {
+                width: 10rem;
+                font-size: 1.5rem;
+            }
+
+            input.food-input {
+                width: 20rem;
+                height: 2rem;
+                padding: 0rem .25rem;
+                font-size: 1rem;
+            }
+
+            select.food-input {
+                width: 20.8rem;
+                height: 2rem;
+                color: black;
+            }
+        }
+
+        div.food-button-group {
+            display: none;
+            width: 32rem;
+            gap: 1rem;
+
+            button {
+                width: 16rem ;
+                height: 2rem;
+            }
+        }
+
+        button.add-food-button {
+            display: flex;
+            width: 32rem;
+            height: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
 
 // Animation
 @keyframes fade-out {

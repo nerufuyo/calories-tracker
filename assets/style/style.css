@@ -561,14 +561,12 @@ section.user-profile div.profile-container div.image-card div.image-button-group
   display: flex;
   width: 0%;
   height: 0%;
-  opacity: 0;
 }
 
 section.user-profile div.profile-container div.image-card div.image-button-group p#image-extension {
   display: flex;
   width: 0%;
   height: 0%;
-  opacity: 0;
 }
 
 section.user-profile div.profile-container div.image-card div.image-button-group input.image-select {
@@ -640,6 +638,68 @@ section.user-profile button#logout {
   padding: 1rem;
   cursor: pointer;
   overflow: hidden;
+}
+
+section.user-profile {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  gap: 1rem;
+}
+
+section.user-profile div.food-outter-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  gap: .5rem;
+  border-radius: 1rem;
+  border: 2px solid blue;
+}
+
+section.user-profile div.food-outter-container div.food-inner-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+section.user-profile div.food-outter-container div.food-inner-container p.food-title {
+  width: 10rem;
+  font-size: 1.5rem;
+}
+
+section.user-profile div.food-outter-container div.food-inner-container input.food-input {
+  width: 20rem;
+  height: 2rem;
+  padding: 0rem .25rem;
+  font-size: 1rem;
+}
+
+section.user-profile div.food-outter-container div.food-inner-container select.food-input {
+  width: 20.8rem;
+  height: 2rem;
+  color: black;
+}
+
+section.user-profile div.food-outter-container div.food-button-group {
+  display: none;
+  width: 32rem;
+  gap: 1rem;
+}
+
+section.user-profile div.food-outter-container div.food-button-group button {
+  width: 16rem;
+  height: 2rem;
+}
+
+section.user-profile div.food-outter-container button.add-food-button {
+  display: flex;
+  width: 32rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes fade-out {
