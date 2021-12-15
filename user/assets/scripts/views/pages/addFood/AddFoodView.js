@@ -49,7 +49,7 @@ class AddFoodView {
           </div>
         </label>
         <div class="add-food-button__container">
-          <button class="add-button add-food-button" ><i class="far fa-plus-square"></i> Add Food</button>
+          <button class="add-food-button"><i class="far fa-plus-square"></i> Add Food</button>
         </div>
       </form>
     `

@@ -19,7 +19,7 @@ class FoodDiaryView {
           <div class="date-picker-button date-picker-next"><i class="fas fa-angle-right"></i></div>
         </div>
         <div class="add-food-link__container">
-          <button class="add-button add-food-link"><a href="#/add-food"><i class="far fa-plus-square"></i> Add Food</a></button>
+          <button class="add-food-link"><a href="#/add-food"><i class="far fa-plus-square"></i> Add Food</a></button>
         </div>
       </div>
 
@@ -59,8 +59,8 @@ class FoodDiaryView {
             <div>200g</div>
             <div>300</div>
             <div class="button-container">
-              <button class="edit-button edit-button-sm edit-button-link"><a href="#/edit-food"><i class="far fa-edit"></i> Edit</a></button>
-              <button class="delete-button"><i class="fas fa-trash-alt"></i> Delete</button>
+              <button class="edit-food-link"><a href="#/edit-food"><i class="far fa-edit"></i> Edit</a></button>
+              <button class="delete-food-button"><i class="fas fa-trash-alt"></i> Delete</button>
             </div>
           </div>
           <div class="food-data">
@@ -68,8 +68,8 @@ class FoodDiaryView {
             <div>300g</div>
             <div>500</div>
             <div class="button-container">
-              <button class="edit-button edit-button-sm edit-button-link"><a href="#/edit-food"><i class="far fa-edit"></i> Edit</a></button>
-              <button class="delete-button"><i class="fas fa-trash-alt"></i> Delete</button>
+              <button class="edit-food-link"><a href="#/edit-food"><i class="far fa-edit"></i> Edit</a></button>
+              <button class="delete-food-button"><i class="fas fa-trash-alt"></i> Delete</button>
             </div>
           </div>
         </div>

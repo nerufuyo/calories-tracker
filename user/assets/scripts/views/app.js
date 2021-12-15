@@ -41,6 +41,9 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
 
+    this._pageTitle.innerHTML = '';
+    this._pageContent.innerHTML = '';
+
     const {title, content} = await page.render();
     this._pageTitle.innerHTML = title;
     this._pageContent.innerHTML = content;
