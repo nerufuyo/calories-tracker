@@ -709,6 +709,40 @@ main {
   text-align: center;
 }
 
+/* ---- Edit Profile ---- */
+.edit-profile__form {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  @extend .add-food__form;
+}
+
+.profile-photo__container {
+  flex-basis: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.user-profile__container {
+  flex-grow: 1;
+}
+
+.edit-profile-button__container {
+  @extend .add-food-button__container;
+}
+
+.edit-profile-button {
+  @include edit-button;
+  padding: 10px;
+}
+
+
 /* ---- Footer ---- */
 footer {
   position: absolute;

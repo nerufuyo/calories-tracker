@@ -588,11 +588,11 @@ main.shift {
 }
 
 /* ---- Add Food ---- */
-.add-food__form label, .edit-food__form label, .goal__form label {
+.add-food__form label, .edit-food__form label, .goal__form label, .edit-profile__form label {
   display: block;
 }
 
-.add-food__form .input-group, .edit-food__form .input-group, .goal__form .input-group {
+.add-food__form .input-group, .edit-food__form .input-group, .goal__form .input-group, .edit-profile__form .input-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -606,7 +606,7 @@ main.shift {
   width: 100%;
 }
 
-.add-food__form .date__input .form-input, .edit-food__form .date__input .form-input, .goal__form .date__input .form-input {
+.add-food__form .date__input .form-input, .edit-food__form .date__input .form-input, .goal__form .date__input .form-input, .edit-profile__form .date__input .form-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -615,17 +615,17 @@ main.shift {
           justify-content: end;
 }
 
-.add-food__form .input-name, .edit-food__form .input-name, .goal__form .input-name {
+.add-food__form .input-name, .edit-food__form .input-name, .goal__form .input-name, .edit-profile__form .input-name {
   min-width: 150px;
 }
 
-.add-food__form .form-input, .edit-food__form .form-input, .goal__form .form-input {
+.add-food__form .form-input, .edit-food__form .form-input, .goal__form .form-input, .edit-profile__form .form-input {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
-.add-food__form .form-input input, .edit-food__form .form-input input, .goal__form .form-input input {
+.add-food__form .form-input input, .edit-food__form .form-input input, .goal__form .form-input input, .edit-profile__form .form-input input {
   display: block;
   padding: 5px;
   border: none;
@@ -634,16 +634,16 @@ main.shift {
   font-size: 1rem;
 }
 
-.add-food__form .form-input input:focus, .edit-food__form .form-input input:focus, .goal__form .form-input input:focus {
+.add-food__form .form-input input:focus, .edit-food__form .form-input input:focus, .goal__form .form-input input:focus, .edit-profile__form .form-input input:focus {
   outline: none;
   border: none;
 }
 
-.add-food__form .form-input input[type="date"], .edit-food__form .form-input input[type="date"], .goal__form .form-input input[type="date"] {
+.add-food__form .form-input input[type="date"], .edit-food__form .form-input input[type="date"], .goal__form .form-input input[type="date"], .edit-profile__form .form-input input[type="date"] {
   width: 230px;
 }
 
-.add-food__form .form-input select, .edit-food__form .form-input select, .goal__form .form-input select {
+.add-food__form .form-input select, .edit-food__form .form-input select, .goal__form .form-input select, .edit-profile__form .form-input select {
   display: block;
   padding: 5px;
   border: none;
@@ -652,20 +652,20 @@ main.shift {
   text-align-last: right;
 }
 
-.add-food__form .form-input select:focus, .edit-food__form .form-input select:focus, .goal__form .form-input select:focus {
+.add-food__form .form-input select:focus, .edit-food__form .form-input select:focus, .goal__form .form-input select:focus, .edit-profile__form .form-input select:focus {
   border: none;
   outline: none;
 }
 
-.add-food__form .form-input option, .edit-food__form .form-input option, .goal__form .form-input option {
+.add-food__form .form-input option, .edit-food__form .form-input option, .goal__form .form-input option, .edit-profile__form .form-input option {
   text-align: right;
 }
 
-.add-food__form .food-name__input, .edit-food__form .food-name__input, .goal__form .food-name__input {
+.add-food__form .food-name__input, .edit-food__form .food-name__input, .goal__form .food-name__input, .edit-profile__form .food-name__input {
   padding: 5px;
 }
 
-.add-food-button__container, .edit-food-button__container, .set-goal-button__container {
+.add-food-button__container, .edit-food-button__container, .set-goal-button__container, .edit-profile-button__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -815,6 +815,54 @@ main.shift {
 .summary-calories-percentage {
   font-weight: 500;
   text-align: center;
+}
+
+/* ---- Edit Profile ---- */
+.edit-profile__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  width: 100%;
+}
+
+.profile-photo__container {
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.profile-photo__container img {
+  width: 100%;
+}
+
+.user-profile__container {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.edit-profile-button {
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.edit-profile-button:hover {
+  background-color: #138496;
 }
 
 /* ---- Footer ---- */

@@ -4,6 +4,7 @@ import EditFood from "../views/pages/EditFood.js";
 import FoodDiary from "../views/pages/FoodDiary.js";
 import Goal from "../views/pages/Goal.js";
 import Summary from "../views/pages/summary.js";
+import EditProfile from '../views/pages/EditProfile.js';
 
 const routes = {
   '/': Dashboard,
@@ -13,6 +14,7 @@ const routes = {
   '/edit-food': EditFood,
   '/goal': Goal,
   '/summary': Summary,
+  '/edit-profile': EditProfile,
 }
 
 export default routes;
