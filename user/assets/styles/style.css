@@ -588,11 +588,11 @@ main.shift {
 }
 
 /* ---- Add Food ---- */
-.add-food__form label, .edit-food__form label {
+.add-food__form label, .edit-food__form label, .goal__form label {
   display: block;
 }
 
-.add-food__form .input-group, .edit-food__form .input-group {
+.add-food__form .input-group, .edit-food__form .input-group, .goal__form .input-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -606,7 +606,7 @@ main.shift {
   width: 100%;
 }
 
-.add-food__form .date__input .form-input, .edit-food__form .date__input .form-input {
+.add-food__form .date__input .form-input, .edit-food__form .date__input .form-input, .goal__form .date__input .form-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -615,17 +615,17 @@ main.shift {
           justify-content: end;
 }
 
-.add-food__form .input-name, .edit-food__form .input-name {
+.add-food__form .input-name, .edit-food__form .input-name, .goal__form .input-name {
   min-width: 150px;
 }
 
-.add-food__form .form-input, .edit-food__form .form-input {
+.add-food__form .form-input, .edit-food__form .form-input, .goal__form .form-input {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
-.add-food__form .form-input input, .edit-food__form .form-input input {
+.add-food__form .form-input input, .edit-food__form .form-input input, .goal__form .form-input input {
   display: block;
   padding: 5px;
   border: none;
@@ -634,16 +634,16 @@ main.shift {
   font-size: 1rem;
 }
 
-.add-food__form .form-input input:focus, .edit-food__form .form-input input:focus {
+.add-food__form .form-input input:focus, .edit-food__form .form-input input:focus, .goal__form .form-input input:focus {
   outline: none;
   border: none;
 }
 
-.add-food__form .form-input input[type="date"], .edit-food__form .form-input input[type="date"] {
+.add-food__form .form-input input[type="date"], .edit-food__form .form-input input[type="date"], .goal__form .form-input input[type="date"] {
   width: 230px;
 }
 
-.add-food__form .form-input select, .edit-food__form .form-input select {
+.add-food__form .form-input select, .edit-food__form .form-input select, .goal__form .form-input select {
   display: block;
   padding: 5px;
   border: none;
@@ -652,16 +652,16 @@ main.shift {
   text-align-last: right;
 }
 
-.add-food__form .form-input select:focus, .edit-food__form .form-input select:focus {
+.add-food__form .form-input select:focus, .edit-food__form .form-input select:focus, .goal__form .form-input select:focus {
   border: none;
   outline: none;
 }
 
-.add-food__form .form-input option, .edit-food__form .form-input option {
+.add-food__form .form-input option, .edit-food__form .form-input option, .goal__form .form-input option {
   text-align: right;
 }
 
-.add-food__form .food-name__input, .edit-food__form .food-name__input {
+.add-food__form .food-name__input, .edit-food__form .food-name__input, .goal__form .food-name__input {
   padding: 5px;
 }
 

@@ -607,6 +607,8 @@ main {
 
 /* ---- Set Goal ---- */
 .goal__form {
+  @extend .add-food__form;
+
   .info {
     display: flex;
     justify-content: end;
