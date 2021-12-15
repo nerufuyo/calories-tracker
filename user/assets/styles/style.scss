@@ -742,6 +742,19 @@ main {
   padding: 10px;
 }
 
+/* ---- Edit Password ---- */
+.edit-password__form {
+  @extend .add-food__form;
+}
+
+.edit-password-button__container {
+  @extend .add-food-button__container;
+}
+
+.edit-password-button {
+  @include edit-button;
+  padding: 10px;
+}
 
 /* ---- Footer ---- */
 footer {
