@@ -9,10 +9,15 @@ import {auth, database, signUpNewUser,
   switchFromSignUpForm,
   hamburgerMenu,
   preloader,
-  removeAttributDisabled,
-  setAttributeDisable,
+  removeProfileAttributDisabled,
+  setProfileAttributeDisable,
   selectPhotoProfile,
-  uploadPhotoProfile} from './function.js';
+  uploadPhotoProfile,
+  getCookie,
+  checkCookie,
+  updateFoodDiary,
+  removeFoodAttributDisabled,
+  setFoodAttributDisabled} from './function.js';
 
 // Preloader
 document.documentElement.addEventListener('load', preloader) || null;
@@ -26,14 +31,24 @@ if (hamburger !== null) {
 // Auth Page
 if (auth !== null) {
   onAuthStateChanged(auth, (user) => {
+    const databaseRef = ref(database, `users/${user.uid}/profile/`);
+    // const databaseFoodRef = ref(database, `users/${user.uid}/food_diary/${newDate}/${newTime}/`);
+    // User Profile Variable
     const fullname = document.getElementById('profile-fullname-input');
     const email = document.getElementById('profile-email-input');
     const birth = document.getElementById('profile-birth-input');
     const gender = document.getElementById('profile-gender-input');
     const height = document.getElementById('profile-height-input');
     const weight = document.getElementById('profile-weight-input');
-    const databaseRef = ref(database, `users/${user.uid}`);
+    const image = document.getElementById('image-preview');
+    // Food Diary Variable
+    // const foodName = document.getElementById('food-name-input');
+    // const foodSize = document.getElementById('food-size-input');
+    // const foodCategory = document.getElementById('food-category-input');
+    // const foodCalories = document.getElementById('food-calories-input');
+    // const foodDate = document.getElementById('food-date-input');
 
+    // User Profile Read
     onValue(databaseRef, (data) => {
       const obj = data.val();
       fullname.value = obj['fullname'];
@@ -42,7 +57,18 @@ if (auth !== null) {
       gender.value = obj['gender'];
       height.value = obj['height'];
       weight.value = obj['weight'];
+      image.src = data.val().image_url;
     });
+
+    // Food Diary Read
+    // onValue(databaseFoodRef, (data) => {
+    //   const obj = data.val();
+    //   foodName.value = obj['food_name'];
+    //   foodSize.value = obj['food_size'];
+    //   foodCategory.value = obj['food_category'];
+    //   foodCalories.value = obj['food_calories'];
+    //   foodDate.value = obj['food_date'];
+    // });
   });
 }
 
@@ -71,6 +97,21 @@ if (logoutButton !== null) {
   logoutButton.addEventListener('click', logOutUser);
 }
 
+// Cookie Page Load
+const foodDiaryPage = document.getElementById('food-diary') || null;
+if (foodDiaryPage !== null) {
+  if (getCookie('user') === '') {
+    window.location.href = 'authentication.html';
+  }
+}
+
+const userProfilePage = document.getElementById('user-profile') || null;
+if (userProfilePage !== null) {
+  if (getCookie('user') === '') {
+    window.location.href = 'authentication.html';
+  }
+}
+
 // User Profile Page
 const saveButton = document.getElementById('profile-save-button') || null;
 if (saveButton !== null) {
@@ -79,12 +120,12 @@ if (saveButton !== null) {
 
 const editProfileButton = document.getElementById('profile-edit-button') || null;
 if (editProfileButton !== null) {
-  editProfileButton.addEventListener('click', removeAttributDisabled);
+  editProfileButton.addEventListener('click', removeProfileAttributDisabled);
 }
 
 const cancelProfileButton = document.getElementById('profile-cancel-button') || null;
 if (cancelProfileButton !== null) {
-  cancelProfileButton.addEventListener('click', setAttributeDisable);
+  cancelProfileButton.addEventListener('click', setProfileAttributeDisable);
 }
 
 const selectProfileImageButton = document.getElementById('image-select') || null;
@@ -95,4 +136,20 @@ if (selectProfileImageButton !== null) {
 const uploadProfileImageButton = document.getElementById('image-upload') || null;
 if (uploadProfileImageButton !== null) {
   uploadProfileImageButton.addEventListener('click', uploadPhotoProfile);
+}
+
+// Food Diary Page
+const saveFoodDiaryButton = document.getElementById('save-food-button') || null;
+if (saveFoodDiaryButton !== null) {
+  saveFoodDiaryButton.addEventListener('click', updateFoodDiary);
+}
+
+const editFoodDiaryButton = document.getElementById('add-food-button') || null;
+if (editFoodDiaryButton !== null) {
+  editFoodDiaryButton.addEventListener('click', removeFoodAttributDisabled);
+}
+
+const cancelFoodDiaryButton = document.getElementById('cancel-food-button') || null;
+if (cancelFoodDiaryButton !== null) {
+  cancelFoodDiaryButton.addEventListener('click', setFoodAttributDisabled);
 }

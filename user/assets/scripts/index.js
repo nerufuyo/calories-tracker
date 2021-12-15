@@ -19,7 +19,6 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-
   DateHelper.setMonthDaysPrototype();
 
   CookieHelper.setCookie({
