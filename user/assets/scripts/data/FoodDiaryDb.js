@@ -1,21 +1,9 @@
 // const FoodDiaryDb = {
-//   async addFood() {
-//     onAuthStateChanged(auth, (user) => {
-//       thingsRef.add({
-//         uid: user.uid,
-//         name: faker.commerce.productName(),
-//         createdAt: serverTimestamp()
-//       });
-//     })
-//   }
+  // add( { name, serving_size, calories, category, date} )
+  // update( { name, serving_size, calories, category, date} )
+  // delete(id)
+  // getById(id)
+  // getByDateRange( { startDate, endDate } )
+// }; 
 
-//   async editFood() {
-//     onAuthStateChanged(auth, (user) => {
-//       thingsRef.add({
-//         uid: user.uid,
-//         name: faker.commerce.productName(),
-//         createdAt: serverTimestamp()
-//       });
-//     })
-//   }
-// };
+// export default FoodDiaryDb;
