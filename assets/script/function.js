@@ -3,12 +3,12 @@
 /* eslint-disable require-jsdoc */
 import {connectToDatabase} from './database-connector.js';
 import {getStorage, ref as refStorage, uploadBytes, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
-import {getDatabase, set, ref, update, onValue} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js';
+import {getFirestore, collection, updateDoc, getDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 // Initialize Firebase
 export const app = connectToDatabase();
-export const database = getDatabase(app);
+export const database = getFirestore(app);
 export const storage = getStorage(app);
 export const auth = getAuth();
 const files = [];
@@ -51,14 +51,14 @@ export async function signUpNewUser() {
     alert('Please fill all fields!');
   } else {
     createUserWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
           const user = userCredential.user;
+          const databaseRef = doc(database, `userProfile`, `${user.uid}`);
 
-          set(ref(database, `users/${user.uid}/profile/`), {
+          setDoc(databaseRef, {
             fullname: fullname.value,
             email: email.value,
           });
-          alert('User Created!');
         })
 
         .catch((error) => {
@@ -66,9 +66,6 @@ export async function signUpNewUser() {
           alert(errorMessage);
         });
   }
-  sendEmailVerification(auth.currentUser).then(() => {
-    // Email verification sent!
-  });
 }
 
 export function loginUser() {
@@ -79,18 +76,17 @@ export function loginUser() {
     alert('Please fill all fields!');
   } else {
     signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
           const user = userCredential.user;
+          const databaseRef = doc(database, `userProfile`, `${user.uid}`);
           const date = new Date();
 
-          update(ref(database, `users/${user.uid}/profile/`), {
-            last_login: date,
-          });
+          await updateDoc(databaseRef, {last_login: date});
+          console.log(date);
           alert('User Logged in!');
           document.cookie = `user= ${user.uid}; expires=Thu, 18 Dec 2012`;
           // window.location.href = 'user-profile.html';
           window.location.href = 'food-diary.html';
-          console.log(user);
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -129,7 +125,8 @@ export function switchFromSignUpForm() {
 
 // Profile CRUD
 export function updateProfile() {
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
+    const databaseRef = doc(database, `userProfile`, `${user.uid}`);
     const fullname = document.getElementById('profile-fullname-input');
     const email = document.getElementById('profile-email-input');
     const birth = document.getElementById('profile-birth-input');
@@ -139,7 +136,7 @@ export function updateProfile() {
     const buttonGroup =document.querySelector('div.profile-button-group');
     const editButton = document.getElementById('profile-edit-button');
 
-    update(ref(database, `users/${user.uid}/profile/`), {
+    await updateDoc(databaseRef, {
       fullname: fullname.value,
       email: email.value,
       birth: birth.value,
@@ -147,6 +144,7 @@ export function updateProfile() {
       height: height.value,
       weight: weight.value,
     });
+
     alert('Data Upadated!');
     fullname.disabled = true;
     email.disabled = true;
@@ -248,8 +246,9 @@ function validateFileName() {
 }
 
 // Food CRUD
-export function updateFoodDiary() {
-  onAuthStateChanged(auth, (user) => {
+export function addFoodDiary() {
+  onAuthStateChanged(auth, async (user) => {
+    const dateObj = new Date();
     // Element Variable
     const foodName = document.getElementById('food-name-input');
     const foodSize = document.getElementById('food-size-input');
@@ -259,7 +258,6 @@ export function updateFoodDiary() {
     const buttonGroup =document.getElementById('food-button-group');
     const editButton = document.getElementById('add-food-button');
     // Date Variable
-    const dateObj = new Date();
     const second = dateObj.getUTCSeconds();
     const minutes = dateObj.getUTCMinutes();
     const hour = dateObj.getUTCHours();
@@ -268,15 +266,19 @@ export function updateFoodDiary() {
     const year = dateObj.getUTCFullYear();
     const newTime = `food_time_${hour}:${minutes}:${second}`;
     const newDate = `food_date_${day}:${month}:${year}`;
+    const databaseRef = collection(database, `foodDiaries`);
+
 
     if (foodName.value, foodSize.value, foodCalories.value, foodCategory.value, foodDate.value !== '') {
-      set(ref(database, `users/${user.uid}/food_diary/${newDate}/${newTime}/`), {
+      await addDoc(databaseRef, {
+        user_id: user.uid,
         food_name: foodName.value,
         food_size: foodSize.value,
         food_category: foodCategory.value,
         food_calories: foodCalories.value,
         food_date: foodDate.value,
       });
+
       alert('Food Updated!');
       foodName.disabled = true;
       foodSize.disabled = true;
@@ -289,6 +291,10 @@ export function updateFoodDiary() {
       alert('Fill All Fields!');
     }
   });
+}
+
+export function getFoodDiary() {
+
 }
 
 // Style
@@ -364,7 +370,43 @@ export function removeFoodAttributDisabled() {
   const foodCalories = document.getElementById('food-calories-input');
   const foodDate = document.getElementById('food-date-input');
   const buttonGroup = document.getElementById('food-button-group');
-  const editButton = document.getElementById('add-food-button');
+  const addButton = document.getElementById('add-food-button');
+
+  foodName.disabled = false;
+  foodSize.disabled = false;
+  foodCategory.disabled = false;
+  foodCalories.disabled = false;
+  foodDate.disabled = false;
+  buttonGroup.style.display = 'flex';
+  addButton.style.display = 'none';
+}
+
+export function setFoodAttributDisabled() {
+  const foodName = document.getElementById('food-name-input');
+  const foodSize = document.getElementById('food-size-input');
+  const foodCategory = document.getElementById('food-category-input');
+  const foodCalories = document.getElementById('food-calories-input');
+  const foodDate = document.getElementById('food-date-input');
+  const buttonGroup = document.getElementById('food-button-group');
+  const addButton = document.getElementById('add-food-button');
+
+  foodName.disabled = true;
+  foodSize.disabled = true;
+  foodCategory.disabled = true;
+  foodCalories.disabled = true;
+  foodDate.disabled = true;
+  buttonGroup.style.display = 'none';
+  addButton.style.display = 'flex';
+}
+
+export function removeEditFoodAttributDisabled() {
+  const foodName = document.getElementById('food-name-edit-input');
+  const foodSize = document.getElementById('food-size-edit-input');
+  const foodCategory = document.getElementById('food-category-edit-input');
+  const foodCalories = document.getElementById('food-calories-edit-input');
+  const foodDate = document.getElementById('food-date-edit-input');
+  const buttonGroup = document.getElementById('food-edit-button-group');
+  const editButton = document.getElementById('edit-food-button');
 
   foodName.disabled = false;
   foodSize.disabled = false;
@@ -375,14 +417,14 @@ export function removeFoodAttributDisabled() {
   editButton.style.display = 'none';
 }
 
-export function setFoodAttributDisabled() {
-  const foodName = document.getElementById('food-name-input');
-  const foodSize = document.getElementById('food-size-input');
-  const foodCategory = document.getElementById('food-category-input');
-  const foodCalories = document.getElementById('food-calories-input');
-  const foodDate = document.getElementById('food-date-input');
-  const buttonGroup = document.getElementById('food-button-group');
-  const editButton = document.getElementById('add-food-button');
+export function setEditFoodAttributDisabled() {
+  const foodName = document.getElementById('food-name-edit-input');
+  const foodSize = document.getElementById('food-size-edit-input');
+  const foodCategory = document.getElementById('food-category-edit-input');
+  const foodCalories = document.getElementById('food-calories-edit-input');
+  const foodDate = document.getElementById('food-date-edit-input');
+  const buttonGroup = document.getElementById('food-edit-button-group');
+  const editButton = document.getElementById('edit-food-button');
 
   foodName.disabled = true;
   foodSize.disabled = true;

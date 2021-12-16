@@ -711,7 +711,7 @@ section.user-profile {
             }
         }
 
-        div.food-button-group {
+        div.food-button-group, .food-edit-button-group {
             display: none;
             width: 32rem;
             gap: 1rem;
@@ -722,7 +722,7 @@ section.user-profile {
             }
         }
 
-        button.add-food-button {
+        button.add-food-button, .delete-food-button, .edit-food-button {
             display: flex;
             width: 32rem;
             height: 2rem;

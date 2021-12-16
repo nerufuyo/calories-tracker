@@ -1,4 +1,4 @@
-import DateHelper from "../../../utils/DateHelper.js";
+import DateHelper from '../../../utils/DateHelper.js';
 
 class DashboardView {
   getTitleTemplate() {
@@ -44,11 +44,11 @@ class DashboardView {
   monthPickerListener(callback) {
     document.querySelector('.previous-month').addEventListener('click', (event) => {
       callback(event.target.dataset.date);
-    })
+    });
 
     document.querySelector('.next-month').addEventListener('click', (event) => {
       callback(event.target.dataset.date);
-    })
+    });
   }
 
   monthPickerDate(date) {
@@ -101,7 +101,7 @@ class DashboardView {
     const dPreviousYYYYMMDD = DateHelper.getPreviousMonth(DateHelper.getYYYYMMDD(d));
     const dPreviousDate = new Date(dPreviousYYYYMMDD);
     const dPreviousSplit = dPreviousYYYYMMDD.split('-');
-    
+
     let remainingDaysTemplate = '';
     for (let i = dPreviousDate.getMonthDays() - remainingDays + 1; i <= dPreviousDate.getMonthDays(); i++) {
       remainingDaysTemplate += `
@@ -121,7 +121,7 @@ class DashboardView {
     const remainingDays = DateHelper.nextMonthRemainingDays(DateHelper.getYYYYMMDD(d));
     const dNextYYYYMMDD = DateHelper.getNextMonth(DateHelper.getYYYYMMDD(d));
     const dNextSplit = dNextYYYYMMDD.split('-');
-    
+
     let remainingDaysTemplate = '';
     for (let i = 1; i <= remainingDays; i++) {
       remainingDaysTemplate += `
@@ -149,7 +149,7 @@ class DashboardView {
   showFoodCalories() {
     document.querySelectorAll('.total-calories__this-day').forEach((caloriesDay) => {
       caloriesDay.innerHTML = `${Math.round(Math.random() * (4000 - 2000)) + 2000}`;
-    })
+    });
   }
 }
 
