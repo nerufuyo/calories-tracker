@@ -7,9 +7,19 @@
         "google"
     ],
     "parserOptions": {
-        "ecmaVersion": 13,
+        "ecmaVersion": 2021,
         "sourceType": "module"
     },
     "rules": {
+        "linebreak-style": 0,
+        "require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": false,
+                "MethodDefinition": false,
+                "ClassDeclaration": false,
+                "ArrowFunctionExpression": false,
+                "FunctionExpression": false
+            }
+        }]
     }
 }
