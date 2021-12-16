@@ -2,6 +2,10 @@ import UserData from './data/UserData.js';
 import CookieHelper from './utils/CookieHelper.js';
 import DateHelper from './utils/DateHelper.js';
 import App from './views/App.js';
+import userLoginTest from './utils/UserLoginTest.js';
+import { firebaseConfig } from '../../../assets/script/globals/config.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
+import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 const app = new App({
   buttonUserProfile: document.querySelector('.user-profile__info'),
@@ -19,6 +23,8 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
+  userLoginTest();
+  
   DateHelper.setMonthDaysPrototype();
 
   CookieHelper.setCookie({
