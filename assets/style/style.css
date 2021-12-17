@@ -680,6 +680,12 @@ section.user-profile div.food-outter-container div.food-inner-container input.fo
 section.user-profile div.food-outter-container div.food-inner-container select.food-input {
   width: 20.8rem;
   height: 2rem;
+  font-size: 1rem;
+  color: black;
+}
+
+section.user-profile div.food-outter-container div.food-inner-container select.food-input option#food-id-edit-option {
+  font-size: 1rem;
   color: black;
 }
 

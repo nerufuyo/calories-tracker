@@ -257,21 +257,47 @@ export function addFoodDiary() {
     const foodDate = document.getElementById('food-date-input');
     const buttonGroup =document.getElementById('food-button-group');
     const editButton = document.getElementById('add-food-button');
-    // Date Variable
-    const second = dateObj.getUTCSeconds();
-    const minutes = dateObj.getUTCMinutes();
-    const hour = dateObj.getUTCHours();
-    const day = dateObj.getUTCDate();
-    const month = dateObj.getUTCMonth();
-    const year = dateObj.getUTCFullYear();
-    const newTime = `food_time_${hour}:${minutes}:${second}`;
-    const newDate = `food_date_${day}:${month}:${year}`;
-    const databaseRef = collection(database, `foodDiaries`);
-
 
     if (foodName.value, foodSize.value, foodCalories.value, foodCategory.value, foodDate.value !== '') {
       await addDoc(databaseRef, {
         user_id: user.uid,
+        food_name: foodName.value,
+        food_size: foodSize.value,
+        food_category: foodCategory.value,
+        food_calories: foodCalories.value,
+        food_date: foodDate.value,
+      });
+
+      alert('Food Added!');
+      foodName.disabled = true;
+      foodSize.disabled = true;
+      foodCategory.disabled = true;
+      foodCalories.disabled = true;
+      foodDate.disabled = true;
+      buttonGroup.style.display = 'none';
+      editButton.style.display = 'flex';
+    } else {
+      alert('Fill All Fields!');
+    }
+  });
+}
+
+export function updateFoodDiary() {
+  onAuthStateChanged(auth, async (user) => {
+    const dateObj = new Date();
+    // Element Variable
+    const foodId = document.getElementById('food-id-edit-input');
+    const foodName = document.getElementById('food-name-edit-input');
+    const foodSize = document.getElementById('food-size-edit-input');
+    const foodCategory = document.getElementById('food-category-edit-input');
+    const foodCalories = document.getElementById('food-calories-edit-input');
+    const foodDate = document.getElementById('food-date-edit-input');
+    const buttonGroup =document.getElementById('food-edit-button-group');
+    const editButton = document.getElementById('edit-food-button');
+    const databaseFoodRef = doc(database, `foodDiaries`, foodId.value);
+
+    if (foodName.value, foodSize.value, foodCalories.value, foodCategory.value, foodDate.value !== '') {
+      await updateDoc(databaseFoodRef, {
         food_name: foodName.value,
         food_size: foodSize.value,
         food_category: foodCategory.value,
@@ -291,10 +317,6 @@ export function addFoodDiary() {
       alert('Fill All Fields!');
     }
   });
-}
-
-export function getFoodDiary() {
-
 }
 
 // Style

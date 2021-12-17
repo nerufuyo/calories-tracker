@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import {getFirestore, collection, updateDoc, getDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
+import {getFirestore, collection, updateDoc, getDoc, addDoc, setDoc, getDocs, query, where, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 import {auth, database, signUpNewUser,
   loginUser,
@@ -19,7 +19,8 @@ import {auth, database, signUpNewUser,
   removeFoodAttributDisabled,
   setFoodAttributDisabled,
   removeEditFoodAttributDisabled,
-  setEditFoodAttributDisabled} from './function.js';
+  setEditFoodAttributDisabled,
+  updateFoodDiary} from './function.js';
 
 // Preloader
 document.documentElement.addEventListener('load', preloader) || null;
@@ -33,29 +34,23 @@ if (hamburger !== null) {
 // Auth State Changed
 if (auth !== null) {
   onAuthStateChanged(auth, async (user) => {
-    const databaseFoodRef = doc(database, `foodDiaries`);
+    // Profile Database
     const databaseRef = doc(database, `userProfile`, `${user.uid}`);
     const databaseRead = await getDoc(databaseRef);
-    const databaseFoodRead = await getDoc(databaseFoodRef);
-
-    // User Profile Variable
-    const fullname = document.getElementById('profile-fullname-input'); 
-    const email = document.getElementById('profile-email-input');
-    const birth = document.getElementById('profile-birth-input');
-    const gender = document.getElementById('profile-gender-input');
-    const height = document.getElementById('profile-height-input');
-    const weight = document.getElementById('profile-weight-input');
-
-    // Food Diary Variable
-    const foodId = document.getElementById('food-id-edit-input');
-    const foodName = document.getElementById('food-name-edit-input');
-    const foodSize = document.getElementById('food-size-edit-input');
-    const foodCategory = document.getElementById('food-category-edit-input');
-    const foodCalories = document.getElementById('food-calories-edit-input');
-    const foodDate = document.getElementById('food-date-edit-input');
+    // Food Database
+    const databaseQuery = query(collection(database, `foodDiaries`), where('user_id', '==', user.uid));
+    const databaseFoodRef = await getDocs(databaseQuery);
 
     // User Profile Read
     if (databaseRead.exists()) {
+      // User Profile Variable
+      const fullname = document.getElementById('profile-fullname-input');
+      const email = document.getElementById('profile-email-input');
+      const birth = document.getElementById('profile-birth-input');
+      const gender = document.getElementById('profile-gender-input');
+      const height = document.getElementById('profile-height-input');
+      const weight = document.getElementById('profile-weight-input');
+
       if (fullname, email, birth, gender, height, weight !== null) {
         fullname.value = databaseRead.data().fullname;
         email.value = databaseRead.data().email;
@@ -67,11 +62,36 @@ if (auth !== null) {
     };
 
     // Food Diary Read
-    if (databaseFoodRef.exists()) {
-      if (foodId, foodName, foodCategory, foodCalories, foodSize, foodDate !== null) {
-        foodId.value = databaseFoodRead.data();
-      }
-    };
+    if (databaseFoodRef !== null) {
+      // Food Diary Variable
+      const foodId = document.getElementById('food-id-edit-input');
+      const foodName = document.getElementById('food-name-edit-input');
+      const foodSize = document.getElementById('food-size-edit-input');
+      const foodCategory = document.getElementById('food-category-edit-input');
+      const foodCalories = document.getElementById('food-calories-edit-input');
+      const foodDate = document.getElementById('food-date-edit-input');
+
+      databaseFoodRef.forEach((doc) => {
+        const optionItem = document.createElement('option');
+        optionItem.setAttribute('id', 'food-id-edit-option');
+        optionItem.value = doc.id;
+        optionItem.innerText = doc.id;
+        foodId.appendChild(optionItem);
+      });
+
+      foodId.addEventListener('change', async (e)=> {
+        const databaseFoodRef = doc(database, `foodDiaries`, foodId.value);
+        const databaseFoodRead = await getDoc(databaseFoodRef);
+
+        if (databaseFoodRead.exists()) {
+          foodName.value = databaseFoodRead.data().food_name;
+          foodSize.value = databaseFoodRead.data().food_size;
+          foodCategory.value = databaseFoodRead.data().food_category;
+          foodCalories.value = databaseFoodRead.data().food_calories;
+          foodDate.value = databaseFoodRead.data().food_date;
+        }
+      });
+    }
   });
 }
 
@@ -165,4 +185,9 @@ if (editFoodDiaryButton !== null) {
 const cancelEditFoodDiaryButton = document.getElementById('cancel-food-edit-button') || null;
 if (cancelEditFoodDiaryButton !== null) {
   cancelEditFoodDiaryButton.addEventListener('click', setEditFoodAttributDisabled);
+}
+
+const saveEditFoodDiaryButton = document.getElementById('save-food-edit-button') || null;
+if (saveEditFoodDiaryButton !== null) {
+  saveEditFoodDiaryButton.addEventListener('click', updateFoodDiary);
 }
