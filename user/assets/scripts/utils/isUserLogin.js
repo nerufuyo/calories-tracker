@@ -1,4 +1,4 @@
-import {auth} from '../globals/firebaseInit.js';
+import {auth} from './firebaseInit.js';
 import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 async function isUserLogin() {
