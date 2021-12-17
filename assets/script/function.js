@@ -3,7 +3,7 @@
 /* eslint-disable require-jsdoc */
 import {connectToDatabase} from './database-connector.js';
 import {getStorage, ref as refStorage, uploadBytes, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
-import {getFirestore, collection, updateDoc, getDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
+import {getFirestore, collection, updateDoc, deleteDoc, getDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 // Initialize Firebase
@@ -248,6 +248,7 @@ function validateFileName() {
 // Food CRUD
 export function addFoodDiary() {
   onAuthStateChanged(auth, async (user) => {
+    const databaseRef = collection(database, `foodDiaries`);
     const dateObj = new Date();
     // Element Variable
     const foodName = document.getElementById('food-name-input');
@@ -313,6 +314,37 @@ export function updateFoodDiary() {
       foodDate.disabled = true;
       buttonGroup.style.display = 'none';
       editButton.style.display = 'flex';
+    } else {
+      alert('Fill All Fields!');
+    }
+  });
+}
+
+export function deleteFoodDiary() {
+  onAuthStateChanged(auth, async (user) => {
+    const dateObj = new Date();
+    // Element Variable
+    const foodId = document.getElementById('food-id-edit-input');
+    const foodName = document.getElementById('food-name-edit-input');
+    const foodSize = document.getElementById('food-size-edit-input');
+    const foodCategory = document.getElementById('food-category-edit-input');
+    const foodCalories = document.getElementById('food-calories-edit-input');
+    const foodDate = document.getElementById('food-date-edit-input');
+    const buttonGroup =document.getElementById('food-edit-button-group');
+    const editButton = document.getElementById('edit-food-button');
+    const databaseFoodRef = doc(database, `foodDiaries`, foodId.value);
+
+    if (foodName.value, foodSize.value, foodCalories.value, foodCategory.value, foodDate.value !== '') {
+      await deleteDoc(databaseFoodRef, {
+        food_name: foodName.value,
+        food_size: foodSize.value,
+        food_category: foodCategory.value,
+        food_calories: foodCalories.value,
+        food_date: foodDate.value,
+      });
+
+      alert('Food Deleted!');
+      window.location.reload;
     } else {
       alert('Fill All Fields!');
     }

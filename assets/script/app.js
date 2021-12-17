@@ -20,7 +20,7 @@ import {auth, database, signUpNewUser,
   setFoodAttributDisabled,
   removeEditFoodAttributDisabled,
   setEditFoodAttributDisabled,
-  updateFoodDiary} from './function.js';
+  updateFoodDiary, deleteFoodDiary} from './function.js';
 
 // Preloader
 document.documentElement.addEventListener('load', preloader) || null;
@@ -170,6 +170,11 @@ if (saveFoodDiaryButton !== null) {
 const addFoodDiaryButton = document.getElementById('add-food-button') || null;
 if (addFoodDiaryButton !== null) {
   addFoodDiaryButton.addEventListener('click', removeFoodAttributDisabled);
+}
+
+const deleteFoodDiaryButton = document.getElementById('delete-food-button') || null;
+if (deleteFoodDiaryButton !== null) {
+  deleteFoodDiaryButton.addEventListener('click', deleteFoodDiary);
 }
 
 const cancelFoodDiaryButton = document.getElementById('cancel-food-button') || null;
