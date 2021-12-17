@@ -72,6 +72,10 @@ class AddFoodView {
       </form>
     `;
   }
+
+  generateInputDateValue(callback) {
+    callback(document.querySelector('.food-date'));
+  }
 }
 
 export default AddFoodView;
