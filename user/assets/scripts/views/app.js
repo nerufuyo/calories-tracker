@@ -3,7 +3,6 @@ import NavbarDrawerInitiator from '../utils/NavbarDrawerInitiator.js';
 import UserProfileNameHeaderGenerator
   from '../utils/UserProfileNameHeaderGenerator.js';
 import UserProfileDrawerInitiator from '../utils/UserProfileDrawerInitiator.js';
-import LogoutHelper from '../utils/LogoutHelper.js';
 import UrlParser from '../routes/UrlParser.js';
 import routes from '../routes/routes.js';
 

@@ -3,6 +3,7 @@ import App from './views/App.js';
 import UserData from './data/UserData.js';
 import userLoginTest from './utils/UserLoginTest.js';
 import isUserLogin from './utils/IsUserLogin.js';
+import LogoutHelper from './utils/LogoutHelper.js';
 
 const app = new App({
   userProfileNameElement: document.querySelector('.user-profile__name'),
@@ -24,7 +25,11 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', () => {
   userLoginTest();
 
-  isUserLogin();
+  const unsubAuth = isUserLogin();
+  LogoutHelper.init({
+    logoutButton: document.querySelector('.logout-button'),
+    unsubAuth: unsubAuth,
+  });
 
   DateHelper.setMonthDaysPrototype();
 
