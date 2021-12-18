@@ -14,7 +14,6 @@ const routes = {
   '/food-diary/:id': FoodDiary,
   '/add-food': AddFood,
   '/add-food/:id': AddFood,
-  '/edit-food': EditFood,
   '/edit-food/:id': EditFood,
   '/goal': Goal,
   '/summary': Summary,

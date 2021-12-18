@@ -1,9 +1,13 @@
-import UserData from './data/UserData.js';
-import CookieHelper from './utils/CookieHelper.js';
 import DateHelper from './utils/DateHelper.js';
 import App from './views/App.js';
+import UserData from './data/UserData.js';
+import userLoginTest from './utils/UserLoginTest.js';
+import isUserLogin from './utils/IsUserLogin.js';
+import LogoutHelper from './utils/LogoutHelper.js';
 
 const app = new App({
+  userProfileNameElement: document.querySelector('.user-profile__name'),
+  userDb: UserData,
   buttonUserProfile: document.querySelector('.user-profile__info'),
   drawerUserProfile: document.querySelector('.user-profile__dropdown'),
   buttonNavbar: document.querySelector('.app-bar_menu-hamburger'),
@@ -19,13 +23,15 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-  DateHelper.setMonthDaysPrototype();
+  userLoginTest();
 
-  CookieHelper.setCookie({
-    cname: 'userId',
-    cvalue: UserData.getById(12345678).id,
-    exdays: 365,
+  const unsubAuth = isUserLogin();
+  LogoutHelper.init({
+    logoutButton: document.querySelector('.logout-button'),
+    unsubAuth: unsubAuth,
   });
+
+  DateHelper.setMonthDaysPrototype();
 
   app.renderPage();
 });

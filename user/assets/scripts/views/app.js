@@ -1,13 +1,26 @@
 import FooterYearGenerator from '../utils/FooterYearGenerator.js';
 import NavbarDrawerInitiator from '../utils/NavbarDrawerInitiator.js';
+import UserProfileNameHeaderGenerator
+  from '../utils/UserProfileNameHeaderGenerator.js';
 import UserProfileDrawerInitiator from '../utils/UserProfileDrawerInitiator.js';
 import UrlParser from '../routes/UrlParser.js';
 import routes from '../routes/routes.js';
 
 class App {
   constructor({
-    buttonUserProfile, drawerUserProfile, buttonNavbar, drawerNavbar, mainElement, pageTitle, pageContent, footerElement,
+    userProfileNameElement,
+    userDb,
+    buttonUserProfile,
+    drawerUserProfile,
+    buttonNavbar,
+    drawerNavbar,
+    mainElement,
+    pageTitle,
+    pageContent,
+    footerElement,
   }) {
+    this._userProfileNameElement = userProfileNameElement;
+    this._userDb = userDb,
     this._buttonUserProfile = buttonUserProfile;
     this._drawerUserProfile = drawerUserProfile;
     this._buttonNavbar = buttonNavbar;
@@ -21,6 +34,11 @@ class App {
   }
 
   _initialAppShell() {
+    UserProfileNameHeaderGenerator.init(
+        this._userProfileNameElement,
+        this._userDb,
+    );
+
     UserProfileDrawerInitiator.init({
       button: this._buttonUserProfile,
       drawer: this._drawerUserProfile,
