@@ -5,10 +5,10 @@ const FooterYearGenerator = {
 
   _generateYear(element) {
     const d = new Date();
-    let year = d.getFullYear();
+    const year = d.getFullYear();
 
     element.innerHTML = year;
-  }
+  },
 };
 
 export default FooterYearGenerator;

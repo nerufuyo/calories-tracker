@@ -5,8 +5,8 @@ import UrlParser from '../routes/UrlParser.js';
 import routes from '../routes/routes.js';
 
 class App {
-  constructor({ 
-    buttonUserProfile, drawerUserProfile, buttonNavbar, drawerNavbar, mainElement, pageTitle, pageContent, footerElement, 
+  constructor({
+    buttonUserProfile, drawerUserProfile, buttonNavbar, drawerNavbar, mainElement, pageTitle, pageContent, footerElement,
   }) {
     this._buttonUserProfile = buttonUserProfile;
     this._drawerUserProfile = drawerUserProfile;
@@ -16,7 +16,7 @@ class App {
     this._pageTitle = pageTitle;
     this._pageContent = pageContent;
     this._footerElement = footerElement;
-    
+
     this._initialAppShell();
   }
 
@@ -24,20 +24,19 @@ class App {
     UserProfileDrawerInitiator.init({
       button: this._buttonUserProfile,
       drawer: this._drawerUserProfile,
-    })
+    });
 
     NavbarDrawerInitiator.init({
       button: this._buttonNavbar,
       drawer: this._drawerNavbar,
       mainElement: this._mainElement,
       footerElement: this._footerElement,
-    })
-    
+    });
+
     FooterYearGenerator.init(this._footerElement.querySelector('.footer-year'));
   }
 
   async renderPage() {
-
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
 

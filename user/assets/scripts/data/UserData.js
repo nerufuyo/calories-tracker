@@ -1,4 +1,4 @@
-import userDummy from "./userDummy.js";
+import userDummy from './userDummy.js';
 
 const UserData = {
   async getById(id) {
@@ -6,8 +6,8 @@ const UserData = {
       return;
     }
 
-    return userDummy.find(user => user.id === id);
+    return userDummy.find((user) => user.id === id);
   },
-}
+};
 
 export default UserData;

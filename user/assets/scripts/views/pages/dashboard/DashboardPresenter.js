@@ -1,7 +1,7 @@
-import DateHelper from "../../../utils/DateHelper.js";
+import DateHelper from '../../../utils/DateHelper.js';
 
 class DashboardPresenter {
-  constructor({ foodDiary, user, view }) {
+  constructor({foodDiary, user, view}) {
     this._view = view;
     this._user = user;
     this._foodDiary = foodDiary;
@@ -20,7 +20,7 @@ class DashboardPresenter {
       this._showGoal(3000);
       this._view.showFoodCalories();
       this._showCurrentDate();
-    })
+    });
   }
 
   _showCurrentDate() {

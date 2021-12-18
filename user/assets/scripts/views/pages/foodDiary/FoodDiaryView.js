@@ -119,7 +119,7 @@ class FoodDiaryView {
           </div>
         </div>
       </div>
-    `
+    `;
   }
 }
 

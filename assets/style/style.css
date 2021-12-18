@@ -680,21 +680,27 @@ section.user-profile div.food-outter-container div.food-inner-container input.fo
 section.user-profile div.food-outter-container div.food-inner-container select.food-input {
   width: 20.8rem;
   height: 2rem;
+  font-size: 1rem;
   color: black;
 }
 
-section.user-profile div.food-outter-container div.food-button-group {
+section.user-profile div.food-outter-container div.food-inner-container select.food-input option#food-id-edit-option {
+  font-size: 1rem;
+  color: black;
+}
+
+section.user-profile div.food-outter-container div.food-button-group, section.user-profile div.food-outter-container .food-edit-button-group {
   display: none;
   width: 32rem;
   gap: 1rem;
 }
 
-section.user-profile div.food-outter-container div.food-button-group button {
+section.user-profile div.food-outter-container div.food-button-group button, section.user-profile div.food-outter-container .food-edit-button-group button {
   width: 16rem;
   height: 2rem;
 }
 
-section.user-profile div.food-outter-container button.add-food-button {
+section.user-profile div.food-outter-container button.add-food-button, section.user-profile div.food-outter-container .delete-food-button, section.user-profile div.food-outter-container .edit-food-button {
   display: flex;
   width: 32rem;
   height: 2rem;

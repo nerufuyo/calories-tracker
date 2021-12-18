@@ -52,7 +52,7 @@ class AddFoodView {
           <button class="add-food-button"><i class="far fa-plus-square"></i> Add Food</button>
         </div>
       </form>
-    `
+    `;
   }
 }
 
