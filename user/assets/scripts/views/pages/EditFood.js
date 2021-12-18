@@ -1,4 +1,7 @@
 import EditFoodView from "./editFood/EditFoodView.js";
+import EditFoodPresenter from "./editFood/EditFoodPresenter.js";
+import FoodDiaryDb from "../../data/FoodDiaryDb.js";
+import UrlParser from "../../routes/UrlParser.js";
 
 const view = new EditFoodView();
 
@@ -8,7 +11,8 @@ const EditFood = {
   },
 
   async afterRender() {
-    return '';
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    new EditFoodPresenter({view, foodId: url.id, FoodDiaryDb})
   }
 }
 

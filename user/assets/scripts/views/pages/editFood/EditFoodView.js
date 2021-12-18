@@ -49,10 +49,34 @@ class EditFoodView {
           </div>
         </label>
         <div class="edit-food-button__container">
-          <button class="edit-food-button" ><i class="far fa-edit"></i> Update Food</button>
+          <button type="submit" class="edit-food-button"><i class="far fa-edit"></i> Update Food</button>
         </div>
       </form>
     `
+  }
+
+  editFormListener(callback) {
+    document.querySelector('.edit-food__form')
+        .addEventListener('submit', (event) => {
+          console.log('masuk');
+          callback({
+            name: document.querySelector('.food-name'),
+            servingSize: document.querySelector('.serving-size'),
+            calories: document.querySelector('.food-calories'),
+            category: document.querySelector('.food-category'),
+            date: document.querySelector('.food-date'),
+          });
+          event.preventDefault();
+        });
+  }
+
+  showFoodData({name, servingSize, calories, category, date}) {
+    console.log('date adalah ', date);
+    document.querySelector('.food-name').value = name;
+    document.querySelector('.serving-size').value = servingSize;
+    document.querySelector('.food-calories').value = calories;
+    document.querySelector('.food-category').value = category;
+    document.querySelector('.food-date').value = date;
   }
 }
 
