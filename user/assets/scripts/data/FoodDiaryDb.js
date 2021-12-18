@@ -32,6 +32,7 @@ const FoodDiaryDb = {
       updatedAt: serverTimestamp(),
     });
   },
+  
   update({id, name, servingSize, calories, category, date}) {
     const docRef = doc(db, 'foodDiaries', id);
 
