@@ -23,7 +23,7 @@ class AddFoodView {
           <div class="input-group serving-size__input">
             <div class="input-name">Serving Size</div>
             <div class="form-input">
-              <input type="text"
+              <input type="number"
                 placeholder="Enter food serving size" 
                 class="serving-size" 
                 required>
@@ -75,6 +75,20 @@ class AddFoodView {
 
   generateInputDateValue(callback) {
     callback(document.querySelector('.food-date'));
+  }
+
+  addFormListener(callback) {
+    document.querySelector('.add-food__form')
+        .addEventListener('submit', (event) => {
+          event.preventDefault;
+          callback({
+            name: document.querySelector('.food-name'),
+            servingSize: document.querySelector('.serving-size'),
+            calories: document.querySelector('.food-calories'),
+            category: document.querySelector('.food-category'),
+            date: document.querySelector('.food-date'),
+          });
+        });
   }
 }
 
