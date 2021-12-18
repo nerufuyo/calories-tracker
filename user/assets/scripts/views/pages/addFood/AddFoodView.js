@@ -80,7 +80,6 @@ class AddFoodView {
   addFormListener(callback) {
     document.querySelector('.add-food__form')
         .addEventListener('submit', (event) => {
-          event.preventDefault;
           callback({
             name: document.querySelector('.food-name'),
             servingSize: document.querySelector('.serving-size'),
@@ -88,6 +87,7 @@ class AddFoodView {
             category: document.querySelector('.food-category'),
             date: document.querySelector('.food-date'),
           });
+          event.preventDefault();
         });
   }
 }
