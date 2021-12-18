@@ -7,7 +7,7 @@ const view = new EditFoodView();
 
 const EditFood = {
   async render() {
-    return { title: view.getTitleTemplate(), content: view.getContentTemplate()};
+    return {title: view.getTitleTemplate(), content: view.getContentTemplate()};
   },
 
   async afterRender() {

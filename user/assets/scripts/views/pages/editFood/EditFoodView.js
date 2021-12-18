@@ -52,7 +52,7 @@ class EditFoodView {
           <button type="submit" class="edit-food-button"><i class="far fa-edit"></i> Update Food</button>
         </div>
       </form>
-    `
+    `;
   }
 
   editFormListener(callback) {

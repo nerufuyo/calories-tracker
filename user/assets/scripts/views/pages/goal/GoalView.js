@@ -1,4 +1,4 @@
-import DateHelper from "../../../utils/DateHelper.js";
+import DateHelper from '../../../utils/DateHelper.js';
 
 class GoalView {
   getTitleTemplate() {
