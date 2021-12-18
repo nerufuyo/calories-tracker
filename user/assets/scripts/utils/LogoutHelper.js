@@ -15,6 +15,7 @@ const LogoutHelper = {
             unsubscribe();
           });
           console.log('user signed out');
+          window.location.replace('/authentication.html');
         })
         .catch((err) => {
           console.log(err.message);
