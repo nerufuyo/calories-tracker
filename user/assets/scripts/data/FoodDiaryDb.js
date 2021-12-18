@@ -4,7 +4,6 @@ import {
   doc,
   getDoc,
   collection,
-  serverTimestamp,
   updateDoc
 } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 import UserDb from './UserDb.js';
@@ -28,11 +27,11 @@ const FoodDiaryDb = {
       category,
       date: new Date(date),
       uid: user.uid,
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
+      createdAt: new Date(),
+      updatedAt: new Date(),
     });
   },
-  
+
   update({id, name, servingSize, calories, category, date}) {
     const docRef = doc(db, 'foodDiaries', id);
 
@@ -42,7 +41,7 @@ const FoodDiaryDb = {
       calories,
       category,
       date: new Date(date),
-      updatedAt: serverTimestamp(),
+      updatedAt: new Date(),
     })
 
   }
