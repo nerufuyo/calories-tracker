@@ -11,7 +11,6 @@ class GoalPresenter {
     this._listenToCloseButton();
     this._generateFormValue();
     this._listenToGoalForm();
-    this._getGoal();
   }
 
   _generateFormValue() {
