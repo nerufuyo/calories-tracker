@@ -1,6 +1,10 @@
 const DateHelper = {
   getYYYYMMDD(date) {
-    const d = date || new Date();
+    const yourDate = date || new Date();
+
+    const offset = yourDate.getTimezoneOffset();
+    
+    const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];
   },
@@ -18,15 +22,23 @@ const DateHelper = {
   },
 
   getPreviousMonth(date) {
-    const d = date ? new Date(date) : new Date();
-    d.setMonth(d.getMonth() - 1);
+    const yourDate = date ? new Date(date) : new Date();
+    yourDate.setMonth(yourDate.getMonth() - 1);
+
+    const offset = yourDate.getTimezoneOffset();
+    
+    const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];
   },
 
   getNextMonth(date) {
-    const d = date ? new Date(date) : new Date();
-    d.setMonth(d.getMonth() + 1);
+    const yourDate = date ? new Date(date) : new Date();
+    yourDate.setMonth(yourDate.getMonth() + 1);
+
+    const offset = yourDate.getTimezoneOffset();
+    
+    const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];
   },
