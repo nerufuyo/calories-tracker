@@ -702,6 +702,23 @@ main.shift {
 }
 
 /* ---- Set Goal ---- */
+.goal__form .end-date__container {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.goal__form .end-date__container label {
+  width: 100%;
+}
+
+.goal__form .end-date__container .input-group {
+  margin-bottom: 0;
+}
+
 .goal__form .form-input .calories-target {
   padding-right: 0;
 }
@@ -720,6 +737,54 @@ main.shift {
 
 .goal__form .info a {
   text-decoration: none;
+}
+
+.show-end-date__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+.show-end-date__container .info {
+  margin: 0 0 20px 0;
+}
+
+.show-end-date__button {
+  padding: 10px;
+  font-weight: 500;
+  color: #007bff;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.show-end-date__button:hover {
+  color: #0069D9;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.close-button:hover {
+  color: #a31826;
 }
 
 .set-goal-button {

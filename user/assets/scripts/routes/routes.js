@@ -16,6 +16,7 @@ const routes = {
   '/add-food/:id': AddFood,
   '/edit-food/:id': EditFood,
   '/goal': Goal,
+  '/goal/:id': Goal,
   '/summary': Summary,
   '/edit-profile': EditProfile,
   '/edit-password': EditPassword,

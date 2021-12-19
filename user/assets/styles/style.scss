@@ -608,6 +608,21 @@ main {
 .goal__form {
   @extend .add-food__form;
 
+  .end-date__container {
+    display: none;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    label {
+      width: 100%;
+    }
+    
+    .input-group {
+      margin-bottom: 0;
+    }
+  }
+
   .form-input {
     .calories-target {
       padding-right: 0;
@@ -624,6 +639,41 @@ main {
     a {
       text-decoration: none;
     }
+  }
+}
+
+.show-end-date__container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  .info {
+    margin: 0 0 20px 0;
+  }
+}
+
+.show-end-date__button {
+  padding: 10px;
+  font-weight: 500;
+  color: #007bff;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: #0069D9;
+  }
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: #a31826;
   }
 }
 
