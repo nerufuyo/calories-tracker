@@ -518,7 +518,6 @@ main {
     display: flex;
     align-items: center;
     padding: 5px 0;
-    gap: 5px;
     margin-bottom: 20px;
     border-bottom: 1px solid #DADCE0;
     width: 100%;
@@ -608,6 +607,12 @@ main {
 /* ---- Set Goal ---- */
 .goal__form {
   @extend .add-food__form;
+
+  .form-input {
+    .calories-target {
+      padding-right: 0;
+    }
+  }
 
   .info {
     display: flex;
