@@ -23,7 +23,7 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-  userLoginTest();
+  // userLoginTest();
 
   const unsubAuth = isUserLogin();
   LogoutHelper.init({
