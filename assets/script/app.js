@@ -79,18 +79,20 @@ if (auth !== null) {
         foodId.appendChild(optionItem);
       });
 
-      foodId.addEventListener('change', async (e)=> {
-        const databaseFoodRef = doc(database, `foodDiaries`, foodId.value);
-        const databaseFoodRead = await getDoc(databaseFoodRef);
-
-        if (databaseFoodRead.exists()) {
-          foodName.value = databaseFoodRead.data().food_name;
-          foodSize.value = databaseFoodRead.data().food_size;
-          foodCategory.value = databaseFoodRead.data().food_category;
-          foodCalories.value = databaseFoodRead.data().food_calories;
-          foodDate.value = databaseFoodRead.data().food_date;
-        }
-      });
+      if (foodId !== null) {
+        foodId.addEventListener('change', async (e)=> {
+          const databaseFoodRef = doc(database, `foodDiaries`, foodId.value);
+          const databaseFoodRead = await getDoc(databaseFoodRef);
+  
+          if (databaseFoodRead.exists()) {
+            foodName.value = databaseFoodRead.data().food_name;
+            foodSize.value = databaseFoodRead.data().food_size;
+            foodCategory.value = databaseFoodRead.data().food_category;
+            foodCalories.value = databaseFoodRead.data().food_calories;
+            foodDate.value = databaseFoodRead.data().food_date;
+          }
+        });
+      } 
     }
   });
 }
