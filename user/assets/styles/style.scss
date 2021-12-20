@@ -356,7 +356,6 @@ main {
 }
 
 .date-picker__container {
-  grid-column-start: 2;
   display: flex;
   align-items: center;
   gap:5px;
@@ -365,6 +364,8 @@ main {
 
 .date-picker-button {
   padding: 15px 20px;
+  user-select: none;
+  color: #333;
 
   &:hover {
     cursor: pointer;
@@ -402,6 +403,26 @@ main {
     @include add-button;
     padding: 10px;
     text-decoration: none;
+  }
+}
+
+.set-goal-link {
+  background-color: none;
+  border: none;
+  margin-top: 10px;
+
+  a {
+    @include add-button();
+
+    background-color: #28a745;
+    border-color: #28a745;
+    padding: 10px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
   }
 }
 
@@ -506,6 +527,101 @@ main {
   @include delete-button;
   padding: 5px 10px;
   width: 85px;
+}
+
+/* ---- Delete Modal ---- */
+.modal button {
+  color: white;
+  padding: 14px 20px;
+  margin:  0 0 -16px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.modal button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+/* Clear floats */
+.modal .buttons {
+  display: flex;
+  margin-top: 40px;
+}
+
+/* Add a color to the cancel button */
+.modal .cancelbtn {
+  margin-left: -16px;
+  border-radius: 0 0 0 5px;
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.modal .deletebtn {
+  margin-right: -16px;
+  border-radius: 0 0 5px 0;
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.modal .container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(71, 78, 93, 0.9);
+  /* padding-top: 50px; */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  border-radius: 10px;
+  margin: 50vh auto 0 auto; 
+  transform: translate(0, -50%);
+  border: 1px solid #888;
+  max-width: 500px; /* Could be more or less, depending on screen size */
+}
+
+.modal h2 {
+  font-size: 1.7rem;
+  margin: 0 -16px 40px -16px;
+  padding: 10px;
+}
+
+/* Style the horizontal ruler */
+.modal hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.modal .close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: #f44336;
+  cursor: pointer;
 }
 
 /* ---- Add Food ---- */
