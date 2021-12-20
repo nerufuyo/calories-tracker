@@ -564,7 +564,7 @@ main.shift {
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  width: 78px;
+  width: 85px;
   padding: 5px 15px;
   text-decoration: none;
 }
@@ -580,7 +580,7 @@ main.shift {
   color: white;
   cursor: pointer;
   padding: 5px 10px;
-  width: 78px;
+  width: 85px;
 }
 
 .delete-food-button:hover {

@@ -496,7 +496,7 @@ main {
 
   a {
     @include edit-button;
-    width: 78px;
+    width: 85px;
     padding: 5px 15px;
     text-decoration: none;
   }
@@ -505,7 +505,7 @@ main {
 .delete-food-button {
   @include delete-button;
   padding: 5px 10px;
-  width: 78px;
+  width: 85px;
 }
 
 /* ---- Add Food ---- */
