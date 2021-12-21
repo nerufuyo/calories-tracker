@@ -4,7 +4,7 @@
 import {connectToDatabase} from './database-connector.js';
 import {getStorage, ref as refStorage, uploadBytes, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
 import {getFirestore, collection, updateDoc, deleteDoc, getDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+import {getAuth, updateEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 // Initialize Firebase
 export const app = connectToDatabase();
@@ -61,8 +61,8 @@ export async function signUpNewUser() {
             fullname: fullname.value,
           });
           alert('Account Created!');
-          loginForm.style.display = 'none';
-          registerForm.style.display = 'flex';
+          loginForm.style.display = 'flex';
+          registerForm.style.display = 'none';
         })
 
         .catch((error) => {
@@ -90,7 +90,8 @@ export function loginUser() {
           alert('User Logged in!');
           document.cookie = `user= ${user.uid}; expires=Thu, 18 Dec 2012`;
           // window.location.href = 'user-profile.html';
-          window.location.href = '/user';
+          // window.location.href = '/user';
+          window.location.href = 'update-email-password.html'
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -125,6 +126,17 @@ export function switchFromSignUpForm() {
 
   loginForm.style.display = 'flex';
   registerForm.style.display = 'none';
+}
+
+export function changeEmailUser() {
+  updateEmail(auth.currentUser, newEmail).then(() => {
+    // Email updated!
+    // ...
+    console.log(auth.currentUser);
+  }).catch((error) => {
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
 }
 
 // Profile CRUD

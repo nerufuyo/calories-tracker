@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import {getFirestore, collection, updateDoc, getDoc, addDoc, setDoc, getDocs, query, where, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
+import {collection, updateDoc, getDoc, addDoc, setDoc, getDocs, query, where, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 import {auth, database, signUpNewUser,
   loginUser,
@@ -20,7 +20,7 @@ import {auth, database, signUpNewUser,
   setFoodAttributDisabled,
   removeEditFoodAttributDisabled,
   setEditFoodAttributDisabled,
-  updateFoodDiary, deleteFoodDiary} from './function.js';
+  updateFoodDiary, deleteFoodDiary, changeEmailUser} from './function.js';
 
 // Preloader
 document.documentElement.addEventListener('load', preloader) || null;
@@ -153,14 +153,9 @@ if (cancelProfileButton !== null) {
   cancelProfileButton.addEventListener('click', setProfileAttributeDisable);
 }
 
-const selectProfileImageButton = document.getElementById('image-select') || null;
-if (selectProfileImageButton !== null) {
-  selectProfileImageButton.addEventListener('change', selectPhotoProfile);
-}
-
-const uploadProfileImageButton = document.getElementById('image-upload') || null;
-if (uploadProfileImageButton !== null) {
-  uploadProfileImageButton.addEventListener('click', uploadPhotoProfile);
+const updateEmailButton = document.getElementById('update-email-button') || null;
+if (updateEmailButton !== null) {
+  updateEmailButton.addEventListener('click', changeEmailUser);
 }
 
 // Food Diary Page

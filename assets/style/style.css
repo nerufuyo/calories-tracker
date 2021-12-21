@@ -134,6 +134,25 @@ nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link
   transition: width .25s ease-in-out;
 }
 
+nav ul.navigation-list li.dashboard-list {
+  display: none;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  padding: .5rem;
+  align-items: center;
+  border-radius: .25rem;
+  background-color: var(--fourth-color);
+}
+
+nav ul.navigation-list li.dashboard-list a.login-link {
+  color: var(--primary-color);
+}
+
+nav ul.navigation-list li.dashboard-list a.login-link span.login-slide {
+  display: none;
+}
+
 nav ul.navigation-list li.login-list {
   display: flex;
   flex-direction: column;
@@ -153,11 +172,11 @@ nav ul.navigation-list li.login-list a.login-link span.login-slide {
   display: none;
 }
 
-nav ul.navigation-list li.login-list:hover {
+nav ul.navigation-list li.login-list:hover, nav ul.navigation-list li.dashboard-list:hover {
   background-color: var(--third-color);
 }
 
-nav ul.navigation-list li.login-list:hover a.login-link:hover {
+nav ul.navigation-list li.login-list:hover a.login-link:hover, nav ul.navigation-list li.dashboard-list:hover a.login-link:hover {
   color: var(--fifth-color);
 }
 

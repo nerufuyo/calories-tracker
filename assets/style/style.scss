@@ -141,6 +141,24 @@ nav {
                 }
             }
         }
+        li.dashboard-list {
+            display: none;
+            flex-direction: column;
+            width: fit-content;
+            height: fit-content;
+            padding: .5rem;
+            align-items: center;
+            border-radius: .25rem;
+            background-color: var(--fourth-color);
+
+            a.login-link {
+                color: var(--primary-color);
+
+                span.login-slide {
+                    display: none;
+                }
+            }
+        }
 
         li.login-list {
             display: flex;
@@ -161,7 +179,7 @@ nav {
             }
         }
 
-        li.login-list:hover {
+        li.login-list:hover, li.dashboard-list:hover {
             background-color: var(--third-color);
 
             a.login-link:hover {
