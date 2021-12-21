@@ -46,6 +46,8 @@ export async function signUpNewUser() {
   const fullname = document.getElementById('fullname');
   const email = document.getElementById('email');
   const password = document.getElementById('password');
+  const loginForm = document.querySelector('div.form-collection div.login-form');
+  const registerForm = document.querySelector('div.form-collection div.signup-form');
 
   if (fullname.value === '' || email.value === '' || password.value === '') {
     alert('Please fill all fields!');
@@ -57,8 +59,10 @@ export async function signUpNewUser() {
 
           setDoc(databaseRef, {
             fullname: fullname.value,
-            email: email.value,
           });
+          alert('Account Created!');
+          loginForm.style.display = 'none';
+          registerForm.style.display = 'flex';
         })
 
         .catch((error) => {
