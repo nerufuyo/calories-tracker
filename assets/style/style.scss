@@ -495,16 +495,46 @@ section.auth-page {
                 div.form-input-group {
                     display: flex;
                     flex-direction: column;
-                    width: fit-content;
+                    width: 30rem;
                     height: fit-content;
                     justify-content: center;
+                    align-items: center;
                     gap: 2rem;
+                    overflow: hidden;
 
                     input {
-                        width: 30rem;
+                        width: 25rem;
                         height: 3rem;
                         padding: .5rem;
                         font-size: 2rem;
+                    }
+
+                    div {
+                        display: flex;
+                        width: fit-content;
+                        align-items: center;
+
+                        span {
+                            position: absolute;
+                            margin-left: 20%;
+
+                            i {
+                                width: 2rem;
+                                height: fit-content;
+                                right: 3rem;
+                                font-size: 1.5rem;
+                                cursor: pointer;
+                                color: #116530;
+                            }
+    
+                            i.fa-eye {
+                                display: none;
+                            }
+    
+                            i.fa-eye-slash {
+                                display: flex;
+                            }
+                        }
                     }
                 }
 
