@@ -4,7 +4,7 @@
 import {connectToDatabase} from './database-connector.js';
 import {getStorage, ref as refStorage, uploadBytes, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
 import {getFirestore, collection, updateDoc, deleteDoc, getDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
-import {getAuth, updateEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+import {getAuth, updatePassword , sendEmailVerification, updateEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 // Initialize Firebase
 export const app = connectToDatabase();
@@ -64,7 +64,6 @@ export async function signUpNewUser() {
           loginForm.style.display = 'flex';
           registerForm.style.display = 'none';
         })
-
         .catch((error) => {
           const errorMessage = error.message;
           alert(errorMessage);
@@ -129,14 +128,39 @@ export function switchFromSignUpForm() {
 }
 
 export function changeEmailUser() {
-  updateEmail(auth.currentUser, newEmail).then(() => {
-    // Email updated!
-    // ...
-    console.log(auth.currentUser);
-  }).catch((error) => {
-    const errorMessage = error.message;
-    alert(errorMessage);
-  });
+  const email = document.getElementById('new-email');
+
+  if (email.value == '') {
+    alert('Please Fill The Fields');
+  } else {
+    updateEmail(auth.currentUser, email.value).then(() => {
+      console.log('Email Updated');
+      sendEmailVerification(auth.currentUser)
+      .then(() => {
+        console.log('Email Verification Send');
+      });
+    }).catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+  }
+}
+
+export function changePasswordUser() {
+  const user = auth.currentUser;
+  const password = document.getElementById('verify-new-password');
+
+  if (password.value == '') {
+    alert('Please Fill The Fields!');
+  } else {
+    updatePassword(user, password.value).then(() => {
+      console.log('Password Updated!')
+      // Update successful.
+    }).catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+  }
 }
 
 // Profile CRUD
@@ -161,7 +185,7 @@ export function updateProfile() {
       weight: weight.value,
     });
 
-    alert('Data Upadated!');
+    alert('Data Updated!');
     fullname.disabled = true;
     email.disabled = true;
     birth.disabled = true;

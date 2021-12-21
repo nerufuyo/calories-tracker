@@ -20,7 +20,7 @@ import {auth, database, signUpNewUser,
   setFoodAttributDisabled,
   removeEditFoodAttributDisabled,
   setEditFoodAttributDisabled,
-  updateFoodDiary, deleteFoodDiary, changeEmailUser} from './function.js';
+  updateFoodDiary, deleteFoodDiary, changeEmailUser, changePasswordUser} from './function.js';
 
 // Preloader
 document.documentElement.addEventListener('load', preloader) || null;
@@ -37,6 +37,11 @@ if (auth !== null) {
     // Profile Database
     const databaseRef = doc(database, `userProfile`, `${user.uid}`);
     const databaseRead = await getDoc(databaseRef);
+
+    // Email Profile
+    const userEmail = auth.currentUser;
+    const email = document.getElementById('new-email');
+
     // Food Database
     const databaseQuery = query(collection(database, `foodDiaries`), where('user_id', '==', user.uid));
     const databaseFoodRef = await getDocs(databaseQuery);
@@ -60,6 +65,13 @@ if (auth !== null) {
         weight.value = databaseRead.data().weight;
       }
     };
+
+    // Email Read
+    if (userEmail !== null) {
+      userEmail.providerData.forEach((profile) => {
+        email.value = profile.email;
+      });
+    }
 
     // Food Diary Read
     if (databaseFoodRef !== null) {
@@ -156,6 +168,11 @@ if (cancelProfileButton !== null) {
 const updateEmailButton = document.getElementById('update-email-button') || null;
 if (updateEmailButton !== null) {
   updateEmailButton.addEventListener('click', changeEmailUser);
+}
+
+const updatePasswordButton = document.getElementById('update-password-button') || null;
+if (updatePasswordButton !== null) {
+  updatePasswordButton.addEventListener('click', changePasswordUser);
 }
 
 // Food Diary Page
