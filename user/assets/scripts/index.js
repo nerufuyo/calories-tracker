@@ -1,13 +1,13 @@
 import DateHelper from './utils/DateHelper.js';
 import App from './views/App.js';
-import UserData from './data/UserData.js';
+import UserDb from './data/UserDb.js';
 import userLoginTest from './utils/UserLoginTest.js';
 import isUserLogin from './utils/IsUserLogin.js';
 import LogoutHelper from './utils/LogoutHelper.js';
 
 const app = new App({
   userProfileNameElement: document.querySelector('.user-profile__name'),
-  userDb: UserData,
+  userDb: UserDb,
   buttonUserProfile: document.querySelector('.user-profile__info'),
   drawerUserProfile: document.querySelector('.user-profile__dropdown'),
   buttonNavbar: document.querySelector('.app-bar_menu-hamburger'),
@@ -23,7 +23,7 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-  userLoginTest();
+  // userLoginTest();
 
   const unsubAuth = isUserLogin();
   LogoutHelper.init({

@@ -1,7 +1,7 @@
 import DashboardView from './dashboard/DashboardView.js';
 import DashboardPresenter from './dashboard/DashboardPresenter.js';
-import FoodDiaryData from '../../data/FoodDiaryData.js';
-import UserData from '../../data/UserData.js';
+import FoodDiaryDb from '../../data/FoodDiaryDb.js';
+import UserDb from '../../data/UserDb.js';
 
 const view = new DashboardView();
 
@@ -12,8 +12,8 @@ const Dashboard = {
 
   async afterRender() {
     new DashboardPresenter({
-      foodDiary: FoodDiaryData,
-      user: UserData,
+      foodDiary: FoodDiaryDb,
+      user: UserDb,
       view,
     });
   },
