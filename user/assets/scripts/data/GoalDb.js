@@ -4,6 +4,7 @@ import {
   getDocs,
   query,
   orderBy,
+  where,
   collection,
 } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 import UserDb from './UserDb.js';
@@ -12,7 +13,9 @@ const colRef = collection(db, 'goals');
 
 const GoalDb = {
   async get() {
-    const q = query(colRef, orderBy('createdAt', 'desc'));
+    const user = await UserDb.getUserAuth();
+
+    const q = query(colRef, orderBy('createdAt', 'desc'), where('uid', '==', user.uid));
 
     const snapshot = await getDocs(q);
 
