@@ -11,12 +11,12 @@ class DashboardView {
     return `
       <div class="dashboard-top">
         <div class="month-picker">
-          <div class="previous-month" data-date="${DateHelper.getPreviousMonth()}"><i class="fas fa-angle-left"></i></div>
-          <div class="next-month" data-date="${DateHelper.getNextMonth()}"><i class="fas fa-angle-right"></i></div>
-          <div class="selected-month">${DateHelper.getMonthName()} ${DateHelper.getYear()}</div>
+          <a class="previous-month"><i class="fas fa-angle-left"></i></a>
+          <a class="next-month"><i class="fas fa-angle-right"></i></a>
+          <div class="selected-month"></div>
         </div>
         <div class="bmi">
-          Your BMI: <span class="bmi-data">19 (Healthy)</span>
+          Your BMI: <span class="bmi-data"></span>
         </div>
         <div class="calories-goal">
           Goal: <span class="calories-goal-data"></span> / day
@@ -33,46 +33,27 @@ class DashboardView {
           <div class="day-name">Sat</div>
         </div>
         <div class="calendar-date">
-          ${this._getCalendarDatePreviousMonth()}
-          ${this._getCalendarDateCurrentMonth()}
-          ${this._getCalendarDateNextMonth()}
         </div>
       </div>
     `;
   };
 
-  monthPickerListener(callback) {
-    document.querySelector('.previous-month').addEventListener('click', (event) => {
-      callback(event.target.dataset.date);
-    });
-
-    document.querySelector('.next-month').addEventListener('click', (event) => {
-      callback(event.target.dataset.date);
-    });
+  showMonthYear(callback) {
+    callback(document.querySelector('.selected-month'));
   }
 
-  monthPickerDate(date) {
-    document.querySelector('.previous-month').dataset.date = DateHelper.getPreviousMonth(date);
-    document.querySelector('.next-month').dataset.date = DateHelper.getNextMonth(date);
+  monthPickerDate(callback) {
+    callback({
+      previousMonth: document.querySelector('.previous-month'),
+      nextMonth: document.querySelector('.next-month'),
+    })
   }
 
-  showCurrentMonthYear(date) {
-    document.querySelector('.selected-month').innerHTML = `${DateHelper.getMonthName(date)} ${DateHelper.getYear(date)}`;
-  }
-
-  getCalendarDateTemplate(date) {
-    const d = date ? new Date(date) : new Date();
-
-    const calendarDateElement = document.querySelector('.calendar-date');
-
-    calendarDateElement.innerHTML = `
-      ${this._getCalendarDatePreviousMonth(DateHelper.getYYYYMMDD(d))}
-      ${this._getCalendarDateCurrentMonth(DateHelper.getYYYYMMDD(d))}
-      ${this._getCalendarDateNextMonth(DateHelper.getYYYYMMDD(d))}
-    `;
+  showCalendar(callback) {
+    callback(document.querySelector('.calendar-date'));
   };
 
-  _getCalendarDateCurrentMonth(date) {
+  showCalendarCurrentMonth(date) {
     const d = date ? new Date(date) : new Date();
 
     const dYYYYMMDD = DateHelper.getYYYYMMDD(d);
@@ -82,9 +63,9 @@ class DashboardView {
     let daysTemplate = '';
     for (let i = 1; i <= d.getMonthDays(); i++) {
       daysTemplate += `
-        <a href="#/food-diary/${dSplit[0]}-${dSplit[1]}-${i.toString().padStart(2, '0')}" class="date-grid current-month _${dSplit[0]}-${dSplit[1]}-${i.toString().padStart(2, '0')}">
+        <a href="#/food-diary/${dSplit[0]}-${dSplit[1]}-${i.toString().padStart(2, '0')}" class="date-grid current-month _${dSplit[0]}-${dSplit[1]}-${i.toString().padStart(2, '0')}" data-date="${dSplit[0]}-${dSplit[1]}-${i.toString().padStart(2, '0')}">
           <div class="date-number"><span class="date-order">${i.toString().padStart(2, '0')}<span> <span class="month-first-date">${i === 1 ? DateHelper.getMonthName(dYYYYMMDD).slice(0, 3) : ''}</span></div>
-          <div class="calories__this-day"><span class="total-calories__this-day"></span><span class="calories-goal__this-day"></span></div>
+          <div class="calories__this-day"><span class="total-calories__this-day"></span> / <span class="calories-goal__this-day"></span></div>
         </a>
       `;
     }
@@ -92,10 +73,8 @@ class DashboardView {
     return daysTemplate;
   }
 
-  _getCalendarDatePreviousMonth(date) {
+  showCalendarPreviousMonth(date) {
     const d = date ? new Date(date) : new Date();
-
-    console.log(d);
 
     const remainingDays = DateHelper.previousMonthRemainingDays(DateHelper.getYYYYMMDD(d));
     const dPreviousYYYYMMDD = DateHelper.getPreviousMonth(DateHelper.getYYYYMMDD(d));
@@ -105,9 +84,9 @@ class DashboardView {
     let remainingDaysTemplate = '';
     for (let i = dPreviousDate.getMonthDays() - remainingDays + 1; i <= dPreviousDate.getMonthDays(); i++) {
       remainingDaysTemplate += `
-        <a href="#/food-diary/${dPreviousSplit[0]}-${dPreviousSplit[1]}-${i.toString().padStart(2, '0')}" class="date-grid not__current-month _${dPreviousSplit[0]}-${dPreviousSplit[1]}-${i.toString().padStart(2, '0')}">
+        <a href="#/food-diary/${dPreviousSplit[0]}-${dPreviousSplit[1]}-${i.toString().padStart(2, '0')}" class="date-grid not__current-month _${dPreviousSplit[0]}-${dPreviousSplit[1]}-${i.toString().padStart(2, '0')}" data-date="${dPreviousSplit[0]}-${dPreviousSplit[1]}-${i.toString().padStart(2, '0')}">
           <div class="date-number"><span class="date-order">${i.toString().padStart(2, '0')}</span></div>
-          <div class="calories__this-day"><span class="total-calories__this-day"></span><span class="calories-goal__this-day"></span></div>
+          <div class="calories__this-day"><span class="total-calories__this-day"></span> / <span class="calories-goal__this-day"></span></div>
         </a>
       `;
     }
@@ -115,7 +94,7 @@ class DashboardView {
     return remainingDaysTemplate;
   }
 
-  _getCalendarDateNextMonth(date) {
+  showCalendarNextMonth(date) {
     const d = date ? new Date(date) : new Date();
 
     const remainingDays = DateHelper.nextMonthRemainingDays(DateHelper.getYYYYMMDD(d));
@@ -125,9 +104,9 @@ class DashboardView {
     let remainingDaysTemplate = '';
     for (let i = 1; i <= remainingDays; i++) {
       remainingDaysTemplate += `
-        <a href="#/food-diary/${dNextSplit[0]}-${dNextSplit[1]}-${i.toString().padStart(2, '0')}" class="date-grid not__current-month _${dNextSplit[0]}-${dNextSplit[1]}-${i.toString().padStart(2, '0')}">
+        <a href="#/food-diary/${dNextSplit[0]}-${dNextSplit[1]}-${i.toString().padStart(2, '0')}" class="date-grid not__current-month _${dNextSplit[0]}-${dNextSplit[1]}-${i.toString().padStart(2, '0')}" data-date="${dNextSplit[0]}-${dNextSplit[1]}-${i.toString().padStart(2, '0')}">
           <div class="date-number"><span class="date-order">${i.toString().padStart(2, '0')}</span> <span class="first-date">${i === 1 ? DateHelper.getMonthName(dNextYYYYMMDD).slice(0, 3) : ''}</span></div>
-          <div class="calories__this-day"><span class="total-calories__this-day"></span><span class="calories-goal__this-day"></span></div>
+          <div class="calories__this-day"><span class="total-calories__this-day"></span> / <span class="calories-goal__this-day"></span></div>
         </a>
       `;
     }
@@ -135,21 +114,12 @@ class DashboardView {
     return remainingDaysTemplate;
   }
 
-  showCurrentDate(date) {
-    document.querySelector(`._${date}`).querySelector('.date-order').classList.add('current-date');
+  showCurrentDate(callback) {
+    callback(document.querySelector(`.calendar-date`));
   }
 
-  showGoal(goal) {
-    document.querySelector('.calories-goal-data').innerHTML = `${goal}`;
-    document.querySelectorAll('.calories-goal__this-day').forEach((goalDay) => {
-      goalDay.innerHTML = ` / ${goal}`;
-    });
-  }
-
-  showFoodCalories() {
-    document.querySelectorAll('.total-calories__this-day').forEach((caloriesDay) => {
-      caloriesDay.innerHTML = `${Math.round(Math.random() * (4000 - 2000)) + 2000}`;
-    });
+  showCalendarData(callback) {
+    callback(document.querySelectorAll('.date-grid'));
   }
 }
 
