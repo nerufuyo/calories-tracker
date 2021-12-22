@@ -276,11 +276,20 @@ main {
   cursor: pointer;
   user-select: none;
   padding: 10px 15px;
+  color: #333;
   
   &:hover {
     border-radius: 50%;
     background-color: $menu-hover-bgcolor;
   }
+}
+
+.bmi {
+  display: none;
+}
+
+.calories-goal {
+  display: none;
 }
 
 .calories-goal-data {

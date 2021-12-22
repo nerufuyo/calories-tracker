@@ -278,11 +278,20 @@ main.shift {
       -ms-user-select: none;
           user-select: none;
   padding: 10px 15px;
+  color: #333;
 }
 
 .previous-month:hover, .next-month:hover {
   border-radius: 50%;
   background-color: #dadce0;
+}
+
+.bmi {
+  display: none;
+}
+
+.calories-goal {
+  display: none;
 }
 
 .calories-goal-data {

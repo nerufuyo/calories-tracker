@@ -10,6 +10,7 @@ import EditPassword from '../views/pages/EditPassword.js';
 const routes = {
   '/': Dashboard,
   '/dashboard': Dashboard,
+  '/dashboard/:id': Dashboard,
   '/food-diary': FoodDiary,
   '/food-diary/:id': FoodDiary,
   '/add-food': AddFood,

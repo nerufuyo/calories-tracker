@@ -58,7 +58,6 @@ class EditFoodView {
   editFormListener(callback) {
     document.querySelector('.edit-food__form')
         .addEventListener('submit', (event) => {
-          console.log('masuk');
           callback({
             name: document.querySelector('.food-name'),
             servingSize: document.querySelector('.serving-size'),
@@ -71,7 +70,6 @@ class EditFoodView {
   }
 
   showFoodData({name, servingSize, calories, category, date}) {
-    console.log('date adalah ', date);
     document.querySelector('.food-name').value = name;
     document.querySelector('.serving-size').value = servingSize;
     document.querySelector('.food-calories').value = calories;

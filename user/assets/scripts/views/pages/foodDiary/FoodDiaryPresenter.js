@@ -72,7 +72,7 @@ class FoodDiaryPresenter {
   }
   
   async _generateCaloriesRemaining(foodCalories) {
-    const goalCalories = await GoalHelper.getGoal(this._date);
+    const goalCalories = await GoalHelper.getGoal({date: this._date});
 
     this._view.showCaloriesRemaining(({
       goalCaloriesElement,
