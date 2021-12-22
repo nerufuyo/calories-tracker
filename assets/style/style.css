@@ -473,17 +473,47 @@ section.auth-page div.form-collection div.form-container div.form-card p.form-ti
 section.auth-page div.form-collection div.form-container div.form-card div.form-input-group {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 30rem;
   height: fit-content;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
+  overflow: hidden;
 }
 
 section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input {
-  width: 30rem;
+  width: 25rem;
   height: 3rem;
   padding: .5rem;
   font-size: 2rem;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span {
+  position: absolute;
+  margin-left: 20%;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span i {
+  width: 2rem;
+  height: fit-content;
+  right: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #116530;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span i.fa-eye {
+  display: none;
+}
+
+section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span i.fa-eye-slash {
+  display: flex;
 }
 
 section.auth-page div.form-collection div.form-container div.form-card p.link-button {

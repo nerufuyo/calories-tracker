@@ -2,9 +2,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable require-jsdoc */
 import {connectToDatabase} from './database-connector.js';
-import {getStorage, ref as refStorage, uploadBytes, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
-import {getFirestore, collection, updateDoc, deleteDoc, getDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
-import {getAuth, updateEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+import {getStorage, ref as refStorage, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
+import {getFirestore, collection, updateDoc, deleteDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
+import {getAuth, reauthenticateWithCredential , updatePassword , sendEmailVerification, updateEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 // Initialize Firebase
 export const app = connectToDatabase();
@@ -64,7 +64,6 @@ export async function signUpNewUser() {
           loginForm.style.display = 'flex';
           registerForm.style.display = 'none';
         })
-
         .catch((error) => {
           const errorMessage = error.message;
           alert(errorMessage);
@@ -91,7 +90,8 @@ export function loginUser() {
           document.cookie = `user= ${user.uid}; expires=Thu, 18 Dec 2012`;
           // window.location.href = 'user-profile.html';
           // window.location.href = '/user';
-          window.location.href = 'update-email-password.html'
+          // window.location.href = 'update-email-password.html'
+          window.location.href = 'index.html';
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -128,16 +128,6 @@ export function switchFromSignUpForm() {
   registerForm.style.display = 'none';
 }
 
-export function changeEmailUser() {
-  updateEmail(auth.currentUser, newEmail).then(() => {
-    // Email updated!
-    // ...
-    console.log(auth.currentUser);
-  }).catch((error) => {
-    const errorMessage = error.message;
-    alert(errorMessage);
-  });
-}
 
 // Profile CRUD
 export function updateProfile() {
@@ -161,7 +151,7 @@ export function updateProfile() {
       weight: weight.value,
     });
 
-    alert('Data Upadated!');
+    alert('Data Updated!');
     fullname.disabled = true;
     email.disabled = true;
     birth.disabled = true;
@@ -259,6 +249,45 @@ function validateFileName() {
   const regex = /[\.#$\[]]/;
   const imageName = document.getElementById('image-name');
   return !(regex.test(imageName.value));
+}
+
+export function changeEmailUser() {
+  const email = document.getElementById('new-email');
+
+  if (email.value == '') {
+    alert('Please Fill The Fields');
+  } else {
+    updateEmail(auth.currentUser, email.value).then(() => {
+      console.log('Email Updated');
+      sendEmailVerification(auth.currentUser)
+      .then(() => {
+        console.log('Email Verification Send');
+      });
+    }).catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+  }
+}
+
+export function changePasswordUser() {
+  const user = auth.currentUser;
+  const credential = promptForCredentials();
+  const password = document.getElementById('verify-new-password');
+
+  if (password.value == '') {
+    alert('Please Fill The Fields!');
+  } else {
+    updatePassword(user, password.value).then(() => {
+      console.log('Password Updated!');
+      reauthenticateWithCredential(user, password.value).then(() => {
+        console.log('Password Verification!');
+      }).catch((error) => {
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
+    });
+  }
 }
 
 // Food CRUD
@@ -503,4 +532,52 @@ export function setEditFoodAttributDisabled() {
   foodDate.disabled = true;
   buttonGroup.style.display = 'none';
   editButton.style.display = 'flex';
+}
+
+export function passwordAttributeHide() {
+  const loginPassword = document.getElementById('passwords') || null;
+  const eye = document.getElementById('eye') || null;
+  const eyeSlash = document.getElementById('eye-slash') || null;
+
+  if (loginPassword !== null) {
+    loginPassword.setAttribute("type", "password");
+    eye.style.display = 'none';
+    eyeSlash.style.display = 'flex';
+  }
+}
+
+export function passwordAttributeUnHide() {
+  const loginPassword = document.getElementById('passwords') || null;
+  const eye = document.getElementById('eye') || null;
+  const eyeSlash = document.getElementById('eye-slash') || null;
+
+  if (loginPassword !== null) {
+    loginPassword.setAttribute("Type", "Text");
+    eye.style.display = 'flex';
+    eyeSlash.style.display = 'none';
+  }
+}
+
+export function passwordSignUpAttributeHide() {
+  const signupPassword = document.getElementById('password') || null;
+  const eyes = document.getElementById('eyes') || null;
+  const eyesSlash = document.getElementById('eyes-slash') || null;
+
+  if (signupPassword !== null) {
+    signupPassword.setAttribute("Type", "Password");
+    eyes.style.display = 'none';
+    eyesSlash.style.display = 'flex';
+  }
+}
+
+export function passwordSignUpAttributeUnHide() {
+  const signupPassword = document.getElementById('password') || null;
+  const eyes = document.getElementById('eyes') || null;
+  const eyesSlash = document.getElementById('eyes-slash') || null;
+
+  if (signupPassword !== null) {
+    signupPassword.setAttribute("type", "text");
+    eyes.style.display = 'flex';
+    eyesSlash.style.display = 'none';
+  }
 }

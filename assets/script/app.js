@@ -20,7 +20,14 @@ import {auth, database, signUpNewUser,
   setFoodAttributDisabled,
   removeEditFoodAttributDisabled,
   setEditFoodAttributDisabled,
-  updateFoodDiary, deleteFoodDiary, changeEmailUser} from './function.js';
+  updateFoodDiary, 
+  deleteFoodDiary, 
+  changeEmailUser, 
+  changePasswordUser, 
+  passwordAttributeUnHide, 
+  passwordAttributeHide,
+  passwordSignUpAttributeHide,
+  passwordSignUpAttributeUnHide} from './function.js';
 
 // Preloader
 document.documentElement.addEventListener('load', preloader) || null;
@@ -34,12 +41,25 @@ if (hamburger !== null) {
 // Auth State Changed
 if (auth !== null) {
   onAuthStateChanged(auth, async (user) => {
+    // Landing Page
+    const loginNavigationButton = document.getElementById('login-list');
+    const dashboardNavigationButton = document.getElementById('dashboard-list');
+
     // Profile Database
     const databaseRef = doc(database, `userProfile`, `${user.uid}`);
     const databaseRead = await getDoc(databaseRef);
+
+    // Email Profile
+    const userEmail = auth.currentUser;
+    const email = document.getElementById('new-email');
+
     // Food Database
     const databaseQuery = query(collection(database, `foodDiaries`), where('user_id', '==', user.uid));
     const databaseFoodRef = await getDocs(databaseQuery);
+
+    // Landing Page Read
+    loginNavigationButton.style.display = 'none';
+    dashboardNavigationButton .style.display = 'flex';
 
     // User Profile Read
     if (databaseRead.exists()) {
@@ -60,6 +80,13 @@ if (auth !== null) {
         weight.value = databaseRead.data().weight;
       }
     };
+
+    // Email Read
+    if (userEmail !== null) {
+      userEmail.providerData.forEach((profile) => {
+        email.value = profile.email;
+      });
+    }
 
     // Food Diary Read
     if (databaseFoodRef !== null) {
@@ -122,6 +149,26 @@ if (logoutButton !== null) {
   logoutButton.addEventListener('click', logOutUser);
 }
 
+const eyeButton = document.getElementById('eye') || null;
+if (eyeButton !== null) {
+  eyeButton.addEventListener('click', passwordAttributeHide);
+}
+
+const eyeSlashButton = document.getElementById('eye-slash') || null;
+if (eyeSlashButton !== null) {
+  eyeSlashButton.addEventListener('click', passwordAttributeUnHide);
+}
+
+const eyeSignUpButton = document.getElementById('eyes') || null;
+if (eyeSignUpButton !== null) {
+  eyeSignUpButton.addEventListener('click', passwordSignUpAttributeHide);
+}
+
+const eyeSlashSignUpButton = document.getElementById('eyes-slash') || null;
+if (eyeSlashSignUpButton !== null) {
+  eyeSlashSignUpButton.addEventListener('click', passwordSignUpAttributeUnHide);
+}
+
 // Cookie Page Load
 const foodDiaryPage = document.getElementById('food-diary') || null;
 if (foodDiaryPage !== null) {
@@ -156,6 +203,11 @@ if (cancelProfileButton !== null) {
 const updateEmailButton = document.getElementById('update-email-button') || null;
 if (updateEmailButton !== null) {
   updateEmailButton.addEventListener('click', changeEmailUser);
+}
+
+const updatePasswordButton = document.getElementById('update-password-button') || null;
+if (updatePasswordButton !== null) {
+  updatePasswordButton.addEventListener('click', changePasswordUser);
 }
 
 // Food Diary Page
