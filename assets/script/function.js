@@ -560,24 +560,24 @@ export function passwordAttributeUnHide() {
 
 export function passwordSignUpAttributeHide() {
   const signupPassword = document.getElementById('password') || null;
-  const eye = document.getElementById('eye') || null;
-  const eyeSlash = document.getElementById('eye-slash') || null;
+  const eyes = document.getElementById('eyes') || null;
+  const eyesSlash = document.getElementById('eyes-slash') || null;
 
   if (signupPassword !== null) {
     signupPassword.setAttribute("Type", "Password");
-    eye.style.display = 'none';
-    eyeSlash.style.display = 'flex';
+    eyes.style.display = 'none';
+    eyesSlash.style.display = 'flex';
   }
 }
 
 export function passwordSignUpAttributeUnHide() {
   const signupPassword = document.getElementById('password') || null;
-  const eye = document.getElementById('eye') || null;
-  const eyeSlash = document.getElementById('eye-slash') || null;
+  const eyes = document.getElementById('eyes') || null;
+  const eyesSlash = document.getElementById('eyes-slash') || null;
 
   if (signupPassword !== null) {
     signupPassword.setAttribute("type", "text");
-    eye.style.display = 'flex';
-    eyeSlash.style.display = 'none';
+    eyes.style.display = 'flex';
+    eyesSlash.style.display = 'none';
   }
 }

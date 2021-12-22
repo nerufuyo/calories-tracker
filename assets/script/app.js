@@ -159,12 +159,12 @@ if (eyeSlashButton !== null) {
   eyeSlashButton.addEventListener('click', passwordAttributeUnHide);
 }
 
-const eyeSignUpButton = document.getElementById('eye') || null;
+const eyeSignUpButton = document.getElementById('eyes') || null;
 if (eyeSignUpButton !== null) {
   eyeSignUpButton.addEventListener('click', passwordSignUpAttributeHide);
 }
 
-const eyeSlashSignUpButton = document.getElementById('eye-slash') || null;
+const eyeSlashSignUpButton = document.getElementById('eyes-slash') || null;
 if (eyeSlashSignUpButton !== null) {
   eyeSlashSignUpButton.addEventListener('click', passwordSignUpAttributeUnHide);
 }
