@@ -17,17 +17,13 @@ const NavbarDrawerInitiator = {
     footerElement.classList.toggle('shift');
   },
 
-  _closeDrawer({event, button, drawer}) {
-    console.log(drawer);
+  _closeDrawer({event, button, drawer, mainElement, footerElement}) {
     if (window.screen.width <= 900)
       if (!event.target.matches(drawer.classList[0])) {
-        if(drawer.classList.contains('show')) {
-          button.classList.remove('active');
-          drawer.classList.remove('show');
-          mainElement.classList.remove('shift');
-          footerElement.classList.remove('shift');
-        }
-
+        button.classList.remove('active');
+        drawer.classList.remove('show');
+        mainElement.classList.remove('shift');
+        footerElement.classList.remove('shift');
       }
   },
 };

@@ -24,6 +24,63 @@
     padding-right: 10px;
     padding-left: 10px;
   }
+
+  .food-diary__top {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .set-goal-link__container {
+    grid-column: 1 / span 2;
+  }
+
+  .date-picker__container {
+    order: 3;
+    margin-top: 60px;
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  
+  .add-food-link__container {
+    grid-column: 3 / -1;
+  }
+
+  .food-data {
+    .button-container {
+      flex-direction: column;
+      align-items: end;
+      gap: 10px;
+    }
+  }
+
+  .date-range__container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .data-range-since__container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    div {
+      width: 50px;
+      margin-bottom: 0;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .reset-button__container {
+    width: 100%;
+  }
+
+  .reset-button {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
