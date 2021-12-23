@@ -15,7 +15,7 @@ $footer-height: 60px;
 
 body {
   margin: 0;
-  padding: calc(#{$app-bar-height} + 40px) 0;
+  padding: calc(#{$app-bar-height} + 40px) 0 calc(#{$app-bar-height} + 80px) 0;
   position: relative;
   min-height: 100vh;
   background-color: #F6F8FA;
@@ -67,11 +67,12 @@ button {
   position: fixed;
   display: flex;
   top: 0;
-  left: 0;
+  // left: 0;
   align-items: center;
   width: 100%;
   height: $app-bar-height;
   background-color: #FFFFFF;
+  border-bottom: 1px solid #DADCE0;
 }
 
 .app-bar_menu-hamburger {
@@ -115,10 +116,17 @@ button {
   display: flex;
   align-items: center;
   color: black;
-  font-size: 24px;
+  font-size: 1.375rem;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: bold;
   height: $app-bar-height;
+}
+
+.user-profile__name {
+  max-width: 120px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 
 .user-profile {
@@ -156,6 +164,10 @@ button {
   right: 0;
   width: 200px;
   background-color: #FFFFFF;
+  border: solid #DADCE0;
+  border-width: 1px;
+  border-top: none;
+  border-right: none;
   min-width: 160px;
   z-index: 1;
 
@@ -188,9 +200,11 @@ button {
 /* ---- Navbar ---- */
 .sidenav {
   position: fixed;
+  z-index: 1;
   top: $app-bar-height;
   left: -$side-nav-width;
   width: $side-nav-width;
+  border-right: 1px solid #DADCE0;
   min-height: calc(100vh - #{$app-bar-height});
   background-color: #FFFFFF;
   transition: left 0.5s;
@@ -233,6 +247,10 @@ main {
   }
 }
 
+.main-content {
+  width: 100%;
+}
+
 .page-header {
   min-height: 72px;
   margin-bottom: 40px;
@@ -250,8 +268,9 @@ main {
 }
 
 .page-content {
+  width: 100%;
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px;
   background-color: #FFFFFF;
   min-height: 300px;
 }
@@ -945,6 +964,7 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+  border-top: 1px solid #DADCE0;
   height: $footer-height;
   background-color: #FFFFFF;
   transition: all 0.5s;
@@ -954,3 +974,5 @@ footer {
     left: $side-nav-width;
   }
 }
+
+@import "responsive";

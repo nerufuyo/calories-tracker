@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  padding: calc(60px + 40px) 0;
+  padding: calc(60px + 40px) 0 calc(60px + 80px) 0;
   position: relative;
   min-height: 100vh;
   background-color: #F6F8FA;
@@ -28,13 +28,13 @@ button {
   display: -ms-flexbox;
   display: flex;
   top: 0;
-  left: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
   height: 60px;
   background-color: #FFFFFF;
+  border-bottom: 1px solid #DADCE0;
 }
 
 .app-bar_menu-hamburger {
@@ -92,10 +92,17 @@ button {
       -ms-flex-align: center;
           align-items: center;
   color: black;
-  font-size: 24px;
+  font-size: 1.375rem;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: bold;
   height: 60px;
+}
+
+.user-profile__name {
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-profile {
@@ -140,6 +147,10 @@ button {
   right: 0;
   width: 200px;
   background-color: #FFFFFF;
+  border: solid #DADCE0;
+  border-width: 1px;
+  border-top: none;
+  border-right: none;
   min-width: 160px;
   z-index: 1;
 }
@@ -172,9 +183,11 @@ button {
 /* ---- Navbar ---- */
 .sidenav {
   position: fixed;
+  z-index: 1;
   top: 60px;
   left: -230px;
   width: 230px;
+  border-right: 1px solid #DADCE0;
   min-height: calc(100vh - 60px);
   background-color: #FFFFFF;
   -webkit-transition: left 0.5s;
@@ -218,6 +231,10 @@ main.shift {
   margin-left: 230px;
 }
 
+.main-content {
+  width: 100%;
+}
+
 .page-header {
   min-height: 72px;
   margin-bottom: 40px;
@@ -239,8 +256,9 @@ main.shift {
 }
 
 .page-content {
+  width: 100%;
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px;
   background-color: #FFFFFF;
   min-height: 300px;
 }
@@ -1106,6 +1124,7 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  border-top: 1px solid #DADCE0;
   height: 60px;
   background-color: #FFFFFF;
   -webkit-transition: all 0.5s;
@@ -1115,4 +1134,53 @@ footer {
 footer.shift {
   width: calc(100% - 230px);
   left: 230px;
+}
+
+@media only screen and (max-width: 900px) {
+  main.shift {
+    width: 100%;
+    margin-left: 0;
+  }
+  footer.shift {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .page-title {
+    padding-left: 10px;
+  }
+  .page-content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app-bar {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .user-profile {
+    margin-left: 0;
+  }
+  .user-profile__name {
+    display: none;
+  }
+  .calendar {
+    font-size: 0.75rem;
+  }
+  .calories__this-day {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 5px;
+  }
 }
