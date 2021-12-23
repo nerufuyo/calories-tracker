@@ -1,5 +1,4 @@
 import DateHelper from '../../../utils/DateHelper.js';
-import UrlParser from '../../../routes/UrlParser.js';
 import GoalHelper from '../../../utils/GoalHelper.js';
 import FoodDiaryHelper from '../../../utils/FoodDiaryHelper.js';
 
@@ -16,9 +15,6 @@ class DashboardPresenter {
     this._displayCalendar();
     this._displayCurrentDate();
     this._displayCalendarData();
-    
-    // this._showGoal();
-    // this._view.showFoodCalories();
   }
 
   _displayMonthYear() {
@@ -28,10 +24,9 @@ class DashboardPresenter {
   }
 
   _generateMonthPickerDate() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
     this._view.monthPickerDate(({previousMonth, nextMonth}) => {
-      previousMonth.href = `#/${url.resource}/${DateHelper.getPreviousMonth(this._date)}`;
-      nextMonth.href =  `#/${url.resource}/${DateHelper.getNextMonth(this._date)}`;
+      previousMonth.href = `#/dashboard/${DateHelper.getPreviousMonth(this._date)}`;
+      nextMonth.href =  `#/dashboard/${DateHelper.getNextMonth(this._date)}`;
     })
   }
 
@@ -70,8 +65,6 @@ class DashboardPresenter {
 
       const goals = await this._goalDb.get();
       const foodDiaries = await this._foodDiaryDb.getByDateRange({startDate, endDate});
-
-      // await FoodDiaryHelper.getCaloriesByRange({foodDiaries, startDate: '2021-12-21', endDate: '2021-12-21'})
 
       dateElements.forEach(async (dateElement) => {
         const goal = await GoalHelper.getGoal({date: dateElement.dataset.date, goals});
