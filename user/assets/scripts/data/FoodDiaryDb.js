@@ -47,43 +47,42 @@ const FoodDiaryDb = {
       category,
       date: new Date(date),
       updatedAt: new Date(),
-    })
-
+    });
   },
 
   async getByDateRange({startDate, endDate}) {
-    const q = query(colRef, 
-      where(
-        "date", ">=", new Date(startDate)
-      ), 
-      where(
-        "date", "<=", new Date(endDate)
-      ),
-      where(
-        "uid", '==', (await UserDb.getUserAuth()).uid
-      ),
-      orderBy('date', 'desc')
+    const q = query(colRef,
+        where(
+            'date', '>=', new Date(startDate),
+        ),
+        where(
+            'date', '<=', new Date(endDate),
+        ),
+        where(
+            'uid', '==', (await UserDb.getUserAuth()).uid,
+        ),
+        orderBy('date', 'desc'),
     );
 
     const snapshot = await getDocs(q);
 
     const foods = [];
 
-    snapshot.docs.forEach(doc => {
-      foods.push({ 
-        ...doc.data(), 
-        date: doc.data().date.toDate(), 
-        id: doc.id })
-    })
+    snapshot.docs.forEach((doc) => {
+      foods.push({
+        ...doc.data(),
+        date: doc.data().date.toDate(),
+        id: doc.id});
+    });
 
     return foods;
   },
 
   async delete(id) {
-    const docRef = doc(db, 'foodDiaries', id)
+    const docRef = doc(db, 'foodDiaries', id);
 
     await deleteDoc(docRef);
-  }
+  },
 };
 
 export default FoodDiaryDb;

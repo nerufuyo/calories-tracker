@@ -8,7 +8,9 @@
 }
 
 * .stop_scrolling {
-  height: 100vh;
+  position: relative;
+  height: 90vh;
+  top: 0;
   overflow: hidden;
 }
 
@@ -916,16 +918,13 @@ section.user-profile div.food-outter-container button.add-food-button, section.u
 
 @media screen and (max-width: 1600px) {
   nav {
-    gap: 50%;
+    gap: 40%;
   }
-  section#hero-container div.hero-image-container img.hero-image {
-    width: 35rem;
+  section#about-container {
+    gap: 5rem;
   }
-  section#hero-container div.hero-detail-container p.detail-title {
-    font-size: 2.5rem;
-  }
-  section#hero-container div.hero-detail-container p.detail-text {
-    font-size: 1.25rem;
+  section#about-container div.about-outer-container {
+    height: 50vh;
   }
   section.login-page div.form-collection div.form-container {
     width: 32rem;
@@ -948,161 +947,163 @@ section.user-profile div.food-outter-container button.add-food-button, section.u
 
 @media screen and (max-width: 1440px) {
   nav {
-    gap: 45%;
+    gap: 30%;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 40rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 4rem;
+  }
+  section#feature-container div.feature-hero {
+    width: 60vw;
+  }
+  section#feature-container div.feature-description {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    gap: 1rem;
+  }
+  section#feature-container div.feature-description p.feature-title {
+    font-size: 3rem;
+  }
+  section#feature-container div.feature-description div.feature-inner-container p.feature-list {
+    font-size: 1.5rem;
+  }
+  section#feature-container div.feature-description div.feature-inner-container p.feature-text {
+    font-size: 1rem;
+  }
+  section.auth-page nav a {
+    width: 25%;
+  }
+  section.auth-page div.auth-hero {
+    width: 40%;
+  }
+  section.auth-page div.form-collection {
+    display: flex;
+    width: 40%;
+    height: fit-content;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  section.auth-page div.form-collection div.form-container {
+    width: 30rem;
+    height: 35rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group {
+    align-items: center;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#emails, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#email, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#fullname {
+    width: 25rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 20rem;
+    font-size: 1.25rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card p.link-button {
+    font-size: 1.25rem;
+  }
+  section.auth-page div.form-collection div.form-container div.footer-container button {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  nav {
+    gap: 20%;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 40rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-title {
+    font-size: 3.5rem;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    font-size: 1.25rem;
+  }
+  section#about-container div.about-outer-container {
+    height: 60vh;
+  }
+  section.auth-page nav a {
+    width: 20%;
+  }
+  section.auth-page div.form-collection {
+    display: flex;
+    width: 40%;
+    height: fit-content;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  section.auth-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 30rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group {
+    align-items: center;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#emails, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#email, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#fullname {
+    width: 20rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 15rem;
+    font-size: 1.25rem;
   }
 }
 
 @media screen and (max-width: 1280px) {
-  section.login-page nav a img {
-    width: 4rem;
-  }
-  section.login-page div.form-collection div.form-container {
-    width: 25rem;
-    height: 28rem;
-  }
-  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
-    width: 20rem;
-    height: 2rem;
-    font-size: 1.5rem;
-  }
-  section.login-page div.form-collection div.form-container div.form-card a {
-    font-size: 1.5rem;
-  }
-  section.login-page div.form-collection div.form-container div.footer-container button {
-    font-size: 2.5rem;
-  }
-  section.login-page div.form-collection div.login-form {
-    display: flex;
-  }
-  section.login-page div.form-collection div.signup-form {
-    display: none;
-    height: 32rem;
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 35rem;
   }
 }
 
 @media screen and (max-width: 1080px) {
   nav {
-    gap: 35%;
-  }
-  nav a img.navigation-logo {
-    width: 10rem;
-  }
-  section#hero-container div.hero-image-container img.hero-image {
-    width: 25rem;
-  }
-  section#hero-container div.hero-detail-container p.detail-title {
-    font-size: 2.5rem;
-  }
-  section#hero-container div.hero-detail-container p.detail-text {
-    font-size: 1.25rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  nav {
     gap: 10%;
   }
-  nav a img.navigation-logo {
-    width: 10rem;
-  }
-  section#hero-container div.hero-image-container {
-    padding: 0;
-  }
   section#hero-container div.hero-image-container img.hero-image {
-    width: 20rem;
-  }
-  section#hero-container div.hero-detail-container {
-    width: 40%;
-    padding: 1rem;
+    width: 30rem;
   }
   section#hero-container div.hero-detail-container p.detail-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   section#hero-container div.hero-detail-container p.detail-text {
     font-size: 1rem;
   }
   section#hero-container div.hero-detail-container a.register-link {
-    padding: .8rem 1.5rem;
+    font-size: 1rem;
   }
-  section#feature-container div.feature-inner-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  section#feature-container div.feature-inner-container img.feature-image {
-    width: 10rem;
-  }
-  section#feature-container div.feature-inner-container p.feature-text {
-    width: 50%;
-    font-size: 1.25rem;
-    font-weight: 400;
-    text-align: center;
-  }
-  section#feature-container div.second-feature {
-    flex-direction: row-reverse;
-  }
-  section#about-container p.about-title {
-    font-size: 3rem;
-    font-weight: 500;
-  }
-  section#about-container div.about-outer-container div.about-inner-container {
-    display: none;
-  }
-  section#about-container div.about-outer-container p.about-text {
-    width: 90%;
-    text-align: center;
-    font-size: 1.25rem;
-  }
-  section.login-page nav a img {
+  section#feature-container div.feature-hero {
+    position: absolute;
     width: 100%;
+    right: 0;
   }
-  section.login-page div.login-hero {
-    display: none;
+  section#feature-container div.feature-hero img {
+    width: 100%;
+    opacity: .15;
   }
-  section.login-page div.form-collection div.form-container {
-    width: 30rem;
-    height: 35rem;
+  section#feature-container div.feature-description {
+    width: 100%;
+    padding: 2rem;
+    z-index: 1;
   }
 }
 
-@media screen and (max-width: 428px) {
-  div#preloader {
-    width: 100vw;
-    height: 100vh;
-    gap: 1rem;
-    padding: 0%;
-    overflow: hidden;
-    animation: fade-out 1s forwards 3800ms;
-  }
-  div#preloader div.preloader-image {
-    height: 20vh;
-    gap: 1rem;
-  }
-  div#preloader div.preloader-image img {
-    width: 3rem;
-  }
-  div#preloader p.preloader-text {
-    font-size: 2.5rem;
-    opacity: 0;
-    color: var(--third-color);
-    animation: blink .75s alternate infinite .2s;
-  }
+@media screen and (max-width: 768px) {
   nav {
     width: 100vw;
     gap: 25%;
     border: none;
-    padding: .5rem 0rem;
+    padding: 1rem 0rem 0rem 0rem;
   }
   nav a img.navigation-logo {
-    width: 8rem;
+    width: 100%;
   }
   nav ul.navigation-list {
     display: flex;
     position: absolute;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     top: 7%;
     left: 100%;
     align-items: center;
@@ -1112,7 +1113,7 @@ section.user-profile div.food-outter-container button.add-food-button, section.u
     padding: 1rem;
     cursor: pointer;
     overflow: hidden;
-    background-color: var(--primary-color);
+    background-color: var(--seventh-color);
     z-index: 4;
     transition: all .5s ease;
   }
@@ -1124,9 +1125,10 @@ section.user-profile div.food-outter-container button.add-food-button, section.u
     justify-content: center;
   }
   nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link {
-    font-size: 2rem;
+    font-family: 'Dosis';
+    font-size: 3rem;
     text-align: center;
-    color: var(--third-color);
+    color: var(--fifth-color);
     transition: .2s all;
   }
   nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link span.navigation-slide {
@@ -1147,27 +1149,40 @@ section.user-profile div.food-outter-container button.add-food-button, section.u
   nav ul.navigation-list li.login-list {
     display: flex;
     flex-direction: column;
-    width: 5rem;
+    width: 8rem;
     height: fit-content;
-    padding: .5rem;
+    padding: .5rem 2rem;
     align-items: center;
-    border-radius: .25rem;
-    background-color: var(--fourth-color);
+    border-radius: 5rem;
+    background-color: var(--third-color);
   }
   nav ul.navigation-list li.login-list a.login-link {
-    color: var(--primary-color);
+    color: var(--seventh-color);
   }
   nav ul.navigation-list li.login-list a.login-link span.login-slide {
     display: none;
   }
   nav ul.navigation-list li.login-list:hover {
-    background-color: var(--third-color);
+    background-color: var(--primary-color);
   }
   nav ul.navigation-list li.login-list:hover a.login-link:hover {
-    color: var(--fifth-color);
+    color: var(--seventh-color);
   }
-  nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
-    color: var(--secondary-color);
+  nav ul.navigation-list li.dashboard-list {
+    display: none;
+    flex-direction: column;
+    width: 12rem;
+    height: fit-content;
+    padding: .5rem 2rem;
+    align-items: center;
+    border-radius: 5rem;
+    background-color: var(--third-color);
+  }
+  nav ul.navigation-list li.dashboard-list a.login-link {
+    color: var(--seventh-color);
+  }
+  nav ul.navigation-list li.dashboard-list a.login-link span.login-slide {
+    display: none;
   }
   nav ul.hamburger-lines {
     display: flex;
@@ -1179,270 +1194,272 @@ section.user-profile div.food-outter-container button.add-food-button, section.u
     width: 2rem;
     height: .25rem;
     border-radius: 1rem;
-    background-color: black;
+    background-color: var(--third-color);
   }
   section#hero-container {
-    width: 100vw;
-    padding: 0rem;
+    flex-direction: column-reverse;
     justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem 0rem 0rem;
   }
   section#hero-container div.hero-image-container {
-    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  section#hero-container div.hero-image-container img.hero-image {
+    width: 30rem;
   }
   section#hero-container div.hero-detail-container {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    height: fit-content;
-    padding: 1rem;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
   }
   section#hero-container div.hero-detail-container p.detail-title {
-    font-size: 2rem;
-  }
-  section#hero-container div.hero-detail-container p.detail-text {
-    font-size: 1rem;
-  }
-  section#hero-container div.hero-detail-container a.register-link {
-    padding: .6rem 1.5rem;
-    font-size: 1.25rem;
-  }
-  section#feature-container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: fit-content;
-    margin-top: 3rem;
-    padding: 0rem;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-  }
-  section#feature-container p.feature-title {
     font-size: 2.5rem;
-    font-weight: 500;
-  }
-  section#feature-container div.feature-inner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  section#feature-container div.feature-inner-container img.feature-image {
-    width: 5rem;
-  }
-  section#feature-container div.feature-inner-container p.feature-text {
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 400;
     text-align: center;
-  }
-  section#feature-container div.second-feature {
-    flex-direction: column;
-  }
-  section#about-container {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    height: fit-content;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  section#about-container p.about-title {
-    font-size: 2.5rem;
-    font-weight: 500;
   }
   section#about-container div.about-outer-container {
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    height: fit-content;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    gap: 2.5rem;
-  }
-  section#about-container div.about-outer-container p.about-text {
-    text-align: center;
-    font-size: 1rem;
-  }
-  footer {
     flex-direction: column;
+    width: 100%;
+    height: 100vh;
   }
-  section.login-page {
-    padding: 0%;
+  footer div.footer-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
   }
-  section.login-page nav {
-    width: 100vw;
-    height: 10vh;
+  footer div.footer-container div.footer-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
   }
-  section.login-page nav a {
-    width: fit-content;
+  footer div.footer-container div.footer-left p {
+    width: 70%;
   }
-  section.login-page nav a img {
+  section.auth-page nav a {
     width: 50%;
   }
-  section.login-page div.form-collection div.form-container {
+  section.auth-page nav a img {
+    width: 100%;
+  }
+  section.auth-page div.auth-hero {
+    display: none;
+  }
+  section.auth-page div.form-collection {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  section.auth-page div.form-collection div.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+    height: 38rem;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 4px solid var(--third-color);
+    border-radius: 1rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 3rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card p.form-title {
+    font-size: 2.5rem;
+    text-decoration: underline;
+    overflow: hidden;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: fit-content;
+    justify-content: center;
+    gap: 2rem;
+    overflow: hidden;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#emails, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#email, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#fullname {
+    width: 28rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input {
     width: 25rem;
-    height: 28rem;
-  }
-  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
-    width: 18rem;
-  }
-  section.login-page div.form-collection div.form-container div.form-card a {
+    height: 3rem;
+    padding: .5rem;
     font-size: 1.5rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span {
+    display: flex;
+    width: 3rem;
+    height: 4.2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span i {
+    width: 2rem;
+    height: fit-content;
+    right: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--fifth-color);
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span i.fa-eye {
+    display: none;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group div span i.fa-eye-slash {
+    display: flex;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card p.link-button {
+    font-family: 'Dosis';
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    overflow: hidden;
+  }
+  section.auth-page div.form-collection div.form-container div.footer-container {
+    display: flex;
+    width: 40rem;
+    height: 6rem;
+    background-color: var(--third-color);
+  }
+  section.auth-page div.form-collection div.form-container div.footer-container button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    font-size: 4rem;
+    color: white;
+    cursor: pointer;
+    background-color: var(--third-color);
+  }
+  section.auth-page div.form-collection div.form-container div.footer-container button:hover {
+    background-color: var(--fourth-color);
+  }
+  section.auth-page div.form-collection div.login-form {
+    display: flex;
+  }
+  section.auth-page div.form-collection div.signup-form {
+    display: none;
   }
 }
 
-@media screen and (max-width: 320px) {
-  div#preloader div.preloader-image img {
-    width: 2.5rem;
-  }
+@media screen and (max-width: 428px) {
   nav {
-    width: 100vw;
-    gap: 40%;
-    border: none;
-    padding: .5rem 0rem;
+    gap: 5%;
   }
-  nav a img.navigation-logo {
-    width: 8rem;
-  }
-  nav ul.navigation-list {
-    top: 6%;
-    left: 100%;
-  }
-  nav ul.navigation-list li.navigation-item-list {
-    display: flex;
-    flex-direction: column;
-    padding: .5rem;
-    align-items: center;
+  section#hero-container {
+    flex-direction: column-reverse;
     justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem 0rem 0rem;
   }
-  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link {
-    font-size: 1.5rem;
+  section#hero-container div.hero-detail-container {
+    justify-content: center;
+    align-items: center;
+  }
+  section#hero-container div.hero-detail-container p.detail-text {
+    padding: 0;
     text-align: center;
-    color: var(--third-color);
-    transition: .2s all;
   }
-  nav ul.navigation-list li.navigation-item-list a.navigation-item-list-link span.navigation-slide {
+  section#feature-container div.feature-description {
     display: flex;
-    width: 0%;
-    height: 3px;
-    border-radius: 5rem;
-    background-color: var(--third-color);
-    transition: width .25s ease-in-out;
-  }
-  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover {
-    color: var(--third-color);
-  }
-  nav ul.navigation-list li.navigation-item-list:hover a.navigation-item-list-link:hover span.navigation-slide {
+    flex-direction: column;
     width: 100%;
-    transition: width .25s ease-in-out;
-  }
-  nav ul.navigation-list li.login-list {
-    display: flex;
-    flex-direction: column;
-    width: 5rem;
-    height: fit-content;
-    padding: .5rem;
-    align-items: center;
-    border-radius: .25rem;
-    background-color: var(--fourth-color);
-  }
-  nav ul.navigation-list li.login-list a.login-link {
-    color: var(--primary-color);
-  }
-  nav ul.navigation-list li.login-list a.login-link span.login-slide {
-    display: none;
-  }
-  nav ul.navigation-list li.login-list:hover {
-    background-color: var(--third-color);
-  }
-  nav ul.navigation-list li.login-list:hover a.login-link:hover {
-    color: var(--fifth-color);
-  }
-  nav ul.navigation-list:hover li.navigation-item-list a.navigation-item-list-link {
-    color: var(--secondary-color);
-  }
-  nav ul.hamburger-lines {
-    display: flex;
-    flex-direction: column;
-    gap: .3rem;
-    cursor: pointer;
-  }
-  nav ul.hamburger-lines li {
-    width: 2rem;
-    height: .25rem;
-    border-radius: 1rem;
-    background-color: black;
-  }
-  section#feature-container p.feature-title {
-    font-size: 2.5rem;
-    font-weight: 500;
-  }
-  section#feature-container div.feature-inner-container p.feature-text {
-    font-size: 1rem;
-  }
-  section#about-container p.about-title {
-    font-size: 2.5rem;
-  }
-  section#about-container div.about-outer-container p.about-text {
-    font-size: 1rem;
-  }
-  footer {
-    width: 90vw;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  section.login-page {
-    justify-content: center;
-    padding: 0%;
-  }
-  section.login-page nav {
-    width: 100vw;
-    height: 3vh;
-    align-items: center;
-  }
-  section.login-page nav a img {
-    width: 30%;
-  }
-  section.login-page div.form-collection div.form-container {
-    width: 25rem;
-    height: 20rem;
-    overflow: hidden;
-  }
-  section.login-page div.form-collection div.form-container div.form-card {
-    gap: 1.5rem;
-  }
-  section.login-page div.form-collection div.form-container div.form-card p.form-title {
-    font-size: 1.5rem;
-  }
-  section.login-page div.form-collection div.form-container div.form-card div.form-input-group {
     gap: 1rem;
   }
-  section.login-page div.form-collection div.form-container div.form-card div.form-input-group input {
-    width: 12rem;
-    height: 1.5rem;
+  section#feature-container div.feature-description p.feature-title {
+    width: 100%;
+    text-align: center;
   }
-  section.login-page div.form-collection div.form-container div.form-card a {
-    font-size: 1.25rem;
+  section#about-container {
+    padding: 0;
   }
-  section.login-page div.form-collection div.form-container div.footer-container button {
+  section#about-container p.about-title {
+    text-align: center;
+    padding: 1rem;
+  }
+  section#about-container p.about-text {
+    width: 80%;
+  }
+  section#about-container div.about-outer-container {
+    height: 120vh;
+  }
+  footer {
+    justify-content: center;
+    align-items: center;
+  }
+  footer div.footer-container div.footer-right {
+    width: 80%;
+  }
+  footer div.footer-container div.footer-right p.footer-title {
+    width: 100%;
+    text-align: center;
+    font-family: 'Dosis';
     font-size: 2rem;
+    font-weight: 600;
+    color: var(--third-color);
   }
-  section.login-page div.form-collection div.login-form {
+  footer div.footer-container div.footer-right div.footer-inner-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+  }
+  footer div.footer-container div.footer-right div.footer-inner-container i {
+    font-size: 1rem;
+    color: var(--fifth-color);
+  }
+  footer div.footer-container div.footer-right div.footer-inner-container p.footer-text {
+    width: 80%;
+    text-align: left;
+    font-family: 'Open Sans';
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fifth-color);
+  }
+  section.auth-page {
+    padding: 1rem 0rem 0rem 0rem;
+  }
+  section.auth-page div.form-collection {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  section.auth-page div.form-collection div.form-container {
+    width: 25rem;
+    height: 32rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#emails, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#email, section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input#fullname {
+    width: 18rem;
+  }
+  section.auth-page div.form-collection div.form-container div.form-card div.form-input-group input {
+    width: 15rem;
+    height: 3rem;
+    padding: .5rem;
+    font-size: 1.5rem;
+  }
+  section.auth-page div.form-collection div.login-form {
     display: flex;
   }
-  section.login-page div.form-collection div.signup-form {
+  section.auth-page div.form-collection div.signup-form {
     display: none;
-    height: 22rem;
   }
 }
 

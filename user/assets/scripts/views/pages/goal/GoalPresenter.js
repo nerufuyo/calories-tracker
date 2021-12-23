@@ -1,4 +1,4 @@
-import DateHelper from "../../../utils/DateHelper.js";
+import DateHelper from '../../../utils/DateHelper.js';
 
 class GoalPresenter {
   constructor({view, date, UserDb, GoalDb}) {
@@ -22,7 +22,7 @@ class GoalPresenter {
         showEndDateButton.click();
         endDate.value = this._date;
       }
-    })
+    });
   }
 
   _listenToShowEndDateButton() {
@@ -49,13 +49,13 @@ class GoalPresenter {
       await this._goalDb.add({
         calories: calories.value,
         startDate: startDate.value,
-        endDate: endDate.value
+        endDate: endDate.value,
       })
-        .then(() => {
-          calories.value = null;
-          startDate.value = null;
-          endDate.value = null;
-        })
+          .then(() => {
+            calories.value = null;
+            startDate.value = null;
+            endDate.value = null;
+          });
     });
   }
 }

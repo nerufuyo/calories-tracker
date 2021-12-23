@@ -46,7 +46,7 @@ class DashboardView {
     callback({
       previousMonth: document.querySelector('.previous-month'),
       nextMonth: document.querySelector('.next-month'),
-    })
+    });
   }
 
   showCalendar(callback) {

@@ -1,7 +1,7 @@
-import DateHelper from "../../../utils/DateHelper.js";
+import DateHelper from '../../../utils/DateHelper.js';
 
 class EditFoodPresenter {
-  constructor({view, foodId, FoodDiaryDb}){
+  constructor({view, foodId, FoodDiaryDb}) {
     this._view = view;
     this._foodId = foodId;
     this._foodDiaryDb = FoodDiaryDb;
@@ -19,7 +19,7 @@ class EditFoodPresenter {
       calories: foodDiary.data().calories,
       category: foodDiary.data().category,
       date: DateHelper.getYYYYMMDD(foodDiary.data().date.toDate()),
-    })
+    });
   }
 
   async _listenToEditForm() {
@@ -37,7 +37,7 @@ class EditFoodPresenter {
         calories: calories.value,
         category: category.options[category.selectedIndex].value,
         date: date.value,
-      })
+      });
     });
   }
 }
