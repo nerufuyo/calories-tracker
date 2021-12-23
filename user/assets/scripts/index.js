@@ -1,7 +1,6 @@
 import DateHelper from './utils/DateHelper.js';
 import App from './views/App.js';
 import UserDb from './data/UserDb.js';
-import userLoginTest from './utils/UserLoginTest.js';
 import isUserLogin from './utils/IsUserLogin.js';
 import LogoutHelper from './utils/LogoutHelper.js';
 
@@ -23,8 +22,6 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-  // userLoginTest();
-
   const unsubAuth = isUserLogin();
   LogoutHelper.init({
     logoutButton: document.querySelector('.logout-button'),
