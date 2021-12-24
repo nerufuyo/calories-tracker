@@ -31,6 +31,9 @@ Lack of maintaining a balance between calories in and out causes many people to 
 - [Font Awesome](https://fontawesome.com/v5.15/icons)
 - [Freepik](https://www.freepik.com/)
 
+## Deployed Link
+- [Calories Tracker](https://calories-tracker-a6aa0.web.app)
+
 ## Attention
 - If you find bugs, please report the issue.
 
