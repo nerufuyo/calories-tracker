@@ -1,5 +1,5 @@
 import EditProfilePresenter from './editProfile/EditProfilePresenter.js';
-import EditProfileView from './editProfile/editProfileView.js';
+import EditProfileView from './editProfile/EditProfileView.js';
 import UserDb from '../../data/UserDb.js';
 
 const view = new EditProfileView();

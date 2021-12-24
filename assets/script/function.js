@@ -89,7 +89,7 @@ export function loginUser() {
           console.log('User Logged in!');
           document.cookie = `user= ${user.uid}; expires=Thu, 18 Dec 2012`;
           // window.location.href = 'user-profile.html';
-          window.location.href = '/user';
+          window.location.href = './user';
           // window.location.href = 'update-email-password.html'
           // window.location.href = 'index.html';
         })
