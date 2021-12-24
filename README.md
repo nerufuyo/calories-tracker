@@ -2,8 +2,6 @@
 
 Lack of maintaining a balance between calories in and out causes many people to suffer from obesity. Based on WHO data, in 2016 there were 1.9 billion adults who were overweight and 650 million of them were obese. Therefore it is important to maintain the amount of calorie consumption. One way to record the number of calories consumed each day. How can recording calorie consumption affect calorie consumption habits? By taking notes, it is possible to evaluate the amount of calorie consumption that may exceed the recommendation. Therefore, we developed the Calories Tracker application with the hope that users can maintain the recommended amount of calorie consumption to avoid obesity. Website Calories Tracker uses the Javascript programming language with the NodeJs framework and Native CSS.
 
-- You can acces this project from [Here](www.google.com)
-
 <img src="caloriestracker.gif">
 
 ## Developer
