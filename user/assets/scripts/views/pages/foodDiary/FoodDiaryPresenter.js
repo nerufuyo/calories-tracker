@@ -5,7 +5,7 @@ import GoalHelper from '../../../utils/GoalHelper.js';
 class FoodDiaryPresenter {
   constructor({
     view,
-    UserDb, 
+    UserDb,
     FoodDiaryDb,
     GoalDb,
     date,
@@ -28,7 +28,7 @@ class FoodDiaryPresenter {
   _generateDatePicker() {
     this._view.showDatePicker(({datePicker}) => {
       datePicker.value = this._date;
-    })
+    });
   }
 
   _generateDay() {
@@ -51,7 +51,7 @@ class FoodDiaryPresenter {
       }
 
       dayElement.innerHTML = DateHelper.getDayName(this._date);
-    })
+    });
   }
 
   _listenToDatePicker() {
@@ -59,7 +59,7 @@ class FoodDiaryPresenter {
       this._date = event.target.value;
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       window.location.href = `#/${url.resource}/${this._date}`;
-    })
+    });
   }
 
   _generateDatePickerButton() {
@@ -68,9 +68,9 @@ class FoodDiaryPresenter {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       datePickerNext.href = `#/${url.resource}/${DateHelper.getNextDate(d)}`;
       datePickerPrevious.href = `#/${url.resource}/${DateHelper.getPreviousDate(d)}`;
-    })
+    });
   }
-  
+
   async _generateCaloriesRemaining(foodCalories) {
     const goalCalories = await GoalHelper.getGoal({date: this._date});
 
@@ -89,7 +89,7 @@ class FoodDiaryPresenter {
 
   async _generateFood() {
     const FoodDiaries = await this._foodDiaryDb.getByDateRange({startDate: this._date, endDate: this._date});
-    
+
     this._generateBreakfast({data: this._view.foodDataTemplate('')});
     this._generateLunch({data: this._view.foodDataTemplate('')});
     this._generateDinner({data: this._view.foodDataTemplate('')});
@@ -102,25 +102,22 @@ class FoodDiaryPresenter {
       if (foodDiary.category === 'Breakfast') {
         breakfastTotal += foodDiary.calories;
         breakfastList += this._view.foodDataTemplate(foodDiary);
-      }
-      else if (foodDiary.category === 'Lunch') {
+      } else if (foodDiary.category === 'Lunch') {
         lunchTotal += foodDiary.calories;
         lunchList += this._view.foodDataTemplate(foodDiary);
-      }
-      else if (foodDiary.category === 'Dinner') {
+      } else if (foodDiary.category === 'Dinner') {
         dinnerTotal += foodDiary.calories;
         dinnerList += this._view.foodDataTemplate(foodDiary);
-      }
-      else if (foodDiary.category === 'Snack') {
+      } else if (foodDiary.category === 'Snack') {
         snackTotal += foodDiary.calories;
         snackList += this._view.foodDataTemplate(foodDiary);
       }
     });
 
-    breakfastList = breakfastList || this._view.foodDataTemplate('')
-    lunchList = lunchList || this._view.foodDataTemplate('')
-    dinnerList = dinnerList || this._view.foodDataTemplate('')
-    snackList = snackList || this._view.foodDataTemplate('')
+    breakfastList = breakfastList || this._view.foodDataTemplate('');
+    lunchList = lunchList || this._view.foodDataTemplate('');
+    dinnerList = dinnerList || this._view.foodDataTemplate('');
+    snackList = snackList || this._view.foodDataTemplate('');
 
     this._generateBreakfast({
       totalCalories: breakfastTotal,
@@ -144,7 +141,7 @@ class FoodDiaryPresenter {
 
     this._listenToDeleteFood();
 
-    await this._generateCaloriesRemaining(breakfastTotal + lunchTotal + dinnerTotal + snackTotal);    
+    await this._generateCaloriesRemaining(breakfastTotal + lunchTotal + dinnerTotal + snackTotal);
   }
 
   _generateBreakfast({totalCalories, data}) {
@@ -180,9 +177,9 @@ class FoodDiaryPresenter {
       deleteButtons.forEach((button) => {
         button.addEventListener('click', (event) => {
           this._displayModal(event.target.dataset.id);
-        })
+        });
       });
-    })
+    });
   }
 
   _displayModal(id) {
@@ -192,20 +189,20 @@ class FoodDiaryPresenter {
       deleteConfirm.addEventListener('click', async () => {
         await this._foodDiaryDb.delete(id);
         await this._generateFood();
-      })
-    })
+      });
+    });
   }
 
   _generateAddFoodLink() {
     this._view.showAddFoodLink((addFoodLinkElement) => {
       addFoodLinkElement.href = `#/add-food/${this._date}`;
-    })
+    });
   }
 
   _generateSetGoalLink() {
     this._view.showSetGoalLink((setGoalLinkElement) => {
       setGoalLinkElement.href = `#/goal/${this._date}`;
-    })
+    });
   }
 }
 

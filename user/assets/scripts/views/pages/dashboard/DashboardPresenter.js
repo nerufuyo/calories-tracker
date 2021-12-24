@@ -16,7 +16,7 @@ class DashboardPresenter {
     this._displayCalendar();
     this._displayCurrentDate();
     this._displayCalendarData();
-    
+
     // this._showGoal();
     // this._view.showFoodCalories();
   }
@@ -24,15 +24,15 @@ class DashboardPresenter {
   _displayMonthYear() {
     this._view.showMonthYear((selectedMonth) => {
       selectedMonth.innerHTML = `${DateHelper.getMonthName(this._date)} ${DateHelper.getYear(this._date)}`;
-    })
+    });
   }
 
   _generateMonthPickerDate() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     this._view.monthPickerDate(({previousMonth, nextMonth}) => {
       previousMonth.href = `#/${url.resource}/${DateHelper.getPreviousMonth(this._date)}`;
-      nextMonth.href =  `#/${url.resource}/${DateHelper.getNextMonth(this._date)}`;
-    })
+      nextMonth.href = `#/${url.resource}/${DateHelper.getNextMonth(this._date)}`;
+    });
   }
 
   _displayCalendar() {
@@ -42,7 +42,7 @@ class DashboardPresenter {
         ${this._view.showCalendarCurrentMonth(this._date)}
         ${this._view.showCalendarNextMonth(this._date)}
       `;
-    })
+    });
   }
 
   _displayCurrentDate() {
@@ -78,9 +78,9 @@ class DashboardPresenter {
         const calories = await FoodDiaryHelper.getCaloriesByRange({foodDiaries, startDate: dateElement.dataset.date, endDate: dateElement.dataset.date});
 
         dateElement.querySelector('.calories-goal__this-day').innerHTML = goal;
-        dateElement.querySelector('.total-calories__this-day').innerHTML = 
+        dateElement.querySelector('.total-calories__this-day').innerHTML =
           calories.breakfastCalories + calories.lunchCalories + calories.dinnerCalories + calories.snackCalories;
-      })
+      });
     });
   }
 }

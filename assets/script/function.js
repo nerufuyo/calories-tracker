@@ -4,7 +4,7 @@
 import {connectToDatabase} from './database-connector.js';
 import {getStorage, ref as refStorage, uploadBytesResumable, getDownloadURL} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js';
 import {getFirestore, collection, updateDoc, deleteDoc, addDoc, setDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
-import {getAuth, reauthenticateWithCredential , updatePassword , sendEmailVerification, updateEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+import {getAuth, reauthenticateWithCredential, updatePassword, sendEmailVerification, updateEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 // Initialize Firebase
 export const app = connectToDatabase();
@@ -86,12 +86,12 @@ export function loginUser() {
 
           await updateDoc(databaseRef, {last_login: date});
           console.log(date);
-          alert('User Logged in!');
+          console.log('User Logged in!');
           document.cookie = `user= ${user.uid}; expires=Thu, 18 Dec 2012`;
           // window.location.href = 'user-profile.html';
-          // window.location.href = '/user';
+          window.location.href = '/user';
           // window.location.href = 'update-email-password.html'
-          window.location.href = 'index.html';
+          // window.location.href = 'index.html';
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -260,9 +260,9 @@ export function changeEmailUser() {
     updateEmail(auth.currentUser, email.value).then(() => {
       console.log('Email Updated');
       sendEmailVerification(auth.currentUser)
-      .then(() => {
-        console.log('Email Verification Send');
-      });
+          .then(() => {
+            console.log('Email Verification Send');
+          });
     }).catch((error) => {
       const errorMessage = error.message;
       alert(errorMessage);
@@ -540,7 +540,7 @@ export function passwordAttributeHide() {
   const eyeSlash = document.getElementById('eye-slash') || null;
 
   if (loginPassword !== null) {
-    loginPassword.setAttribute("type", "password");
+    loginPassword.setAttribute('type', 'password');
     eye.style.display = 'none';
     eyeSlash.style.display = 'flex';
   }
@@ -552,7 +552,7 @@ export function passwordAttributeUnHide() {
   const eyeSlash = document.getElementById('eye-slash') || null;
 
   if (loginPassword !== null) {
-    loginPassword.setAttribute("Type", "Text");
+    loginPassword.setAttribute('Type', 'Text');
     eye.style.display = 'flex';
     eyeSlash.style.display = 'none';
   }
@@ -564,7 +564,7 @@ export function passwordSignUpAttributeHide() {
   const eyesSlash = document.getElementById('eyes-slash') || null;
 
   if (signupPassword !== null) {
-    signupPassword.setAttribute("Type", "Password");
+    signupPassword.setAttribute('Type', 'Password');
     eyes.style.display = 'none';
     eyesSlash.style.display = 'flex';
   }
@@ -576,7 +576,7 @@ export function passwordSignUpAttributeUnHide() {
   const eyesSlash = document.getElementById('eyes-slash') || null;
 
   if (signupPassword !== null) {
-    signupPassword.setAttribute("type", "text");
+    signupPassword.setAttribute('type', 'text');
     eyes.style.display = 'flex';
     eyesSlash.style.display = 'none';
   }

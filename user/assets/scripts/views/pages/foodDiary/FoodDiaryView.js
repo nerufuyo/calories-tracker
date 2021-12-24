@@ -115,7 +115,7 @@ class FoodDiaryView {
   }
 
   showDay(callback) {
-    callback(document.querySelector('.day-of-date'))
+    callback(document.querySelector('.day-of-date'));
   }
 
   showDatePickerButton(callback) {
@@ -129,28 +129,28 @@ class FoodDiaryView {
     callback({
       breakfastTotal: document.querySelector('.breakfast-list .total-calories'),
       breakfastData: document.querySelector('.breakfast-data'),
-    })
+    });
   }
 
   showLunch(callback) {
     callback({
       lunchTotal: document.querySelector('.lunch-list .total-calories'),
       lunchData: document.querySelector('.lunch-data'),
-    })
+    });
   }
 
   showDinner(callback) {
     callback({
       dinnerTotal: document.querySelector('.dinner-list .total-calories'),
       dinnerData: document.querySelector('.dinner-data'),
-    })
+    });
   }
 
   showSnack(callback) {
     callback({
       snackTotal: document.querySelector('.snack-list .total-calories'),
       snackData: document.querySelector('.snack-data'),
-    })
+    });
   }
 
   foodDataTemplate(foodDiary) {
@@ -160,16 +160,16 @@ class FoodDiaryView {
         <div>${foodDiary.servingSize || '-'}</div>
         <div>${foodDiary.calories || '-'}</div>
         <div class="button-container">
-          ${foodDiary ? 
+          ${foodDiary ?
             `
               <button class="edit-food-link"><a href="#/edit-food/${foodDiary.id}"><i class="far fa-edit"></i> Edit</a></button>
               <button class="delete-food-button" data-id="${foodDiary.id}"><i class="fas fa-trash-alt"></i> Delete</button>
-            `
-            : ''
-          }
+            ` :
+            ''
+}
         </div>
       </div>
-    `
+    `;
   }
 
   showCaloriesRemaining(callback) {
@@ -184,7 +184,7 @@ class FoodDiaryView {
     callback({
       modal: document.querySelector('.modal'),
       deleteConfirm: document.querySelector('.modal .deletebtn'),
-    })
+    });
   }
 
   deleteFoodListener(callback) {

@@ -1,4 +1,4 @@
-import GoalDb from "../data/GoalDb.js";
+import GoalDb from '../data/GoalDb.js';
 
 const GoalHelper = {
   async getGoal({date, goalsInput}) {
@@ -6,7 +6,7 @@ const GoalHelper = {
     const goals = goalsInput || await GoalDb.get();
 
     let myGoal = 0;
-    for (let goal of goals) { 
+    for (const goal of goals) {
       if (d.getTime() >= goal.startDate.getTime()) {
         if (goal.endDate) {
           if (d.getTime() <= goal.endDate.getTime()) {
@@ -23,6 +23,6 @@ const GoalHelper = {
 
     return myGoal;
   },
-}
+};
 
 export default GoalHelper;
