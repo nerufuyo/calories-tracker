@@ -23,6 +23,7 @@ Lack of maintaining a balance between calories in and out causes many people to 
 - [NodeJs](https://nodejs.org/en/)
 - [Firebase Authentication](https://firebase.google.com/docs/auth)
 - [Firestore](https://firebase.google.com/docs/firestore)
+- [API](https://fdc.nal.usda.gov/api-guide.html)
 
 ## Library
 - [ESLint](https://eslint.org/)
