@@ -76,7 +76,7 @@ class GoalView {
         endDateContainer: document.querySelector('.end-date__container'),
         endDateInput: document.querySelector('.end-date'),
         showEndDateContainer: document.querySelector('.show-end-date__container'),
-      })
+      });
     });
   }
 
@@ -86,7 +86,7 @@ class GoalView {
         endDateContainer: document.querySelector('.end-date__container'),
         endDateInput: document.querySelector('.end-date'),
         showEndDateContainer: document.querySelector('.show-end-date__container'),
-      })
+      });
     });
   }
 
@@ -97,7 +97,7 @@ class GoalView {
         calories: document.querySelector('.calories-target'),
         startDate: document.querySelector('.start-date'),
         endDate: document.querySelector('.end-date'),
-      })
+      });
 
       event.preventDefault();
     });

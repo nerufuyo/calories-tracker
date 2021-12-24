@@ -3,7 +3,7 @@ const DateHelper = {
     const yourDate = date || new Date();
 
     const offset = yourDate.getTimezoneOffset();
-    
+
     const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];
@@ -23,8 +23,8 @@ const DateHelper = {
 
   getDayName(date) {
     const d = date ? new Date(date) : new Date();
-    
-    return d.toLocaleString('default', {weekday: 'long'});;
+
+    return d.toLocaleString('default', {weekday: 'long'}); ;
   },
 
   getPreviousMonth(date) {
@@ -32,7 +32,7 @@ const DateHelper = {
     yourDate.setMonth(yourDate.getMonth() - 1);
 
     const offset = yourDate.getTimezoneOffset();
-    
+
     const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];
@@ -43,7 +43,7 @@ const DateHelper = {
     yourDate.setMonth(yourDate.getMonth() + 1);
 
     const offset = yourDate.getTimezoneOffset();
-    
+
     const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];
@@ -74,7 +74,7 @@ const DateHelper = {
     yourDate.setDate(yourDate.getDate() + 1);
 
     const offset = yourDate.getTimezoneOffset();
-    
+
     const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];
@@ -85,7 +85,7 @@ const DateHelper = {
     yourDate.setDate(yourDate.getDate() - 1);
 
     const offset = yourDate.getTimezoneOffset();
-    
+
     const d = new Date(yourDate.getTime() - (offset*60*1000));
 
     return d.toISOString().split('T')[0];

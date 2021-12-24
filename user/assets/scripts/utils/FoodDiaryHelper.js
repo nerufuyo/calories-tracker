@@ -29,8 +29,8 @@ const FoodDiaryHelper = {
     });
 
     return {breakfastCalories, lunchCalories, dinnerCalories, snackCalories};
-  }
-}
+  },
+};
 
 
 export default FoodDiaryHelper;

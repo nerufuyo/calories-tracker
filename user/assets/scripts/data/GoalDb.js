@@ -21,14 +21,14 @@ const GoalDb = {
 
     const goals = [];
 
-    snapshot.docs.forEach(doc => {
-      let endDate = doc.data().endDate ? doc.data().endDate.toDate() : null;
-      goals.push({ 
-        ...doc.data(), 
-        startDate: doc.data().startDate.toDate(), 
+    snapshot.docs.forEach((doc) => {
+      const endDate = doc.data().endDate ? doc.data().endDate.toDate() : null;
+      goals.push({
+        ...doc.data(),
+        startDate: doc.data().startDate.toDate(),
         endDate: endDate,
-        id: doc.id })
-    })
+        id: doc.id});
+    });
 
     return goals;
   },
@@ -45,7 +45,7 @@ const GoalDb = {
       createdAt: new Date(),
       uid: user.uid,
     });
-  }
-}
+  },
+};
 
 export default GoalDb;

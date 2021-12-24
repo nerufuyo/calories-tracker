@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import {collection, updateDoc, getDoc, addDoc, setDoc, getDocs, query, where, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
+import {collection, getDoc, getDocs, query, where, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 import {auth, database, signUpNewUser,
   loginUser,
@@ -11,20 +11,17 @@ import {auth, database, signUpNewUser,
   preloader,
   removeProfileAttributDisabled,
   setProfileAttributeDisable,
-  selectPhotoProfile,
-  uploadPhotoProfile,
   getCookie,
-  checkCookie,
   addFoodDiary,
   removeFoodAttributDisabled,
   setFoodAttributDisabled,
   removeEditFoodAttributDisabled,
   setEditFoodAttributDisabled,
-  updateFoodDiary, 
-  deleteFoodDiary, 
-  changeEmailUser, 
-  changePasswordUser, 
-  passwordAttributeUnHide, 
+  updateFoodDiary,
+  deleteFoodDiary,
+  changeEmailUser,
+  changePasswordUser,
+  passwordAttributeUnHide,
   passwordAttributeHide,
   passwordSignUpAttributeHide,
   passwordSignUpAttributeUnHide} from './function.js';
@@ -110,7 +107,7 @@ if (auth !== null) {
         foodId.addEventListener('change', async (e)=> {
           const databaseFoodRef = doc(database, `foodDiaries`, foodId.value);
           const databaseFoodRead = await getDoc(databaseFoodRef);
-  
+
           if (databaseFoodRead.exists()) {
             foodName.value = databaseFoodRead.data().food_name;
             foodSize.value = databaseFoodRead.data().food_size;
@@ -119,7 +116,7 @@ if (auth !== null) {
             foodDate.value = databaseFoodRead.data().food_date;
           }
         });
-      } 
+      }
     }
   });
 }
