@@ -25,6 +25,24 @@ input[type="date"] {
   font-size: 1rem;
 }
 
+.alert {
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.alert-success {
+  border: 1px solid #c3e6cb;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert.active {
+  display: block;
+}
+
 /* ---- Header ---- */
 .app-bar {
   position: fixed;
@@ -32,6 +50,7 @@ input[type="date"] {
   display: -ms-flexbox;
   display: flex;
   top: 0;
+  left: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -39,6 +58,7 @@ input[type="date"] {
   height: 60px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #DADCE0;
+  z-index: 2;
 }
 
 .app-bar_menu-hamburger {
@@ -855,6 +875,51 @@ main.shift {
 
 .add-food-button:hover {
   background-color: #0069D9;
+}
+
+/* ---- Autocomplete ---- */
+.autocomplete {
+  position: relative;
+}
+
+.autocomplete-list {
+  display: none;
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+  top: calc(100% + 5px);
+  right: -5px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.autocomplete-list.active {
+  display: block;
+}
+
+.autocomplete-loading, .autocomplete-not-found {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  color: #888;
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover {
+  background-color: #dadce0;
 }
 
 /* ---- Edit Food ---- */

@@ -66,17 +66,36 @@ input[type="date"] {
   font-size: 1rem;
 }
 
+.alert {
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  &-success {
+    border: 1px solid #c3e6cb;
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
 /* ---- Header ---- */
 .app-bar {
   position: fixed;
   display: flex;
   top: 0;
-  // left: 0;
+  left: 0;
   align-items: center;
   width: 100%;
   height: $app-bar-height;
   background-color: #FFFFFF;
   border-bottom: 1px solid #DADCE0;
+  z-index: 2;
 }
 
 .app-bar_menu-hamburger {
@@ -738,6 +757,50 @@ main {
 .add-food-button {
   @include add-button;
   padding: 10px;
+}
+
+/* ---- Autocomplete ---- */
+.autocomplete {
+  position: relative;
+
+  &-list {
+    display: none;
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    width: 100%;
+    background-color: #fff;
+  
+    z-index: 1;
+    top: calc(100% + 5px);
+    right: -5px;
+    max-height: 300px;
+    overflow-y: auto;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: #888;
+  }
+
+  &-not-found {
+    @extend .autocomplete-loading;
+  }
+
+  &-item {
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $menu-hover-bgcolor; 
+    }
+  }
 }
 
 /* ---- Edit Food ---- */
