@@ -1,5 +1,11 @@
 import {db, auth} from '../utils/firebaseInit.js';
-import {onAuthStateChanged, getAuth, updateEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+import {
+  onAuthStateChanged,
+  updateEmail,
+  updatePassword,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 import {
   getDoc,
   updateDoc,
@@ -47,6 +53,19 @@ const UserDb = {
 
     return await updateEmail(auth.currentUser, email);
   },
+
+  async reauthenticate(password) {
+    const credential = EmailAuthProvider.credential(
+      auth.currentUser.email,
+      password,
+    );
+
+    return await reauthenticateWithCredential(auth.currentUser, credential);
+  },
+
+  async updatePassword(password) {
+    return await updatePassword(auth.currentUser, password);
+  }
 };
 
 export default UserDb;

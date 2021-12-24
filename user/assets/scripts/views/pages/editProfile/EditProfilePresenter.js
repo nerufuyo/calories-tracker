@@ -62,7 +62,6 @@ class EditProfilePresenter {
 
   _displayAlertError(error) {
     this._view.showAlert((alert) => {
-      console.log('masuk');
       alert.classList.add('active', 'alert-error');
       alert.innerHTML = `Error: ${error}`;
     })
