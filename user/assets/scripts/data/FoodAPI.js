@@ -3,7 +3,7 @@ const CONFIG = {
   apiKey: 'Wftb9w4AArWP94YaUXjeGbObQRmUlvF6cV0bh81O',
 }
 
-const FoodApi = {
+const FoodAPI = {
   async search(query) {
     const result = await fetch(`${CONFIG.baseUrl}foods/search?query=${query}&api_key=${CONFIG.apiKey}&pageNumber=1`);
 
@@ -17,4 +17,4 @@ const FoodApi = {
   },
 }
 
-export default FoodApi;
+export default FoodAPI;
