@@ -38,7 +38,26 @@ class EditFoodPresenter {
         category: category.options[category.selectedIndex].value,
         date: date.value,
       })
+      
+      this._displayAlertSuccess();
     });
+  }
+
+  _displayAlertSuccess() {
+    this._view.showAlert((alert) => {
+      console.log('masuk');
+      alert.classList.add('active', 'alert-success');
+      alert.innerHTML = 'Data has been updated';
+    })
+
+    setTimeout(this._hiddenAlert.bind(this), 3000);
+  }
+
+  _hiddenAlert() {
+    this._view.showAlert((alert) => {
+      alert.classList.remove('active', 'alert-success', 'alert-error');
+      alert.innerHTML = '';
+    })
   }
 }
 
