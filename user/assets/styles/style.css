@@ -39,6 +39,12 @@ input[type="date"] {
   color: #155724;
 }
 
+.alert-error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
 .alert.active {
   display: block;
 }

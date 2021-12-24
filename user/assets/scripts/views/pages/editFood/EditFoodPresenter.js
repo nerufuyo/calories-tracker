@@ -45,7 +45,6 @@ class EditFoodPresenter {
 
   _displayAlertSuccess() {
     this._view.showAlert((alert) => {
-      console.log('masuk');
       alert.classList.add('active', 'alert-success');
       alert.innerHTML = 'Data has been updated';
     })

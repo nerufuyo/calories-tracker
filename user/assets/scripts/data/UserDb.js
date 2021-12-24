@@ -1,6 +1,10 @@
 import {db, auth} from '../utils/firebaseInit.js';
-import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
-import {getDoc, doc} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
+import {onAuthStateChanged, getAuth, updateEmail} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+import {
+  getDoc,
+  updateDoc,
+  doc
+} from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js';
 
 const userProfileData = async () => {
   return new Promise(function(resolve, reject) {
@@ -27,6 +31,21 @@ const UserDb = {
     const docRef = await this.docRef();
 
     return (await getDoc(docRef)).data();
+  },
+
+  async update({fullname, gender, birthday, height, weight, email}) {
+    const docRef = await this.docRef();
+
+    updateDoc(docRef, {
+      fullname,
+      gender,
+      birthday: new Date(birthday),
+      height: parseInt(height),
+      weight: parseInt(weight),
+      updatedAt: new Date(),
+    });
+
+    return await updateEmail(auth.currentUser, email);
   },
 };
 
