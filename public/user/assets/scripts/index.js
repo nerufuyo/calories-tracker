@@ -1,7 +1,7 @@
 import DateHelper from './utils/DateHelper.js';
-import App from './views/App.js';
+import App from './views/app.js';
 import UserDb from './data/UserDb.js';
-import isUserLogin from './utils/IsUserLogin.js';
+import isUserLogin from './utils/isUserLogin.js';
 import LogoutHelper from './utils/LogoutHelper.js';
 
 const app = new App({
