@@ -28,28 +28,74 @@ class SummaryView {
 
       <div class="summary-calories__section breakfast-summary">
         <span class="summary-column-title">Breakfast</span>
-        <span class="summary-calories-number breakfast-summary-calories">2500</span>
-        <span class="summary-calories-percentage breakfast-summary-percentage">31.25%</span>
-      </div>
+        <span class="summary-calories-number breakfast-summary-calories">0</span>
+        <div class="summary-calories-percentage ">
+          <span class="breakfast-summary-percentage">0</span>%
+        </div>
+        </div>
 
       <div class="summary-calories__section lunch-summary">
         <span class="summary-column-title">Lunch</span>
-        <span class="summary-calories-number lunch-summary-calories">3000</span>
-        <span class="summary-calories-percentage lunch-summary-percentage">37.25%</span>
-      </div>
+        <span class="summary-calories-number lunch-summary-calories">0</span>
+        <div class="summary-calories-percentage ">
+          <span class="lunch-summary-percentage">0</span>%
+        </div>
+        </div>
 
       <div class="summary-calories__section dinner-summary">
         <span class="summary-column-title">Dinner</span>
-        <span class="summary-calories-number dinner-summary-calories">1500</span>
-        <span class="summary-calories-percentage dinner-summary-percentage">18.75%</span>
-      </div>
+        <span class="summary-calories-number dinner-summary-calories">0</span>
+        <div class="summary-calories-percentage ">
+          <span class="dinner-summary-percentage">0</span>%
+        </div>
+        </div>
 
       <div class="summary-calories__section snack-summary">
         <span class="summary-column-title">Snack</span>
-        <span class="summary-calories-number snack-summary-calories">1000</span>
-        <span class="summary-calories-percentage snack-summary-percentage">12.5%</span>
-      </div>
+        <span class="summary-calories-number snack-summary-calories">0</span>
+        <div class="summary-calories-percentage ">
+          <span class="snack-summary-percentage">0</span>%
+        </div>
+        </div>
     `;
+  }
+
+  dateRangeListener(callback) {
+    document.querySelector('.date-since-input').addEventListener('change', (event) => {
+      callback({
+        dateSince: event.target,
+        dateUntil: document.querySelector('.date-until-input'),
+      });
+    });
+
+    document.querySelector('.date-until-input').addEventListener('change', (event) => {
+      callback({
+        dateSince: document.querySelector('.date-since-input'),
+        dateUntil: event.target,
+      });
+    });
+  }
+
+  resetButtonListener(callback) {
+    document.querySelector('.reset-button').addEventListener('click', () => {
+      callback({
+        dateSince: document.querySelector('.date-since-input'),
+        dateUntil: document.querySelector('.date-until-input'),
+      })
+    })
+  }
+
+  showSummaryData(callback) {
+    callback({
+      breakfastCalories: document.querySelector('.breakfast-summary-calories'),
+      breakfastPercentage: document.querySelector('.breakfast-summary-percentage'),
+      lunchCalories: document.querySelector('.lunch-summary-calories'),
+      lunchPercentage: document.querySelector('.lunch-summary-percentage'),
+      dinnerCalories: document.querySelector('.dinner-summary-calories'),
+      dinnerPercentage: document.querySelector('.dinner-summary-percentage'),
+      snackCalories: document.querySelector('.snack-summary-calories'),
+      snackPercentage: document.querySelector('.snack-summary-percentage'),
+    })
   }
 }
 

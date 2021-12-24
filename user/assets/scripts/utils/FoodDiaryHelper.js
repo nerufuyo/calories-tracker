@@ -1,6 +1,12 @@
+import FoodDiaryDb from '../data/FoodDiaryDb.js';
+
 const FoodDiaryHelper = {
-  getCaloriesByRange({startDate, endDate, foodDiaries}) {
+  async getCaloriesByRange({startDate, endDate, foodDiaries}) {
     let [breakfastCalories, lunchCalories, dinnerCalories, snackCalories] = [0, 0, 0, 0];
+
+    if (!foodDiaries) {
+      foodDiaries = await FoodDiaryDb.getByDateRange({startDate, endDate})
+    }
 
     startDate = new Date(startDate);
     endDate = new Date(endDate);

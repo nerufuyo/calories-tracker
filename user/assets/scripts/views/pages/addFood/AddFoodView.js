@@ -7,15 +7,20 @@ class AddFoodView {
 
   getContentTemplate() {
     return `
-      <form class="add-food__form">
+      <div class="alert">
+      </div>
+      <form autocomplete="off" class="add-food__form">
         <label>
           <div class="input-group food-name__input">
             <div class="input-name">Name</div>
-            <div class="form-input">
+            <div class="form-input autocomplete">
               <input type="text"
                 placeholder="Enter food name" 
                 class="food-name" 
                 required>
+
+              <div class="autocomplete-list">
+              </div>
             </div>
           </div>
         </label>
@@ -89,6 +94,83 @@ class AddFoodView {
           });
           event.preventDefault();
         });
+  }
+
+  autocompleteListener(callback) {
+    callback({
+      inputElement: document.querySelector('.food-name'),
+    });
+  }
+
+  foodNameListener(callback) {
+    document.querySelector('.food-name').addEventListener('input', () => {
+      callback({
+        foodNameElement: document.querySelector('.food-name'),
+        autocompleteList: document.querySelector('.autocomplete-list'),
+      });
+    });
+  }
+
+  autocompleteListLoading() {
+    return `
+      <div class="autocomplete-loading">
+        Loading...
+      </div>
+    `;
+  }
+
+  autocompleteListNotFound() {
+    return `
+      <div class="autocomplete-not-found">
+        Not found...
+      </div>
+    `;
+  }
+
+  autocompleteItemTemplate({id, name}) {
+    return `
+      <div class="autocomplete-item" data-id="${id}" data-value='${name}'>
+        ${name}
+      </div>
+    `;
+  }
+
+  autocompleteItemListener(callback) {
+    document.querySelectorAll('.autocomplete-item').forEach((element) => {
+      element.addEventListener('click', (event) => {
+        callback({
+          autocompleteItem: event.target,
+          foodNameElement: document.querySelector('.food-name'),
+          autocompleteList: document.querySelector('.autocomplete-list'),
+          caloriesElement: document.querySelector('.food-calories'),
+          servingSizeElement: document.querySelector('.serving-size'),
+        });
+      });
+    })
+  }
+
+  servingSizeListener(callback) {
+    document.querySelector('.serving-size').addEventListener('change', (event) => {
+      callback({
+        foodNameElement: document.querySelector('.food-name'),
+        caloriesElement: document.querySelector('.food-calories'),
+        servingSizeElement: document.querySelector('.serving-size'),
+      })
+    })
+  }
+
+  windowListener(callback) {
+    window.addEventListener('click', (event) => {
+      callback({
+        event,
+        autocompleteList: document.querySelector('.autocomplete-list'),
+        foodName: document.querySelector('.food-name'),
+      });
+    })
+  }
+
+  showAlert(callback) {
+    callback(document.querySelector('.alert'));
   }
 }
 

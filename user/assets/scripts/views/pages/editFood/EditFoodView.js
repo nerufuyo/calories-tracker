@@ -9,6 +9,8 @@ class EditFoodView {
 
   getContentTemplate() {
     return `
+      <div class="alert">
+      </div>
       <form class="edit-food__form">
         <label>
           <div class="input-group food-name__input">
@@ -75,6 +77,10 @@ class EditFoodView {
     document.querySelector('.food-calories').value = calories;
     document.querySelector('.food-category').value = category;
     document.querySelector('.food-date').value = date;
+  }
+
+  showAlert(callback) {
+    callback(document.querySelector('.alert'));
   }
 }
 

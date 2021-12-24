@@ -1,4 +1,6 @@
 import SummaryView from './summary/SummaryView.js';
+import SummaryPresenter from './summary/SummaryPresenter.js';
+import FoodDiaryHelper from '../../utils/FoodDiaryHelper.js';
 
 const view = new SummaryView();
 
@@ -8,7 +10,7 @@ const Summary = {
   },
 
   async afterRender() {
-    return ``;
+    new SummaryPresenter(view, FoodDiaryHelper);
   },
 };
 
