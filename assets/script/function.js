@@ -413,14 +413,14 @@ export async function preloader() {
   const preloader = document.getElementById('preloader');
 
   document.body.classList.add('stop_scrolling');
-  await sleep(4500);
+  await sleep(3000);
   preloader.style.display = 'none';
   document.body.classList.remove('stop_scrolling');
-
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  };
 }
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
 
 export function removeProfileAttributDisabled() {
   const inputFullName = document.getElementById('profile-fullname-input');
