@@ -19,7 +19,7 @@
 }
 
 div#preloader {
-  display: none;
+  display: flex;
   position: fixed;
   flex-direction: column;
   width: 100vw;
@@ -28,7 +28,7 @@ div#preloader {
   align-items: center;
   gap: 1rem;
   z-index: 10;
-  background-color: var(--primary-color);
+  background-color: var(--third-color);
   animation: fade-out 1s forwards 3800ms;
 }
 
@@ -69,7 +69,7 @@ div#preloader div.preloader-image img.fifth-image {
 div#preloader p.preloader-text {
   font-size: 2.5rem;
   opacity: 0;
-  color: var(--third-color);
+  color: var(--seventh-color);
   animation: blink .75s alternate infinite .2s;
 }
 
@@ -1361,6 +1361,12 @@ section.user-profile div.food-outter-container button.add-food-button, section.u
 }
 
 @media screen and (max-width: 428px) {
+  div#preloader div.preloader-image {
+    gap: 1rem;
+  }
+  div#preloader div.preloader-image img {
+    width: 3rem;
+  }
   nav {
     gap: 5%;
   }
