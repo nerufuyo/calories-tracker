@@ -7,8 +7,8 @@ Lack of maintaining a balance between calories in and out causes many people to 
 <img src="caloriestracker.gif">
 
 ## Developer
-- [Imam Firdaus Dwimeianto F299R4300](https://www.linkedin.com/in/idwimeianto/) 
-- [Listyo Adi Pamungkas F152R5106](https://www.linkedin.com/in/listyo-adi-pamungkas-851490205/)
+- Imam Firdaus Dwimeianto F299R4300 | [LinkedIn](https://www.linkedin.com/in/idwimeianto/) 
+- Listyo Adi Pamungkas F152R5106 | [LinkedIn](https://www.linkedin.com/in/listyo-adi-pamungkas-851490205/)
 
 ## Compatibility
 - Latest versions of all modules and components
