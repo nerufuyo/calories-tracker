@@ -1,5 +1,3 @@
-import DateHelper from '../../../utils/DateHelper.js';
-
 class GoalView {
   getTitleTemplate() {
     return `
@@ -9,6 +7,8 @@ class GoalView {
 
   getContentTemplate() {
     return `
+      <div class="alert">
+      </div>
       <form class="goal__form">
         <label>
           <div class="input-group activity__input">
@@ -97,10 +97,15 @@ class GoalView {
         calories: document.querySelector('.calories-target'),
         startDate: document.querySelector('.start-date'),
         endDate: document.querySelector('.end-date'),
+        activity: document.querySelector('.activity-level'),
       });
 
       event.preventDefault();
     });
+  }
+
+  showAlert(callback) {
+    callback(document.querySelector('.alert'));
   }
 }
 

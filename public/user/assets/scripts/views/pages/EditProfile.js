@@ -1,6 +1,7 @@
 import EditProfilePresenter from './editProfile/EditProfilePresenter.js';
 import EditProfileView from './editProfile/EditProfileView.js';
 import UserDb from '../../data/UserDb.js';
+import UserProfileNameHeaderGenerator from '../../utils/UserProfileNameHeaderGenerator.js';
 
 const view = new EditProfileView();
 
@@ -10,7 +11,7 @@ const EditProfile = {
   },
 
   async afterRender() {
-    new EditProfilePresenter({view, UserDb});
+    new EditProfilePresenter({view, UserDb, UserProfileNameHeaderGenerator});
   },
 };
 

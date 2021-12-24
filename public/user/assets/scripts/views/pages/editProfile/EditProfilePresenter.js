@@ -1,9 +1,10 @@
 import DateHelper from "../../../utils/DateHelper.js";
 
 class EditProfilePresenter {
-  constructor({view, UserDb}) {
+  constructor({view, UserDb, UserProfileNameHeaderGenerator}) {
     this._view = view;
     this._userDb = UserDb;
+    this._userHeaderName = UserProfileNameHeaderGenerator;
 
     this._displayEmail();
     this._displayFormData();
@@ -44,6 +45,7 @@ class EditProfilePresenter {
       })
         .then(() => {
           this._displayAlertSuccess();
+          this._userHeaderName.init(document.querySelector('.user-profile__name'), this._userDb);
         })
         .catch((err) => {
           this._displayAlertError(err.message);

@@ -54,6 +54,14 @@ const UserDb = {
     return await updateEmail(auth.currentUser, email);
   },
 
+  async updateActivity(activity) {
+    const docRef = await this.docRef();
+
+    updateDoc(docRef, {
+      activity,
+    });
+  },
+
   async reauthenticate(password) {
     const credential = EmailAuthProvider.credential(
       auth.currentUser.email,
